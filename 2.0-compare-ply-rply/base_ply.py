@@ -117,4 +117,14 @@ import ply.yacc as yacc
 
 parser = yacc.yacc()
 
-print(yacc.parse("1 + 3 - 2+12-32"))
+yacc.parse("1 + 3 - 2+12-32")
+
+from pympler import asizeof
+
+print("parser size in bytes:", asizeof.asized(parser, detail=1).format())
+
+import tracemalloc
+from bench_utils import display_top
+
+snap = tracemalloc.take_snapshot()
+display_top(snap)

@@ -66,3 +66,8 @@ def start():
 
 if __name__ == "__main__":
     start()
+    import tracemalloc
+    from bench_utils import display_top
+
+    snap = tracemalloc.take_snapshot()
+    display_top(snap)

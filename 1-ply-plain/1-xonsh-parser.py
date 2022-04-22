@@ -6,7 +6,7 @@ def main():
 
     p = Parser()
     # wait for thread to finish
-    p.parse("1")
+    p.parse("ls -alh")
 
 
 if __name__ == "__main__":

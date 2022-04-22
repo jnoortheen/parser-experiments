@@ -28,6 +28,7 @@ tasks:
       - qcachegrind results/profile-rply.callgrind
   type:
     cmds:
-      - dmypy run -- rply --strict
+#      - dmypy run -- rply --strict
+      - mypy rply --strict
     sources:
       - rply

@@ -75,3 +75,20 @@ def trace(limit=10, show_tb=False):
     display_top(snap, limit=limit)
     tracemalloc.reset_peak()
     tracemalloc.stop()
+
+
+@contextmanager
+def prof_pyinstr(name: str):
+    ts = get_timestamp()
+    from pyinstrument import Profiler
+
+    profiler = Profiler()
+    profiler.start()
+    yield
+    profiler.stop()
+
+    dest = Path.cwd() / "results" / name
+    dest.mkdir(exist_ok=True)
+
+    out = dest / f"{ts}.html"
+    out.write_text(profiler.output_html())

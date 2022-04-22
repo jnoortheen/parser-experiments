@@ -1,0 +1,2851 @@
+version: 1
+creator: yappi
+pid: 41438
+cmd:  profile_rply.py
+part: 1
+
+events: Ticks
+
+fl=(9) profile_rply.py
+fl=(10) profile_rply.py
+fl=(11) <frozen importlib._bootstrap>
+fl=(23) <frozen importlib._bootstrap>
+fl=(72) <frozen importlib._bootstrap>
+fl=(87) <frozen importlib._bootstrap_external>
+fl=(104) <frozen importlib._bootstrap>
+fl=(105) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(106) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/__init__.py
+fl=(129) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(130) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(25) <frozen importlib._bootstrap>
+fl=(37) <frozen importlib._bootstrap_external>
+fl=(38) <frozen importlib._bootstrap_external>
+fl=(131) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(55) <frozen importlib._bootstrap_external>
+fl=(248) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(275) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(170) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(88) <frozen importlib._bootstrap_external>
+fl=(61) <frozen importlib._bootstrap_external>
+fl=(73) <frozen importlib._bootstrap>
+fl=(288) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(62) <frozen importlib._bootstrap_external>
+fl=(142) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bz2.py
+fl=(76) <frozen importlib._bootstrap>
+fl=(284) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(82) <frozen importlib._bootstrap_external>
+fl=(138) <frozen importlib._bootstrap_external>
+fl=(301) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(118) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(201) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(202) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py
+fl=(203) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py
+fl=(150) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lzma.py
+fl=(79) <frozen importlib._bootstrap>
+fl=(278) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(92) <frozen importlib._bootstrap_external>
+fl=(205) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(101) <frozen importlib._bootstrap_external>
+fl=(80) <frozen importlib._bootstrap_external>
+fl=(356) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(359) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py
+fl=(200) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(44) <frozen importlib._bootstrap_external>
+fl=(171) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bisect.py
+fl=(311) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(13) <frozen importlib._bootstrap>
+fl=(285) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py
+fl=(187) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(119) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(293) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(295) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(291) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(40) <frozen importlib._bootstrap_external>
+fl=(67) <frozen importlib._bootstrap_external>
+fl=(292) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(361) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(83) <frozen importlib._bootstrap_external>
+fl=(222) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(286) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(65) <frozen importlib._bootstrap>
+fl=(362) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(66) <frozen importlib._bootstrap_external>
+fl=(14) <frozen importlib._bootstrap>
+fl=(206) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(26) <frozen importlib._bootstrap>
+fl=(32) <frozen importlib._bootstrap>
+fl=(48) <frozen importlib._bootstrap_external>
+fl=(98) <frozen importlib._bootstrap_external>
+fl=(69) <frozen importlib._bootstrap_external>
+fl=(242) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(210) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(312) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(100) <frozen importlib._bootstrap_external>
+fl=(321) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(371) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py
+fl=(281) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(115) <frozen importlib._bootstrap>
+fl=(212) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(27) /Users/noor/src/py/parser-experiments/.venv/lib/python3.10/site-packages/_distutils_hack/__init__.py
+fl=(96) <frozen importlib._bootstrap_external>
+fl=(223) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(117) <frozen importlib._bootstrap>
+fl=(298) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(262) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(299) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(85) <frozen importlib._bootstrap_external>
+fl=(363) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(296) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(229) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(19) <frozen importlib._bootstrap>
+fl=(116) <frozen importlib._bootstrap>
+fl=(16) <frozen importlib._bootstrap>
+fl=(42) <frozen importlib._bootstrap_external>
+fl=(297) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(91) <frozen importlib._bootstrap_external>
+fl=(56) <frozen importlib._bootstrap_external>
+fl=(305) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(160) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py
+fl=(252) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(140) <frozen importlib._bootstrap_external>
+fl=(145) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py
+fl=(302) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(290) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(46) <frozen importlib._bootstrap_external>
+fl=(263) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(325) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(52) <frozen importlib._bootstrap_external>
+fl=(35) <frozen importlib._bootstrap>
+fl=(77) <frozen importlib._bootstrap>
+fl=(60) <frozen importlib._bootstrap_external>
+fl=(33) <frozen importlib._bootstrap>
+fl=(49) <frozen importlib._bootstrap_external>
+fl=(367) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(267) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(276) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(143) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py
+fl=(268) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(89) <frozen importlib._bootstrap_external>
+fl=(287) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py
+fl=(219) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(58) <frozen importlib._bootstrap_external>
+fl=(135) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py
+fl=(107) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py
+fl=(348) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(266) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(197) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(279) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(233) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py
+fl=(264) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(132) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/fnmatch.py
+fl=(178) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(188) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(326) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(179) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(334) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py
+fl=(344) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(71) <frozen importlib._bootstrap>
+fl=(224) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(375) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(120) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(328) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(134) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py
+fl=(12) <frozen importlib._bootstrap>
+fl=(329) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(271) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/genericpath.py
+fl=(244) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(218) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(234) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py
+fl=(43) <frozen zipimport>
+fl=(336) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py
+fl=(372) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(313) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(269) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py
+fl=(75) <frozen importlib._bootstrap>
+fl=(204) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(207) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(238) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(306) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(230) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(255) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(314) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(245) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(47) <frozen importlib._bootstrap_external>
+fl=(51) <frozen importlib._bootstrap_external>
+fl=(78) <frozen importlib._bootstrap>
+fl=(239) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(74) <frozen importlib._bootstrap_external>
+fl=(68) <frozen importlib._bootstrap_external>
+fl=(289) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(214) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(31) /Users/noor/src/py/parser-experiments/.venv/lib/python3.10/site-packages/_distutils_hack/__init__.py
+fl=(226) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(211) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(215) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(90) <frozen importlib._bootstrap_external>
+fl=(315) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py
+fl=(241) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(370) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(273) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(208) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(360) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(258) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(221) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(194) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py
+fl=(235) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py
+fl=(249) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(304) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(228) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(217) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(317) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py
+fl=(376) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(198) <frozen importlib._bootstrap>
+fl=(335) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py
+fl=(257) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(213) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(369) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(270) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py
+fl=(220) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(137) <frozen importlib._bootstrap_external>
+fl=(256) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(4) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py
+fl=(366) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(280) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(322) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(1) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py
+fl=(227) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(374) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(349) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(341) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(260) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(253) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(209) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(237) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py
+fl=(175) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(185) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(337) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(357) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(303) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(319) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/os.py
+fl=(246) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(373) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(339) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(353) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(133) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py
+fl=(350) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(236) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py
+fl=(167) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py
+fl=(149) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bz2.py
+fl=(186) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(177) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(183) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(251) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(346) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(199) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(196) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(169) <string>
+fl=(122) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(310) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(111) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py
+fl=(342) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(148) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py
+fl=(190) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(151) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lzma.py
+fl=(154) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(182) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(192) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(191) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(377) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(109) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py
+fl=(155) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(2) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py
+fl=(277) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(123) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(126) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(243) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py
+fl=(250) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(125) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(110) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py
+fl=(128) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(195) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py
+fl=(127) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py
+fl=(112) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py
+fl=(184) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(247) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(176) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py
+fl=(338) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py
+fl=(320) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py
+fl=(121) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py
+fl=(193) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(124) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(157) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(259) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(355) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py
+fl=(152) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(158) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(144) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py
+fl=(261) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py
+fl=(354) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py
+fl=(358) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py
+fl=(345) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py
+fl=(156) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+fl=(189) /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py
+fl=(153) /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py
+
+fn=(9) <module> profile_rply.py:1
+fn=(10) main profile_rply.py:1
+fn=(11) _find_and_load <frozen importlib._bootstrap>:1022
+fn=(23) _find_and_load_unlocked <frozen importlib._bootstrap>:987
+fn=(72) _load_unlocked <frozen importlib._bootstrap>:664
+fn=(87) SourceFileLoader.exec_module <frozen importlib._bootstrap_external>:877
+fn=(104) _call_with_frames_removed <frozen importlib._bootstrap>:233
+fn=(105) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:1
+fn=(106) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/__init__.py:1
+fn=(129) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:1
+fn=(130) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:1
+fn=(25) _find_spec <frozen importlib._bootstrap>:921
+fn=(37) find_spec <frozen importlib._bootstrap_external>:1422
+fn=(38) _get_spec <frozen importlib._bootstrap_external>:1390
+fn=(131) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:1
+fn=(55) FileFinder.find_spec <frozen importlib._bootstrap_external>:1527
+fn=(248) ParserGenerator.build /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:136
+fn=(275) from_grammar /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:282
+fn=(170) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:1
+fn=(88) SourceFileLoader.get_code <frozen importlib._bootstrap_external>:950
+fn=(61) _path_join <frozen importlib._bootstrap_external>:126
+fn=(73) module_from_spec <frozen importlib._bootstrap>:564
+fn=(288) add_lalr_lookaheads /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:478
+fn=(62) <listcomp> <frozen importlib._bootstrap_external>:128
+fn=(142) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bz2.py:1
+fn=(76) _init_module_attrs <frozen importlib._bootstrap>:492
+fn=(284) lr0_goto /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:455
+fn=(82) cache_from_source <frozen importlib._bootstrap_external>:380
+fn=(138) ExtensionFileLoader.create_module <frozen importlib._bootstrap_external>:1174
+fn=(301) compute_lookback_includes /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:572
+fn=(118) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:1
+fn=(201) Rule.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:9
+fn=(202) compile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py:249
+fn=(203) _compile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/re.py:288
+fn=(150) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lzma.py:1
+fn=(79) ModuleSpec.cached <frozen importlib._bootstrap>:391
+fn=(278) lr0_items /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:414
+fn=(92) SourceFileLoader.get_data <frozen importlib._bootstrap_external>:1070
+fn=(205) compile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:759
+fn=(101) _compile_bytecode <frozen importlib._bootstrap_external>:670
+fn=(80) _get_cached <frozen importlib._bootstrap_external>:510
+fn=(356) start /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:64
+fn=(359) LRParser.parse /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py:9
+fn=(200) LexerGenerator.add /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:70
+fn=(44) _path_stat <frozen importlib._bootstrap_external>:140
+fn=(171) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bisect.py:1
+fn=(311) ParserGenerator._write_cache /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:199
+fn=(13) _ModuleLockManager.__enter__ <frozen importlib._bootstrap>:169
+fn=(285) IdentityDict.get /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py:813
+fn=(187) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:1
+fn=(119) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:1
+fn=(293) digraph /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:213
+fn=(295) traverse /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:223
+fn=(291) LRItem.getlength /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:222
+fn=(40) _path_importer_cache <frozen importlib._bootstrap_external>:1347
+fn=(67) FileFinder._get_spec <frozen importlib._bootstrap_external>:1522
+fn=(292) compute_read_sets /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:521
+fn=(361) LexerStream.__next__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:61
+fn=(83) _path_split <frozen importlib._bootstrap_external>:132
+fn=(222) _code /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:598
+fn=(286) IdentityDict.__getitem__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:14
+fn=(65) _verbose_message <frozen importlib._bootstrap>:244
+fn=(362) LexerStream.next /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:35
+fn=(66) _path_isfile <frozen importlib._bootstrap_external>:159
+fn=(14) _get_module_lock <frozen importlib._bootstrap>:179
+fn=(206) parse /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:937
+fn=(26) _ImportLockContext.__enter__ <frozen importlib._bootstrap>:893
+fn=(32) _ImportLockContext.__exit__ <frozen importlib._bootstrap>:897
+fn=(48) _path_is_mode_type <frozen importlib._bootstrap_external>:150
+fn=(98) _unpack_uint32 <frozen importlib._bootstrap_external>:84
+fn=(69) spec_from_file_location <frozen importlib._bootstrap_external>:721
+fn=(242) LexerGenerator.ignore /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:77
+fn=(210) _parse_sub /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:435
+fn=(312) NamedTemporaryFile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:522
+fn=(100) _validate_timestamp_pyc <frozen importlib._bootstrap_external>:618
+fn=(321) _mkstemp_inner /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:244
+fn=(371) LRParser._reduce_production /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py:67
+fn=(281) IdentityDict.__setitem__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:17
+fn=(115) _ModuleLockManager.__exit__ <frozen importlib._bootstrap>:173
+fn=(212) _parse /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:493
+fn=(27) DistutilsMetaFinder.find_spec /Users/noor/src/py/parser-experiments/.venv/lib/python3.10/site-packages/_distutils_hack/__init__.py:83
+fn=(96) _classify_pyc <frozen importlib._bootstrap_external>:585
+fn=(223) _compile_info /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:536
+fn=(117) cb <frozen importlib._bootstrap>:198
+fn=(298) <lambda> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:527
+fn=(262) Grammar.build_lritems /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:89
+fn=(299) reads_relation /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:558
+fn=(85) <genexpr> <frozen importlib._bootstrap_external>:134
+fn=(363) Rule.matches /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:16
+fn=(296) <lambda> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:530
+fn=(229) _compile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:71
+fn=(19) _ModuleLock.acquire <frozen importlib._bootstrap>:100
+fn=(116) _ModuleLock.release <frozen importlib._bootstrap>:125
+fn=(16) _ModuleLock.__init__ <frozen importlib._bootstrap>:71
+fn=(42) _path_hooks <frozen importlib._bootstrap_external>:1334
+fn=(297) dr_relation /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:543
+fn=(91) SourceFileLoader.path_stats <frozen importlib._bootstrap_external>:1089
+fn=(56) FileFinder._fill_cache <frozen importlib._bootstrap_external>:1578
+fn=(305) add_lookaheads /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:626
+fn=(160) namedtuple /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py:328
+fn=(252) Grammar.add_production /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:31
+fn=(140) ExtensionFileLoader.exec_module <frozen importlib._bootstrap_external>:1182
+fn=(145) __new__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:105
+fn=(302) compute_follow_sets /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:535
+fn=(290) find_nonterminal_transitions /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:510
+fn=(46) path_hook_for_FileFinder <frozen importlib._bootstrap_external>:1619
+fn=(263) Production.getlength /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:203
+fn=(325) _RandomNameSequence.__next__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:153
+fn=(52) _path_isabs <frozen importlib._bootstrap_external>:180
+fn=(35) find_spec <frozen importlib._bootstrap>:826
+fn=(77) ModuleSpec.parent <frozen importlib._bootstrap>:404
+fn=(60) _relax_case <frozen importlib._bootstrap_external>:67
+fn=(33) find_spec <frozen importlib._bootstrap>:746
+fn=(49) FileFinder.__init__ <frozen importlib._bootstrap_external>:1485
+fn=(367) LexerStream._update_pos /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:26
+fn=(267) Grammar._first /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:119
+fn=(276) IdentityDict.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:10
+fn=(143) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py:1
+fn=(268) Grammar.compute_follow /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:154
+fn=(89) SourceFileLoader._check_name_wrapper <frozen importlib._bootstrap_external>:542
+fn=(287) IdentityDict.__contains__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py:820
+fn=(219) SubPattern.__getitem__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:164
+fn=(58) <setcomp> <frozen importlib._bootstrap_external>:1607
+fn=(135) update_wrapper /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py:35
+fn=(107) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py:1
+fn=(348) _TemporaryFileWrapper.__exit__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:500
+fn=(266) Grammar.compute_first /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:135
+fn=(197) LRTable /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:247
+fn=(279) lr0_closure /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:438
+fn=(233) RegexFlag.__and__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py:986
+fn=(264) LRItem.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:208
+fn=(132) <module> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/fnmatch.py:1
+fn=(178) Random.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:119
+fn=(188) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:1
+fn=(326) _RandomNameSequence.rng /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:142
+fn=(179) Random.seed /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:128
+fn=(334) abspath /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py:376
+fn=(344) _TemporaryFileWrapper.__getattr__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:473
+fn=(71) ModuleSpec.__init__ <frozen importlib._bootstrap>:357
+fn=(224) SubPattern.getwidth /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:174
+fn=(375) expr_op /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:34
+fn=(120) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:1
+fn=(328) Random.choices /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:506
+fn=(134) decorating_function /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py:518
+fn=(12) _ModuleLockManager.__init__ <frozen importlib._bootstrap>:165
+fn=(329) <listcomp> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:519
+fn=(271) exists /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/genericpath.py:16
+fn=(244) ParserGenerator.production /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:42
+fn=(218) SubPattern.__len__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:160
+fn=(234) __call__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py:359
+fn=(43) zipimporter.__init__ <frozen zipimport>:64
+fn=(336) normpath /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py:337
+fn=(372) expr_num /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:47
+fn=(313) _sanitize_params /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:114
+fn=(269) join /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py:71
+fn=(75) _new_module <frozen importlib._bootstrap>:48
+fn=(204) isstring /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:595
+fn=(207) Tokenizer.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:224
+fn=(238) _simple /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:423
+fn=(306) itervalues /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:46
+fn=(230) State.groups /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:81
+fn=(255) Production.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:183
+fn=(314) _infer_return_type /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:85
+fn=(245) inner /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:81
+fn=(47) _path_isdir <frozen importlib._bootstrap_external>:164
+fn=(51) <genexpr> <frozen importlib._bootstrap_external>:1491
+fn=(78) ModuleSpec.has_location <frozen importlib._bootstrap>:412
+fn=(239) _optimize_charset /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:276
+fn=(74) SourceFileLoader.create_module <frozen importlib._bootstrap_external>:874
+fn=(68) SourceFileLoader.__init__ <frozen importlib._bootstrap_external>:1040
+fn=(289) compute_nullable_nonterminals /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:491
+fn=(214) Tokenizer.get /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:254
+fn=(31) <lambda> /Users/noor/src/py/parser-experiments/.venv/lib/python3.10/site-packages/_distutils_hack/__init__.py:88
+fn=(226) _get_literal_prefix /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:461
+fn=(211) Tokenizer.tell /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:286
+fn=(215) _escape /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:355
+fn=(90) SourceFileLoader.get_filename <frozen importlib._bootstrap_external>:1065
+fn=(315) __instancecheck__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:117
+fn=(241) _compile_charset /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:249
+fn=(370) Token.gettokentype /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:34
+fn=(273) ParserGenerator.data_is_valid /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:115
+fn=(208) Tokenizer.__next /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:233
+fn=(360) Token.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:21
+fn=(258) iteritems /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:49
+fn=(221) fix_flags /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:921
+fn=(194) <module> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py:1
+fn=(235) __new__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/enum.py:678
+fn=(249) Grammar.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:13
+fn=(304) <lambda> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:539
+fn=(228) _generate_overlap_table /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:432
+fn=(217) SubPattern.append /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:172
+fn=(317) __subclasscheck__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:121
+fn=(376) BoxInt.getint /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:60
+fn=(198) _handle_fromlist <frozen importlib._bootstrap>:1053
+fn=(335) isabs /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py:60
+fn=(257) Grammar.unused_terminals /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:79
+fn=(213) SubPattern.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:111
+fn=(369) SourcePosition.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:65
+fn=(270) _get_sep /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/posixpath.py:41
+fn=(220) Tokenizer.match /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:249
+fn=(137) ExtensionFileLoader.__init__ <frozen importlib._bootstrap_external>:1163
+fn=(256) Grammar.set_start /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:73
+fn=(4) IncrementalDecoder.decode /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py:319
+fn=(366) Match.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:24
+fn=(280) Counter.incr /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:41
+fn=(322) _get_candidate_names /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:230
+fn=(1) IncrementalDecoder.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py:309
+fn=(227) _get_iscased /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:453
+fn=(374) BoxInt.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:57
+fn=(349) _TemporaryFileWrapper.close /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:505
+fn=(341) ParserGenerator.serialize_table /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:100
+fn=(260) Grammar.unused_productions /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:86
+fn=(253) rightmost_terminal /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:5
+fn=(209) State.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:76
+fn=(237) _get_charset_prefix /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_compile.py:492
+fn=(175) Random /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:103
+fn=(185) SpooledTemporaryFile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:638
+fn=(337) _TemporaryFileWrapper.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:467
+fn=(357) Lexer.lex /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:10
+fn=(303) <lambda> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:540
+fn=(319) __subclasshook__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/os.py:1079
+fn=(246) LexerGenerator.build /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:84
+fn=(373) Token.getstr /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:47
+fn=(339) _TemporaryFileWrapper.__enter__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:494
+fn=(353) _TemporaryFileCloser.__del__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:449
+fn=(133) lru_cache /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py:479
+fn=(350) _TemporaryFileCloser.close /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:439
+fn=(236) SubPattern.__setitem__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/sre_parse.py:168
+fn=(167) <genexpr> /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py:402
+fn=(149) BZ2File /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/bz2.py:26
+fn=(186) TemporaryDirectory /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:782
+fn=(177) __init_subclass__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:219
+fn=(183) _TemporaryFileCloser /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:416
+fn=(251) Grammar.set_precedence /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:60
+fn=(346) func_wrapper /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:481
+fn=(199) LexerGenerator.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:66
+fn=(196) ParserGenerator /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:18
+fn=(169) <module> <string>:1
+fn=(122) Token /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:11
+fn=(310) LRTable.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:248
+fn=(111) ParsingError /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py:23
+fn=(342) <listcomp> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:110
+fn=(148) DecompressReader /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py:33
+fn=(190) Counter /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:37
+fn=(151) LZMAFile /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/lzma.py:38
+fn=(154) SpecialFileError /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:65
+fn=(182) _RandomNameSequence /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:132
+fn=(192) Production /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:182
+fn=(191) Grammar /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:12
+fn=(377) main /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:27
+fn=(109) ParserGeneratorError /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py:1
+fn=(155) ExecError /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:69
+fn=(2) IncrementalDecoder.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/codecs.py:260
+fn=(277) Counter.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:38
+fn=(123) SourcePosition /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:54
+fn=(126) Rule /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:6
+fn=(243) ParserGenerator.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parsergenerator.py:35
+fn=(250) <genexpr> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:21
+fn=(125) LexerStream /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:14
+fn=(110) LexingError /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py:5
+fn=(128) LexerGenerator /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:29
+fn=(195) LRParser /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py:4
+fn=(127) Match /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexergenerator.py:21
+fn=(112) ParserGeneratorWarning /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/errors.py:41
+fn=(184) _TemporaryFileWrapper /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:459
+fn=(247) Lexer.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:6
+fn=(176) SystemRandom /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/random.py:813
+fn=(338) _TemporaryFileCloser.__init__ /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/tempfile.py:424
+fn=(320) _check_methods /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_collections_abc.py:78
+fn=(121) BaseBox /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/token.py:1
+fn=(193) LRItem /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:207
+fn=(124) Lexer /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:5
+fn=(157) RegistryError /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:75
+fn=(259) <listcomp> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:80
+fn=(355) BoxInt /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:56
+fn=(152) Error /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:59
+fn=(158) _GiveupOnFastCopy /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:79
+fn=(144) BaseStream /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/_compression.py:9
+fn=(261) <listcomp> /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/grammar.py:87
+fn=(354) LRParser.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/parser.py:5
+fn=(358) LexerStream.__init__ /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/lexer.py:15
+fn=(345) wraps /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/functools.py:65
+fn=(156) ReadError /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:72
+fn=(189) IdentityDict /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/rply/utils.py:9
+fn=(153) SameFileError /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/shutil.py:62
+
+fl=(9)
+fn=(9)
+1 4
+cfl=(10)
+cfn=(10)
+calls=1 0
+0 23226
+
+fl=(10)
+fn=(10)
+1 4
+cfl=(356)
+cfn=(356)
+calls=1 0
+0 723
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 22498
+
+fl=(11)
+fn=(11)
+1022 240
+cfl=(117)
+cfn=(117)
+calls=25 0
+0 189
+cfl=(115)
+cfn=(115)
+calls=25 0
+0 209
+cfl=(23)
+cfn=(23)
+calls=25 0
+0 22432
+cfl=(13)
+cfn=(13)
+calls=25 0
+0 584
+cfl=(12)
+cfn=(12)
+calls=25 0
+0 36
+
+fl=(23)
+fn=(23)
+987 137
+cfl=(72)
+cfn=(72)
+calls=25 0
+0 22033
+cfl=(25)
+cfn=(25)
+calls=25 0
+0 7704
+
+fl=(72)
+fn=(72)
+664 200
+cfl=(140)
+cfn=(140)
+calls=7 0
+0 122
+cfl=(65)
+cfn=(65)
+calls=25 0
+0 18
+cfl=(87)
+cfn=(87)
+calls=18 0
+0 21925
+cfl=(73)
+cfn=(73)
+calls=25 0
+0 2895
+
+fl=(87)
+fn=(87)
+877 77
+cfl=(104)
+cfn=(104)
+calls=18 0
+0 21733
+cfl=(88)
+cfn=(88)
+calls=18 0
+0 3078
+
+fl=(104)
+fn=(104)
+233 80
+
+fl=(105)
+fn=(105)
+1 35
+cfl=(248)
+cfn=(248)
+calls=1 0
+0 4637
+cfl=(246)
+cfn=(246)
+calls=1 0
+0 5
+cfl=(245)
+cfn=(245)
+calls=4 0
+0 22
+cfl=(244)
+cfn=(244)
+calls=4 0
+0 32
+cfl=(243)
+cfn=(243)
+calls=1 0
+0 2
+cfl=(242)
+cfn=(242)
+calls=1 0
+0 268
+cfl=(200)
+cfn=(200)
+calls=3 0
+0 679
+cfl=(199)
+cfn=(199)
+calls=1 0
+0 2
+cfl=(198)
+cfn=(198)
+calls=1 0
+0 10
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 16021
+
+fl=(106)
+fn=(106)
+1 10
+cfl=(11)
+cfn=(11)
+calls=3 0
+0 15404
+
+fl=(129)
+fn=(129)
+1 14
+cfl=(11)
+cfn=(11)
+calls=3 0
+0 12594
+
+fl=(130)
+fn=(130)
+1 24
+cfl=(11)
+cfn=(11)
+calls=2 0
+0 10268
+
+fl=(25)
+fn=(25)
+921 421
+cfl=(37)
+cfn=(37)
+calls=25 0
+0 6281
+cfl=(35)
+cfn=(35)
+calls=25 0
+0 84
+cfl=(33)
+cfn=(33)
+calls=25 0
+0 70
+cfl=(32)
+cfn=(32)
+calls=100 0
+0 318
+cfl=(27)
+cfn=(27)
+calls=25 0
+0 202
+cfl=(26)
+cfn=(26)
+calls=100 0
+0 325
+
+fl=(37)
+fn=(37)
+1422 65
+cfl=(38)
+cfn=(38)
+calls=25 0
+0 6215
+
+fl=(38)
+fn=(38)
+1390 356
+cfl=(55)
+cfn=(55)
+calls=62 0
+0 5247
+cfl=(40)
+cfn=(40)
+calls=77 0
+0 463
+
+fl=(131)
+fn=(131)
+1 89
+cfl=(160)
+cfn=(160)
+calls=1 0
+0 131
+cfl=(11)
+cfn=(11)
+calls=4 0
+0 5192
+
+fl=(55)
+fn=(55)
+1527 1042
+cfl=(67)
+cfn=(67)
+calls=25 0
+0 405
+cfl=(66)
+cfn=(66)
+calls=28 0
+0 352
+cfl=(65)
+cfn=(65)
+calls=260 0
+0 283
+cfl=(61)
+cfn=(61)
+calls=265 0
+0 2580
+cfl=(60)
+cfn=(60)
+calls=62 0
+0 82
+cfl=(56)
+cfn=(56)
+calls=2 0
+0 137
+cfl=(44)
+cfn=(44)
+calls=62 0
+0 301
+
+fl=(248)
+fn=(248)
+136 51
+cfl=(354)
+cfn=(354)
+calls=1 0
+0 1
+cfl=(353)
+cfn=(353)
+calls=1 0
+0 4
+cfl=(311)
+cfn=(311)
+calls=1 0
+0 585
+cfl=(275)
+cfn=(275)
+calls=1 0
+0 3400
+cfl=(273)
+cfn=(273)
+calls=1 0
+0 14
+cfl=(271)
+cfn=(271)
+calls=1 0
+0 29
+cfl=(269)
+cfn=(269)
+calls=1 0
+0 14
+cfl=(268)
+cfn=(268)
+calls=1 0
+0 65
+cfl=(266)
+cfn=(266)
+calls=1 0
+0 54
+cfl=(262)
+cfn=(262)
+calls=1 0
+0 179
+cfl=(260)
+cfn=(260)
+calls=1 0
+0 7
+cfl=(257)
+cfn=(257)
+calls=1 0
+0 9
+cfl=(256)
+cfn=(256)
+calls=1 0
+0 8
+cfl=(252)
+cfn=(252)
+calls=4 0
+0 125
+cfl=(251)
+cfn=(251)
+calls=2 0
+0 3
+cfl=(249)
+cfn=(249)
+calls=1 0
+0 12
+
+fl=(275)
+fn=(275)
+282 157
+cfl=(310)
+cfn=(310)
+calls=1 0
+0 2
+cfl=(306)
+cfn=(306)
+calls=8 0
+0 23
+cfl=(285)
+cfn=(285)
+calls=17 0
+0 80
+cfl=(284)
+cfn=(284)
+calls=17 0
+0 288
+cfl=(291)
+cfn=(291)
+calls=24 0
+0 68
+cfl=(288)
+cfn=(288)
+calls=1 0
+0 1909
+cfl=(278)
+cfn=(278)
+calls=1 0
+0 821
+cfl=(277)
+cfn=(277)
+calls=1 0
+0 2
+cfl=(276)
+cfn=(276)
+calls=1 0
+0 2
+
+fl=(170)
+fn=(170)
+1 58
+cfl=(178)
+cfn=(178)
+calls=1 0
+0 26
+cfl=(11)
+cfn=(11)
+calls=4 0
+0 3173
+
+fl=(88)
+fn=(88)
+950 243
+cfl=(101)
+cfn=(101)
+calls=18 0
+0 757
+cfl=(65)
+cfn=(65)
+calls=18 0
+0 20
+cfl=(100)
+cfn=(100)
+calls=18 0
+0 262
+cfl=(96)
+cfn=(96)
+calls=18 0
+0 197
+cfl=(92)
+cfn=(92)
+calls=18 0
+0 799
+cfl=(91)
+cfn=(91)
+calls=18 0
+0 139
+cfl=(82)
+cfn=(82)
+calls=18 0
+0 597
+cfl=(89)
+cfn=(89)
+calls=18 0
+0 65
+
+fl=(61)
+fn=(61)
+126 1005
+cfl=(62)
+cfn=(62)
+calls=301 0
+0 1674
+
+fl=(73)
+fn=(73)
+564 145
+cfl=(138)
+cfn=(138)
+calls=7 0
+0 1199
+cfl=(76)
+cfn=(76)
+calls=25 0
+0 1478
+cfl=(75)
+cfn=(75)
+calls=18 0
+0 24
+cfl=(74)
+cfn=(74)
+calls=18 0
+0 20
+
+fl=(288)
+fn=(288)
+478 14
+cfl=(305)
+cfn=(305)
+calls=1 0
+0 133
+cfl=(302)
+cfn=(302)
+calls=1 0
+0 108
+cfl=(301)
+cfn=(301)
+calls=1 0
+0 1139
+cfl=(292)
+cfn=(292)
+calls=1 0
+0 392
+cfl=(290)
+cfn=(290)
+calls=1 0
+0 104
+cfl=(289)
+cfn=(289)
+calls=1 0
+0 18
+
+fl=(62)
+fn=(62)
+128 1036
+
+fl=(142)
+fn=(142)
+1 11
+cfl=(11)
+cfn=(11)
+calls=2 0
+0 1468
+
+fl=(76)
+fn=(76)
+492 328
+cfl=(79)
+cfn=(79)
+calls=43 0
+0 830
+cfl=(78)
+cfn=(78)
+calls=25 0
+0 21
+cfl=(77)
+cfn=(77)
+calls=25 0
+0 84
+
+fl=(284)
+fn=(284)
+455 583
+cfl=(279)
+cfn=(279)
+calls=7 0
+0 36
+cfl=(281)
+cfn=(281)
+calls=22 0
+0 153
+cfl=(285)
+cfn=(285)
+calls=73 0
+0 349
+cfl=(276)
+cfn=(276)
+calls=73 0
+0 65
+
+fl=(82)
+fn=(82)
+380 294
+cfl=(61)
+cfn=(61)
+calls=36 0
+0 434
+cfl=(83)
+cfn=(83)
+calls=36 0
+0 376
+
+fl=(138)
+fn=(138)
+1174 29
+cfl=(65)
+cfn=(65)
+calls=7 0
+0 8
+cfl=(104)
+cfn=(104)
+calls=7 0
+0 1161
+
+fl=(301)
+fn=(301)
+572 234
+cfl=(285)
+cfn=(285)
+calls=24 0
+0 113
+cfl=(284)
+cfn=(284)
+calls=24 0
+0 459
+cfl=(291)
+cfn=(291)
+calls=107 0
+0 286
+
+fl=(118)
+fn=(118)
+1 8
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 977
+
+fl=(201)
+fn=(201)
+9 8
+cfl=(202)
+cfn=(202)
+calls=4 0
+0 921
+
+fl=(202)
+fn=(202)
+249 13
+cfl=(203)
+cfn=(203)
+calls=4 0
+0 908
+
+fl=(203)
+fn=(203)
+288 35
+cfl=(233)
+cfn=(233)
+calls=4 0
+0 49
+cfl=(205)
+cfn=(205)
+calls=4 0
+0 794
+cfl=(204)
+cfn=(204)
+calls=4 0
+0 14
+
+fl=(150)
+fn=(150)
+1 13
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 817
+
+fl=(79)
+fn=(79)
+391 78
+cfl=(80)
+cfn=(80)
+calls=25 0
+0 752
+
+fl=(278)
+fn=(278)
+414 113
+cfl=(287)
+cfn=(287)
+calls=13 0
+0 64
+cfl=(284)
+cfn=(284)
+calls=24 0
+0 533
+cfl=(281)
+cfn=(281)
+calls=8 0
+0 58
+cfl=(279)
+cfn=(279)
+calls=1 0
+0 14
+
+fl=(92)
+fn=(92)
+1070 151
+
+fl=(205)
+fn=(205)
+759 41
+cfl=(230)
+cfn=(230)
+calls=8 0
+0 23
+cfl=(222)
+cfn=(222)
+calls=4 0
+0 370
+cfl=(206)
+cfn=(206)
+calls=4 0
+0 338
+cfl=(204)
+cfn=(204)
+calls=4 0
+0 11
+
+fl=(101)
+fn=(101)
+670 112
+cfl=(65)
+cfn=(65)
+calls=18 0
+0 21
+
+fl=(80)
+fn=(80)
+510 97
+cfl=(82)
+cfn=(82)
+calls=18 0
+0 619
+
+fl=(356)
+fn=(356)
+64 9
+cfl=(359)
+cfn=(359)
+calls=1 0
+0 698
+cfl=(357)
+cfn=(357)
+calls=1 0
+0 5
+
+fl=(359)
+fn=(359)
+9 59
+cfl=(371)
+cfn=(371)
+calls=10 0
+0 210
+cfl=(370)
+cfn=(370)
+calls=11 0
+0 12
+cfl=(360)
+cfn=(360)
+calls=2 0
+0 3
+
+fl=(200)
+fn=(200)
+70 12
+cfl=(201)
+cfn=(201)
+calls=3 0
+0 665
+
+fl=(44)
+fn=(44)
+140 245
+
+fl=(171)
+fn=(171)
+1 6
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 597
+
+fl=(311)
+fn=(311)
+199 16
+cfl=(348)
+cfn=(348)
+calls=1 0
+0 54
+cfl=(341)
+cfn=(341)
+calls=1 0
+0 7
+cfl=(339)
+cfn=(339)
+calls=1 0
+0 4
+cfl=(312)
+cfn=(312)
+calls=1 0
+0 263
+cfl=(271)
+cfn=(271)
+calls=1 0
+0 5
+
+fl=(13)
+fn=(13)
+169 84
+cfl=(19)
+cfn=(19)
+calls=25 0
+0 154
+cfl=(14)
+cfn=(14)
+calls=25 0
+0 346
+
+fl=(285)
+fn=(285)
+813 235
+cfl=(286)
+cfn=(286)
+calls=118 0
+0 327
+
+fl=(187)
+fn=(187)
+1 9
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 490
+
+fl=(119)
+fn=(119)
+1 7
+cfl=(11)
+cfn=(11)
+calls=1 0
+0 494
+
+fl=(293)
+fn=(293)
+213 13
+cfl=(295)
+cfn=(295)
+calls=7 0
+0 477
+
+fl=(295)
+fn=(295)
+223 73
+cfl=(295)
+cfn=(295)
+calls=1 0
+0 29
+cfl=(304)
+cfn=(304)
+calls=4 0
+0 12
+cfl=(303)
+cfn=(303)
+calls=4 0
+0 5
+cfl=(298)
+cfn=(298)
+calls=4 0
+0 185
+cfl=(296)
+cfn=(296)
+calls=4 0
+0 156
+
+fl=(291)
+fn=(291)
+222 314
+
+fl=(40)
+fn=(40)
+1347 125
+cfl=(42)
+cfn=(42)
+calls=2 0
+0 146
+
+fl=(67)
+fn=(67)
+1522 98
+cfl=(137)
+cfn=(137)
+calls=7 0
+0 8
+cfl=(69)
+cfn=(69)
+calls=25 0
+0 279
+cfl=(68)
+cfn=(68)
+calls=18 0
+0 20
+
+fl=(292)
+fn=(292)
+521 3
+cfl=(293)
+cfn=(293)
+calls=1 0
+0 388
+
+fl=(361)
+fn=(361)
+61 22
+cfl=(362)
+cfn=(362)
+calls=10 0
+0 356
+
+fl=(83)
+fn=(83)
+132 93
+
+fl=(222)
+fn=(222)
+598 22
+cfl=(229)
+cfn=(229)
+calls=4 0
+0 154
+cfl=(223)
+cfn=(223)
+calls=4 0
+0 190
+
+fl=(286)
+fn=(286)
+14 247
+
+fl=(65)
+fn=(65)
+244 357
+
+fl=(362)
+fn=(362)
+35 98
+cfl=(360)
+cfn=(360)
+calls=9 0
+0 10
+cfl=(369)
+cfn=(369)
+calls=9 0
+0 8
+cfl=(367)
+cfn=(367)
+calls=13 0
+0 70
+cfl=(363)
+cfn=(363)
+calls=34 0
+0 159
+
+fl=(66)
+fn=(66)
+159 61
+cfl=(48)
+cfn=(48)
+calls=28 0
+0 292
+
+fl=(14)
+fn=(14)
+179 140
+cfl=(16)
+cfn=(16)
+calls=25 0
+0 149
+
+fl=(206)
+fn=(206)
+937 28
+cfl=(221)
+cfn=(221)
+calls=4 0
+0 13
+cfl=(210)
+cfn=(210)
+calls=4 0
+0 267
+cfl=(209)
+cfn=(209)
+calls=4 0
+0 6
+cfl=(207)
+cfn=(207)
+calls=4 0
+0 24
+
+fl=(26)
+fn=(26)
+893 222
+
+fl=(32)
+fn=(32)
+897 205
+
+fl=(48)
+fn=(48)
+150 79
+cfl=(44)
+cfn=(44)
+calls=30 0
+0 229
+
+fl=(98)
+fn=(98)
+84 176
+
+fl=(69)
+fn=(69)
+721 124
+cfl=(71)
+cfn=(71)
+calls=25 0
+0 41
+cfl=(52)
+cfn=(52)
+calls=25 0
+0 84
+
+fl=(242)
+fn=(242)
+77 2
+cfl=(201)
+cfn=(201)
+calls=1 0
+0 263
+
+fl=(210)
+fn=(210)
+435 32
+cfl=(220)
+cfn=(220)
+calls=4 0
+0 6
+cfl=(212)
+cfn=(212)
+calls=4 0
+0 207
+cfl=(211)
+cfn=(211)
+calls=4 0
+0 12
+
+fl=(312)
+fn=(312)
+522 8
+cfl=(337)
+cfn=(337)
+calls=1 0
+0 5
+cfl=(321)
+cfn=(321)
+calls=1 0
+0 218
+cfl=(313)
+cfn=(313)
+calls=1 0
+0 26
+
+fl=(100)
+fn=(100)
+618 63
+cfl=(98)
+cfn=(98)
+calls=36 0
+0 198
+
+fl=(321)
+fn=(321)
+244 13
+cfl=(334)
+cfn=(334)
+calls=1 0
+0 42
+cfl=(269)
+cfn=(269)
+calls=1 0
+0 12
+cfl=(322)
+cfn=(322)
+calls=1 0
+0 7
+
+fl=(371)
+fn=(371)
+67 80
+cfl=(377)
+cfn=(377)
+calls=1 0
+0 2
+cfl=(375)
+cfn=(375)
+calls=4 0
+0 40
+cfl=(372)
+cfn=(372)
+calls=5 0
+0 26
+cfl=(263)
+cfn=(263)
+calls=10 0
+0 28
+
+fl=(281)
+fn=(281)
+17 127
+
+fl=(115)
+fn=(115)
+173 56
+cfl=(116)
+cfn=(116)
+calls=25 0
+0 153
+
+fl=(212)
+fn=(212)
+493 68
+cfl=(236)
+cfn=(236)
+calls=2 0
+0 3
+cfl=(220)
+cfn=(220)
+calls=2 0
+0 2
+cfl=(218)
+cfn=(218)
+calls=4 0
+0 12
+cfl=(211)
+cfn=(211)
+calls=2 0
+0 5
+cfl=(219)
+cfn=(219)
+calls=12 0
+0 42
+cfl=(217)
+cfn=(217)
+calls=4 0
+0 11
+cfl=(215)
+cfn=(215)
+calls=3 0
+0 17
+cfl=(214)
+cfn=(214)
+calls=6 0
+0 18
+cfl=(213)
+cfn=(213)
+calls=4 0
+0 6
+
+fl=(27)
+fn=(27)
+83 118
+cfl=(31)
+cfn=(31)
+calls=17 0
+0 18
+
+fl=(96)
+fn=(96)
+585 75
+cfl=(98)
+cfn=(98)
+calls=18 0
+0 102
+
+fl=(223)
+fn=(223)
+536 73
+cfl=(237)
+cfn=(237)
+calls=2 0
+0 6
+cfl=(228)
+cfn=(228)
+calls=2 0
+0 11
+cfl=(226)
+cfn=(226)
+calls=4 0
+0 18
+cfl=(224)
+cfn=(224)
+calls=4 0
+0 40
+
+fl=(117)
+fn=(117)
+198 102
+
+fl=(298)
+fn=(298)
+527 12
+cfl=(299)
+cfn=(299)
+calls=4 0
+0 173
+
+fl=(262)
+fn=(262)
+89 54
+cfl=(264)
+cfn=(264)
+calls=14 0
+0 49
+cfl=(263)
+cfn=(263)
+calls=19 0
+0 56
+
+fl=(299)
+fn=(299)
+558 42
+cfl=(291)
+cfn=(291)
+calls=10 0
+0 27
+cfl=(285)
+cfn=(285)
+calls=4 0
+0 18
+cfl=(284)
+cfn=(284)
+calls=4 0
+0 84
+
+fl=(85)
+fn=(85)
+134 122
+
+fl=(363)
+fn=(363)
+16 99
+cfl=(366)
+cfn=(366)
+calls=13 0
+0 8
+
+fl=(296)
+fn=(296)
+530 11
+cfl=(297)
+cfn=(297)
+calls=4 0
+0 145
+
+fl=(229)
+fn=(229)
+71 54
+cfl=(241)
+cfn=(241)
+calls=2 0
+0 16
+cfl=(239)
+cfn=(239)
+calls=2 0
+0 21
+cfl=(219)
+cfn=(219)
+calls=4 0
+0 14
+cfl=(229)
+cfn=(229)
+calls=2 0
+0 80
+cfl=(238)
+cfn=(238)
+calls=2 0
+0 24
+
+fl=(19)
+fn=(19)
+100 99
+
+fl=(116)
+fn=(116)
+125 106
+
+fl=(16)
+fn=(16)
+71 98
+
+fl=(42)
+fn=(42)
+1334 14
+cfl=(46)
+cfn=(46)
+calls=2 0
+0 104
+cfl=(43)
+cfn=(43)
+calls=2 0
+0 28
+
+fl=(297)
+fn=(297)
+543 27
+cfl=(291)
+cfn=(291)
+calls=10 0
+0 28
+cfl=(284)
+cfn=(284)
+calls=4 0
+0 84
+
+fl=(91)
+fn=(91)
+1089 42
+cfl=(44)
+cfn=(44)
+calls=18 0
+0 97
+
+fl=(56)
+fn=(56)
+1578 18
+cfl=(58)
+cfn=(58)
+calls=2 0
+0 59
+
+fl=(305)
+fn=(305)
+626 73
+cfl=(258)
+cfn=(258)
+calls=1 0
+0 3
+
+fl=(160)
+fn=(160)
+328 56
+
+fl=(252)
+fn=(252)
+31 62
+cfl=(255)
+cfn=(255)
+calls=4 0
+0 20
+cfl=(253)
+cfn=(253)
+calls=4 0
+0 6
+
+fl=(140)
+fn=(140)
+1182 27
+cfl=(65)
+cfn=(65)
+calls=7 0
+0 6
+cfl=(104)
+cfn=(104)
+calls=7 0
+0 89
+
+fl=(145)
+fn=(145)
+105 24
+
+fl=(302)
+fn=(302)
+535 4
+cfl=(293)
+cfn=(293)
+calls=1 0
+0 104
+
+fl=(290)
+fn=(290)
+510 36
+cfl=(291)
+cfn=(291)
+calls=24 0
+0 64
+
+fl=(46)
+fn=(46)
+1619 11
+cfl=(49)
+cfn=(49)
+calls=2 0
+0 70
+cfl=(47)
+cfn=(47)
+calls=2 0
+0 22
+
+fl=(263)
+fn=(263)
+203 64
+
+fl=(325)
+fn=(325)
+153 9
+cfl=(328)
+cfn=(328)
+calls=1 0
+0 37
+cfl=(326)
+cfn=(326)
+calls=1 0
+0 46
+
+fl=(52)
+fn=(52)
+180 54
+
+fl=(35)
+fn=(35)
+826 52
+
+fl=(77)
+fn=(77)
+404 49
+
+fl=(60)
+fn=(60)
+67 82
+
+fl=(33)
+fn=(33)
+746 44
+
+fl=(49)
+fn=(49)
+1485 17
+cfl=(52)
+cfn=(52)
+calls=2 0
+0 9
+
+fl=(367)
+fn=(367)
+26 42
+
+fl=(267)
+fn=(267)
+119 56
+
+fl=(276)
+fn=(276)
+10 68
+
+fl=(143)
+fn=(143)
+1 5
+
+fl=(268)
+fn=(268)
+154 24
+cfl=(267)
+cfn=(267)
+calls=10 0
+0 35
+
+fl=(89)
+fn=(89)
+542 48
+cfl=(90)
+cfn=(90)
+calls=18 0
+0 17
+
+fl=(287)
+fn=(287)
+820 28
+cfl=(286)
+cfn=(286)
+calls=13 0
+0 36
+
+fl=(219)
+fn=(219)
+164 42
+cfl=(213)
+cfn=(213)
+calls=2 0
+0 2
+
+fl=(58)
+fn=(58)
+1607 29
+
+fl=(135)
+fn=(135)
+35 35
+
+fl=(107)
+fn=(107)
+1 6
+
+fl=(348)
+fn=(348)
+500 4
+cfl=(349)
+cfn=(349)
+calls=1 0
+0 7
+
+fl=(266)
+fn=(266)
+135 17
+cfl=(267)
+cfn=(267)
+calls=12 0
+0 34
+
+fl=(197)
+fn=(197)
+247 52
+
+fl=(279)
+fn=(279)
+438 36
+cfl=(280)
+cfn=(280)
+calls=8 0
+0 8
+
+fl=(233)
+fn=(233)
+986 16
+cfl=(234)
+cfn=(234)
+calls=8 0
+0 28
+
+fl=(264)
+fn=(264)
+208 32
+
+fl=(132)
+fn=(132)
+1 9
+cfl=(134)
+cfn=(134)
+calls=1 0
+0 36
+cfl=(133)
+cfn=(133)
+calls=1 0
+0 4
+
+fl=(178)
+fn=(178)
+119 6
+cfl=(179)
+cfn=(179)
+calls=2 0
+0 42
+
+fl=(188)
+fn=(188)
+1 6
+
+fl=(326)
+fn=(326)
+142 22
+cfl=(178)
+cfn=(178)
+calls=1 0
+0 22
+
+fl=(179)
+fn=(179)
+128 11
+
+fl=(334)
+fn=(334)
+376 3
+cfl=(336)
+cfn=(336)
+calls=1 0
+0 27
+cfl=(335)
+cfn=(335)
+calls=1 0
+0 10
+
+fl=(344)
+fn=(344)
+473 10
+cfl=(135)
+cfn=(135)
+calls=1 0
+0 28
+cfl=(345)
+cfn=(345)
+calls=1 0
+0 1
+
+fl=(71)
+fn=(71)
+357 41
+
+fl=(224)
+fn=(224)
+174 24
+cfl=(224)
+cfn=(224)
+calls=2 0
+0 12
+
+fl=(375)
+fn=(375)
+34 24
+cfl=(374)
+cfn=(374)
+calls=4 0
+0 2
+cfl=(370)
+cfn=(370)
+calls=6 0
+0 3
+cfl=(376)
+cfn=(376)
+calls=8 0
+0 11
+
+fl=(120)
+fn=(120)
+1 6
+
+fl=(328)
+fn=(328)
+506 3
+cfl=(329)
+cfn=(329)
+calls=1 0
+0 34
+
+fl=(134)
+fn=(134)
+518 5
+cfl=(135)
+cfn=(135)
+calls=1 0
+0 31
+
+fl=(12)
+fn=(12)
+165 36
+
+fl=(329)
+fn=(329)
+519 21
+
+fl=(271)
+fn=(271)
+16 5
+
+fl=(244)
+fn=(244)
+42 17
+
+fl=(218)
+fn=(218)
+160 22
+
+fl=(234)
+fn=(234)
+359 16
+cfl=(235)
+cfn=(235)
+calls=8 0
+0 12
+
+fl=(43)
+fn=(43)
+64 12
+cfl=(44)
+cfn=(44)
+calls=2 0
+0 14
+
+fl=(336)
+fn=(336)
+337 14
+
+fl=(372)
+fn=(372)
+47 16
+cfl=(374)
+cfn=(374)
+calls=5 0
+0 5
+cfl=(373)
+cfn=(373)
+calls=5 0
+0 5
+
+fl=(313)
+fn=(313)
+114 3
+cfl=(314)
+cfn=(314)
+calls=1 0
+0 23
+
+fl=(269)
+fn=(269)
+71 14
+cfl=(270)
+cfn=(270)
+calls=2 0
+0 5
+
+fl=(75)
+fn=(75)
+48 24
+
+fl=(204)
+fn=(204)
+595 21
+
+fl=(207)
+fn=(207)
+224 12
+cfl=(208)
+cfn=(208)
+calls=4 0
+0 6
+
+fl=(238)
+fn=(238)
+423 8
+cfl=(219)
+cfn=(219)
+calls=2 0
+0 6
+
+fl=(306)
+fn=(306)
+46 14
+
+fl=(230)
+fn=(230)
+81 14
+
+fl=(255)
+fn=(255)
+183 18
+
+fl=(314)
+fn=(314)
+85 2
+
+fl=(245)
+fn=(245)
+81 12
+
+fl=(47)
+fn=(47)
+164 5
+cfl=(48)
+cfn=(48)
+calls=2 0
+0 17
+
+fl=(51)
+fn=(51)
+1491 22
+
+fl=(78)
+fn=(78)
+412 21
+
+fl=(239)
+fn=(239)
+276 12
+
+fl=(74)
+fn=(74)
+874 20
+
+fl=(68)
+fn=(68)
+1040 20
+
+fl=(289)
+fn=(289)
+491 6
+cfl=(263)
+cfn=(263)
+calls=4 0
+0 12
+
+fl=(214)
+fn=(214)
+254 10
+cfl=(208)
+cfn=(208)
+calls=6 0
+0 9
+
+fl=(31)
+fn=(31)
+88 18
+
+fl=(226)
+fn=(226)
+461 12
+cfl=(227)
+cfn=(227)
+calls=4 0
+0 4
+
+fl=(211)
+fn=(211)
+286 8
+
+fl=(215)
+fn=(215)
+355 9
+
+fl=(90)
+fn=(90)
+1065 17
+
+fl=(315)
+fn=(315)
+117 3
+
+fl=(241)
+fn=(241)
+249 11
+
+fl=(370)
+fn=(370)
+34 14
+
+fl=(273)
+fn=(273)
+115 7
+cfl=(258)
+cfn=(258)
+calls=1 0
+0 4
+
+fl=(208)
+fn=(208)
+233 14
+
+fl=(360)
+fn=(360)
+21 13
+
+fl=(258)
+fn=(258)
+49 10
+
+fl=(221)
+fn=(221)
+921 8
+
+fl=(194)
+fn=(194)
+1 3
+
+fl=(235)
+fn=(235)
+678 12
+
+fl=(249)
+fn=(249)
+13 10
+cfl=(250)
+cfn=(250)
+calls=4 0
+0 2
+
+fl=(304)
+fn=(304)
+539 10
+
+fl=(228)
+fn=(228)
+432 6
+
+fl=(217)
+fn=(217)
+172 4
+
+fl=(317)
+fn=(317)
+121 4
+
+fl=(376)
+fn=(376)
+60 11
+
+fl=(198)
+fn=(198)
+1053 6
+
+fl=(335)
+fn=(335)
+60 4
+cfl=(270)
+cfn=(270)
+calls=1 0
+0 3
+
+fl=(257)
+fn=(257)
+79 5
+cfl=(259)
+cfn=(259)
+calls=1 0
+0 1
+cfl=(258)
+cfn=(258)
+calls=1 0
+0 3
+
+fl=(213)
+fn=(213)
+111 8
+
+fl=(369)
+fn=(369)
+65 8
+
+fl=(270)
+fn=(270)
+41 3
+
+fl=(220)
+fn=(220)
+249 8
+
+fl=(137)
+fn=(137)
+1163 8
+
+fl=(256)
+fn=(256)
+73 3
+cfl=(255)
+cfn=(255)
+calls=1 0
+0 3
+
+fl=(4)
+fn=(4)
+319 6
+
+fl=(366)
+fn=(366)
+24 8
+
+fl=(280)
+fn=(280)
+41 8
+
+fl=(322)
+fn=(322)
+230 7
+
+fl=(1)
+fn=(1)
+309 5
+cfl=(2)
+cfn=(2)
+calls=1 0
+0 2
+
+fl=(227)
+fn=(227)
+453 7
+
+fl=(374)
+fn=(374)
+57 7
+
+fl=(349)
+fn=(349)
+505 3
+cfl=(350)
+cfn=(350)
+calls=1 0
+0 4
+
+fl=(341)
+fn=(341)
+100 3
+cfl=(342)
+cfn=(342)
+calls=1 0
+0 2
+
+fl=(260)
+fn=(260)
+86 3
+cfl=(261)
+cfn=(261)
+calls=1 0
+0 1
+cfl=(258)
+cfn=(258)
+calls=1 0
+0 3
+
+fl=(253)
+fn=(253)
+5 6
+
+fl=(209)
+fn=(209)
+76 6
+
+fl=(237)
+fn=(237)
+492 3
+cfl=(227)
+cfn=(227)
+calls=2 0
+0 3
+
+fl=(175)
+fn=(175)
+103 6
+
+fl=(185)
+fn=(185)
+638 6
+
+fl=(337)
+fn=(337)
+467 4
+cfl=(338)
+cfn=(338)
+calls=1 0
+0 1
+
+fl=(357)
+fn=(357)
+10 4
+cfl=(358)
+cfn=(358)
+calls=1 0
+0 1
+
+fl=(303)
+fn=(303)
+540 5
+
+fl=(319)
+fn=(319)
+1079 4
+cfl=(320)
+cfn=(320)
+calls=1 0
+0 1
+
+fl=(246)
+fn=(246)
+84 4
+cfl=(247)
+cfn=(247)
+calls=1 0
+0 1
+
+fl=(373)
+fn=(373)
+47 5
+
+fl=(339)
+fn=(339)
+494 2
+
+fl=(353)
+fn=(353)
+449 4
+cfl=(350)
+cfn=(350)
+calls=1 0
+0 0
+
+fl=(133)
+fn=(133)
+479 3
+
+fl=(350)
+fn=(350)
+439 2
+
+fl=(236)
+fn=(236)
+168 3
+
+fl=(167)
+fn=(167)
+402 3
+
+fl=(149)
+fn=(149)
+26 3
+
+fl=(186)
+fn=(186)
+782 3
+
+fl=(177)
+fn=(177)
+219 3
+
+fl=(183)
+fn=(183)
+416 3
+
+fl=(251)
+fn=(251)
+60 3
+
+fl=(346)
+fn=(346)
+481 1
+
+fl=(199)
+fn=(199)
+66 2
+
+fl=(196)
+fn=(196)
+18 2
+
+fl=(169)
+fn=(169)
+1 2
+
+fl=(122)
+fn=(122)
+11 2
+
+fl=(310)
+fn=(310)
+248 2
+
+fl=(111)
+fn=(111)
+23 2
+
+fl=(342)
+fn=(342)
+110 2
+
+fl=(148)
+fn=(148)
+33 2
+
+fl=(190)
+fn=(190)
+37 2
+
+fl=(151)
+fn=(151)
+38 2
+
+fl=(154)
+fn=(154)
+65 2
+
+fl=(182)
+fn=(182)
+132 2
+
+fl=(192)
+fn=(192)
+182 2
+
+fl=(191)
+fn=(191)
+12 2
+
+fl=(377)
+fn=(377)
+27 2
+
+fl=(109)
+fn=(109)
+1 2
+
+fl=(155)
+fn=(155)
+69 2
+
+fl=(2)
+fn=(2)
+260 2
+
+fl=(277)
+fn=(277)
+38 2
+
+fl=(123)
+fn=(123)
+54 2
+
+fl=(126)
+fn=(126)
+6 2
+
+fl=(243)
+fn=(243)
+35 2
+
+fl=(250)
+fn=(250)
+21 2
+
+fl=(125)
+fn=(125)
+14 2
+
+fl=(110)
+fn=(110)
+5 2
+
+fl=(128)
+fn=(128)
+29 2
+
+fl=(195)
+fn=(195)
+4 2
+
+fl=(127)
+fn=(127)
+21 2
+
+fl=(112)
+fn=(112)
+41 1
+
+fl=(184)
+fn=(184)
+459 1
+
+fl=(247)
+fn=(247)
+6 1
+
+fl=(176)
+fn=(176)
+813 1
+
+fl=(338)
+fn=(338)
+424 1
+
+fl=(320)
+fn=(320)
+78 1
+
+fl=(121)
+fn=(121)
+1 1
+
+fl=(193)
+fn=(193)
+207 1
+
+fl=(124)
+fn=(124)
+5 1
+
+fl=(157)
+fn=(157)
+75 1
+
+fl=(259)
+fn=(259)
+80 1
+
+fl=(355)
+fn=(355)
+56 1
+
+fl=(152)
+fn=(152)
+59 1
+
+fl=(158)
+fn=(158)
+79 1
+
+fl=(144)
+fn=(144)
+9 1
+
+fl=(261)
+fn=(261)
+87 1
+
+fl=(354)
+fn=(354)
+5 1
+
+fl=(358)
+fn=(358)
+15 1
+
+fl=(345)
+fn=(345)
+65 1
+
+fl=(156)
+fn=(156)
+72 1
+
+fl=(189)
+fn=(189)
+9 1
+
+fl=(153)
+fn=(153)
+62 0

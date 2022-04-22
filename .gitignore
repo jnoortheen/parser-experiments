@@ -51,3 +51,4 @@ Icon*
 # extensions
 *.c
 *.so
+.dmypy.json

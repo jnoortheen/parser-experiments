@@ -1,0 +1,1524 @@
+Created by PLY (http://www.dabeaz.com/ply)
+
+Grammar
+
+Rule 0     S' -> start_symbols
+Rule 1     ampersand_shift_expr_list_opt -> empty
+Rule 2     ampersand_shift_expr_list_opt -> ampersand_shift_expr_list
+Rule 3     and_not_test_list_opt -> empty
+Rule 4     and_not_test_list_opt -> and_not_test_list
+Rule 5     any_raw_toks_opt -> empty
+Rule 6     any_raw_toks_opt -> any_raw_toks
+Rule 7     arglist_opt -> empty
+Rule 8     arglist_opt -> arglist
+Rule 9     as_name_opt -> empty
+Rule 10    as_name_opt -> as_name
+Rule 11    colon_test_opt -> empty
+Rule 12    colon_test_opt -> colon_test
+Rule 13    comma_dotted_as_name_list_opt -> empty
+Rule 14    comma_dotted_as_name_list_opt -> comma_dotted_as_name_list
+Rule 15    comma_import_as_name_list_opt -> empty
+Rule 16    comma_import_as_name_list_opt -> comma_import_as_name_list
+Rule 17    comma_name_list_opt -> empty
+Rule 18    comma_name_list_opt -> comma_name_list
+Rule 19    comma_pow_tfpdef_opt -> empty
+Rule 20    comma_pow_tfpdef_opt -> comma_pow_tfpdef
+Rule 21    comma_pow_vfpdef_opt -> empty
+Rule 22    comma_pow_vfpdef_opt -> comma_pow_vfpdef
+Rule 23    comma_subscript_list_opt -> empty
+Rule 24    comma_subscript_list_opt -> comma_subscript_list
+Rule 25    comma_test_opt -> empty
+Rule 26    comma_test_opt -> comma_test
+Rule 27    comma_tfpdef_list_opt -> empty
+Rule 28    comma_tfpdef_list_opt -> comma_tfpdef_list
+Rule 29    comma_vfpdef_list_opt -> empty
+Rule 30    comma_vfpdef_list_opt -> comma_vfpdef_list
+Rule 31    comp_iter_opt -> empty
+Rule 32    comp_iter_opt -> comp_iter
+Rule 33    comp_op_expr_list_opt -> empty
+Rule 34    comp_op_expr_list_opt -> comp_op_expr_list
+Rule 35    dictorsetmaker_opt -> empty
+Rule 36    dictorsetmaker_opt -> dictorsetmaker
+Rule 37    elif_part_list_opt -> empty
+Rule 38    elif_part_list_opt -> elif_part_list
+Rule 39    equals_test_opt -> empty
+Rule 40    equals_test_opt -> equals_test
+Rule 41    equals_yield_expr_or_testlist_list_opt -> empty
+Rule 42    equals_yield_expr_or_testlist_list_opt -> equals_yield_expr_or_testlist_list
+Rule 43    finally_part_opt -> empty
+Rule 44    finally_part_opt -> finally_part
+Rule 45    func_call_opt -> empty
+Rule 46    func_call_opt -> func_call
+Rule 47    macroarglist_opt -> empty
+Rule 48    macroarglist_opt -> macroarglist
+Rule 49    newlines_opt -> empty
+Rule 50    newlines_opt -> newlines
+Rule 51    op_factor_list_opt -> empty
+Rule 52    op_factor_list_opt -> op_factor_list
+Rule 53    or_and_test_list_opt -> empty
+Rule 54    or_and_test_list_opt -> or_and_test_list
+Rule 55    period_or_ellipsis_list_opt -> empty
+Rule 56    period_or_ellipsis_list_opt -> period_or_ellipsis_list
+Rule 57    rarrow_test_opt -> empty
+Rule 58    rarrow_test_opt -> rarrow_test
+Rule 59    shift_arith_expr_list_opt -> empty
+Rule 60    shift_arith_expr_list_opt -> shift_arith_expr_list
+Rule 61    sliceop_opt -> empty
+Rule 62    sliceop_opt -> sliceop
+Rule 63    test_comma_list_opt -> empty
+Rule 64    test_comma_list_opt -> test_comma_list
+Rule 65    test_opt -> empty
+Rule 66    test_opt -> test
+Rule 67    testlist_comp_opt -> empty
+Rule 68    testlist_comp_opt -> testlist_comp
+Rule 69    testlist_opt -> empty
+Rule 70    testlist_opt -> testlist
+Rule 71    tfpdef_opt -> empty
+Rule 72    tfpdef_opt -> tfpdef
+Rule 73    trailer_list_opt -> empty
+Rule 74    trailer_list_opt -> trailer_list
+Rule 75    typedargslist_opt -> empty
+Rule 76    typedargslist_opt -> typedargslist
+Rule 77    varargslist_opt -> empty
+Rule 78    varargslist_opt -> varargslist
+Rule 79    vfpdef_opt -> empty
+Rule 80    vfpdef_opt -> vfpdef
+Rule 81    xor_and_expr_list_opt -> empty
+Rule 82    xor_and_expr_list_opt -> xor_and_expr_list
+Rule 83    yield_arg_opt -> empty
+Rule 84    yield_arg_opt -> yield_arg
+Rule 85    yield_expr_or_testlist_comp_opt -> empty
+Rule 86    yield_expr_or_testlist_comp_opt -> yield_expr_or_testlist_comp
+Rule 87    ampersand_shift_expr_list -> ampersand_shift_expr
+Rule 88    ampersand_shift_expr_list -> ampersand_shift_expr_list ampersand_shift_expr
+Rule 89    and_not_test_list -> and_not_test
+Rule 90    and_not_test_list -> and_not_test_list and_not_test
+Rule 91    attr_period_name_list -> attr_period_name
+Rule 92    attr_period_name_list -> attr_period_name_list attr_period_name
+Rule 93    comma_argument_list -> comma_argument
+Rule 94    comma_argument_list -> comma_argument_list comma_argument
+Rule 95    comma_dotted_as_name_list -> comma_dotted_as_name
+Rule 96    comma_dotted_as_name_list -> comma_dotted_as_name_list comma_dotted_as_name
+Rule 97    comma_expr_or_star_expr_list -> comma_expr_or_star_expr
+Rule 98    comma_expr_or_star_expr_list -> comma_expr_or_star_expr_list comma_expr_or_star_expr
+Rule 99    comma_import_as_name_list -> comma_import_as_name
+Rule 100   comma_import_as_name_list -> comma_import_as_name_list comma_import_as_name
+Rule 101   comma_item_list -> comma_item
+Rule 102   comma_item_list -> comma_item_list comma_item
+Rule 103   comma_name_list -> comma_name
+Rule 104   comma_name_list -> comma_name_list comma_name
+Rule 105   comma_nocomma_list -> comma_nocomma
+Rule 106   comma_nocomma_list -> comma_nocomma_list comma_nocomma
+Rule 107   comma_subscript_list -> comma_subscript
+Rule 108   comma_subscript_list -> comma_subscript_list comma_subscript
+Rule 109   comma_test_list -> comma_test
+Rule 110   comma_test_list -> comma_test_list comma_test
+Rule 111   comma_test_or_star_expr_list -> comma_test_or_star_expr
+Rule 112   comma_test_or_star_expr_list -> comma_test_or_star_expr_list comma_test_or_star_expr
+Rule 113   comma_tfpdef_list -> comma_tfpdef
+Rule 114   comma_tfpdef_list -> comma_tfpdef_list comma_tfpdef
+Rule 115   comma_vfpdef_list -> comma_vfpdef
+Rule 116   comma_vfpdef_list -> comma_vfpdef_list comma_vfpdef
+Rule 117   comma_with_item_list -> comma_with_item
+Rule 118   comma_with_item_list -> comma_with_item_list comma_with_item
+Rule 119   comp_op_expr_list -> comp_op_expr
+Rule 120   comp_op_expr_list -> comp_op_expr_list comp_op_expr
+Rule 121   elif_part_list -> elif_part
+Rule 122   elif_part_list -> elif_part_list elif_part
+Rule 123   equals_yield_expr_or_testlist_list -> equals_yield_expr_or_testlist
+Rule 124   equals_yield_expr_or_testlist_list -> equals_yield_expr_or_testlist_list equals_yield_expr_or_testlist
+Rule 125   except_part_list -> except_part
+Rule 126   except_part_list -> except_part_list except_part
+Rule 127   op_factor_list -> op_factor
+Rule 128   op_factor_list -> op_factor_list op_factor
+Rule 129   or_and_test_list -> or_and_test
+Rule 130   or_and_test_list -> or_and_test_list or_and_test
+Rule 131   period_name_list -> period_name
+Rule 132   period_name_list -> period_name_list period_name
+Rule 133   period_or_ellipsis_list -> period_or_ellipsis
+Rule 134   period_or_ellipsis_list -> period_or_ellipsis_list period_or_ellipsis
+Rule 135   pipe_xor_expr_list -> pipe_xor_expr
+Rule 136   pipe_xor_expr_list -> pipe_xor_expr_list pipe_xor_expr
+Rule 137   pm_term_list -> pm_term
+Rule 138   pm_term_list -> pm_term_list pm_term
+Rule 139   semi_small_stmt_list -> semi_small_stmt
+Rule 140   semi_small_stmt_list -> semi_small_stmt_list semi_small_stmt
+Rule 141   shift_arith_expr_list -> shift_arith_expr
+Rule 142   shift_arith_expr_list -> shift_arith_expr_list shift_arith_expr
+Rule 143   test_comma_list -> test_comma
+Rule 144   test_comma_list -> test_comma_list test_comma
+Rule 145   trailer_list -> trailer
+Rule 146   trailer_list -> trailer_list trailer
+Rule 147   xor_and_expr_list -> xor_and_expr
+Rule 148   xor_and_expr_list -> xor_and_expr_list xor_and_expr
+Rule 149   ampersand_tok -> AMPERSAND
+Rule 150   ampersandequal_tok -> AMPERSANDEQUAL
+Rule 151   as_tok -> AS
+Rule 152   assert_tok -> ASSERT
+Rule 153   at_lparen_tok -> AT_LPAREN
+Rule 154   at_tok -> AT
+Rule 155   atdollar_lparen_tok -> ATDOLLAR_LPAREN
+Rule 156   atdollar_tok -> ATDOLLAR
+Rule 157   atequal_tok -> ATEQUAL
+Rule 158   bang_lbracket_tok -> BANG_LBRACKET
+Rule 159   bang_lparen_tok -> BANG_LPAREN
+Rule 160   bang_tok -> BANG
+Rule 161   break_tok -> BREAK
+Rule 162   class_tok -> CLASS
+Rule 163   colon_tok -> COLON
+Rule 164   comma_tok -> COMMA
+Rule 165   continue_tok -> CONTINUE
+Rule 166   dedent_tok -> DEDENT
+Rule 167   def_tok -> DEF
+Rule 168   del_tok -> DEL
+Rule 169   divequal_tok -> DIVEQUAL
+Rule 170   divide_tok -> DIVIDE
+Rule 171   dollar_lbrace_tok -> DOLLAR_LBRACE
+Rule 172   dollar_lbracket_tok -> DOLLAR_LBRACKET
+Rule 173   dollar_lparen_tok -> DOLLAR_LPAREN
+Rule 174   dollar_name_tok -> DOLLAR_NAME
+Rule 175   double_question_tok -> DOUBLE_QUESTION
+Rule 176   doublediv_tok -> DOUBLEDIV
+Rule 177   doubledivequal_tok -> DOUBLEDIVEQUAL
+Rule 178   elif_tok -> ELIF
+Rule 179   ellipsis_tok -> ELLIPSIS
+Rule 180   else_tok -> ELSE
+Rule 181   eq_tok -> EQ
+Rule 182   equals_tok -> EQUALS
+Rule 183   errortoken_tok -> ERRORTOKEN
+Rule 184   except_tok -> EXCEPT
+Rule 185   false_tok -> FALSE
+Rule 186   finally_tok -> FINALLY
+Rule 187   for_tok -> FOR
+Rule 188   from_tok -> FROM
+Rule 189   ge_tok -> GE
+Rule 190   global_tok -> GLOBAL
+Rule 191   if_tok -> IF
+Rule 192   import_tok -> IMPORT
+Rule 193   in_tok -> IN
+Rule 194   indent_tok -> INDENT
+Rule 195   is_tok -> IS
+Rule 196   lambda_tok -> LAMBDA
+Rule 197   lbrace_tok -> LBRACE
+Rule 198   lbracket_tok -> LBRACKET
+Rule 199   le_tok -> LE
+Rule 200   lparen_tok -> LPAREN
+Rule 201   lshift_tok -> LSHIFT
+Rule 202   lshiftequal_tok -> LSHIFTEQUAL
+Rule 203   minus_tok -> MINUS
+Rule 204   minusequal_tok -> MINUSEQUAL
+Rule 205   mod_tok -> MOD
+Rule 206   modequal_tok -> MODEQUAL
+Rule 207   name_tok -> NAME
+Rule 208   ne_tok -> NE
+Rule 209   newline_tok -> NEWLINE
+Rule 210   none_tok -> NONE
+Rule 211   nonlocal_tok -> NONLOCAL
+Rule 212   number_tok -> NUMBER
+Rule 213   pass_tok -> PASS
+Rule 214   period_tok -> PERIOD
+Rule 215   pipe_tok -> PIPE
+Rule 216   pipeequal_tok -> PIPEEQUAL
+Rule 217   plus_tok -> PLUS
+Rule 218   plusequal_tok -> PLUSEQUAL
+Rule 219   pow_tok -> POW
+Rule 220   powequal_tok -> POWEQUAL
+Rule 221   question_tok -> QUESTION
+Rule 222   raise_tok -> RAISE
+Rule 223   rarrow_tok -> RARROW
+Rule 224   rbracket_tok -> RBRACKET
+Rule 225   return_tok -> RETURN
+Rule 226   rparen_tok -> RPAREN
+Rule 227   rshift_tok -> RSHIFT
+Rule 228   rshiftequal_tok -> RSHIFTEQUAL
+Rule 229   semi_tok -> SEMI
+Rule 230   string_tok -> STRING
+Rule 231   tilde_tok -> TILDE
+Rule 232   times_tok -> TIMES
+Rule 233   timesequal_tok -> TIMESEQUAL
+Rule 234   true_tok -> TRUE
+Rule 235   try_tok -> TRY
+Rule 236   while_tok -> WHILE
+Rule 237   with_tok -> WITH
+Rule 238   xor_tok -> XOR
+Rule 239   xorequal_tok -> XOREQUAL
+Rule 240   yield_tok -> YIELD
+Rule 241   start_symbols -> single_input
+Rule 242   start_symbols -> file_input
+Rule 243   start_symbols -> eval_input
+Rule 244   start_symbols -> empty
+Rule 245   single_input -> compound_stmt NEWLINE
+Rule 246   file_input -> file_stmts
+Rule 247   file_stmts -> newline_or_stmt
+Rule 248   file_stmts -> file_stmts newline_or_stmt
+Rule 249   newline_or_stmt -> NEWLINE
+Rule 250   newline_or_stmt -> stmt
+Rule 251   newlines -> NEWLINE
+Rule 252   newlines -> newlines NEWLINE
+Rule 253   eval_input -> testlist newlines_opt
+Rule 254   func_call -> LPAREN arglist_opt RPAREN
+Rule 255   attr_period_name -> PERIOD NAME
+Rule 256   attr_name -> name_tok
+Rule 257   attr_name -> name_tok attr_period_name_list
+Rule 258   decorator -> at_tok attr_name NEWLINE
+Rule 259   decorator -> at_tok attr_name func_call NEWLINE
+Rule 260   decorators -> decorator
+Rule 261   decorators -> decorators decorator
+Rule 262   decorated -> decorators classdef_or_funcdef
+Rule 263   rarrow_test -> RARROW test
+Rule 264   funcdef -> def_tok NAME parameters rarrow_test_opt COLON suite
+Rule 265   parameters -> LPAREN typedargslist_opt RPAREN
+Rule 266   equals_test -> EQUALS test
+Rule 267   typedargslist -> POW tfpdef
+Rule 268   typedargslist -> TIMES tfpdef comma_pow_tfpdef_opt
+Rule 269   typedargslist -> TIMES comma_pow_tfpdef
+Rule 270   typedargslist -> TIMES tfpdef comma_tfpdef_list comma_pow_tfpdef_opt
+Rule 271   typedargslist -> TIMES comma_tfpdef_list comma_pow_tfpdef_opt
+Rule 272   typedargslist -> tfpdef equals_test_opt comma_tfpdef_list_opt comma_opt
+Rule 273   typedargslist -> tfpdef equals_test_opt comma_tfpdef_list_opt comma_opt POW tfpdef
+Rule 274   typedargslist -> tfpdef equals_test_opt comma_tfpdef_list_opt comma_opt TIMES tfpdef_opt comma_tfpdef_list_opt
+Rule 275   typedargslist -> tfpdef equals_test_opt comma_tfpdef_list_opt comma_opt TIMES tfpdef_opt COMMA POW vfpdef
+Rule 276   typedargslist -> tfpdef equals_test_opt comma_tfpdef_list_opt comma_opt TIMES tfpdef_opt comma_tfpdef_list COMMA POW tfpdef
+Rule 277   colon_test -> COLON test
+Rule 278   tfpdef -> name_tok colon_test_opt
+Rule 279   comma_tfpdef -> COMMA
+Rule 280   comma_tfpdef -> COMMA tfpdef equals_test_opt
+Rule 281   comma_pow_tfpdef -> COMMA POW tfpdef
+Rule 282   varargslist -> POW vfpdef
+Rule 283   varargslist -> TIMES vfpdef_opt comma_pow_vfpdef_opt
+Rule 284   varargslist -> TIMES vfpdef_opt comma_vfpdef_list comma_pow_vfpdef_opt
+Rule 285   varargslist -> vfpdef equals_test_opt comma_vfpdef_list_opt comma_opt
+Rule 286   varargslist -> vfpdef equals_test_opt comma_vfpdef_list_opt comma_opt POW vfpdef
+Rule 287   varargslist -> vfpdef equals_test_opt comma_vfpdef_list_opt comma_opt TIMES vfpdef_opt comma_vfpdef_list_opt
+Rule 288   varargslist -> vfpdef equals_test_opt comma_vfpdef_list_opt comma_opt TIMES vfpdef_opt COMMA POW vfpdef
+Rule 289   varargslist -> vfpdef equals_test_opt comma_vfpdef_list_opt comma_opt TIMES vfpdef_opt comma_vfpdef_list COMMA POW vfpdef
+Rule 290   vfpdef -> name_tok
+Rule 291   comma_vfpdef -> COMMA
+Rule 292   comma_vfpdef -> COMMA vfpdef equals_test_opt
+Rule 293   comma_pow_vfpdef -> COMMA POW vfpdef
+Rule 294   stmt -> simple_stmt
+Rule 295   stmt -> compound_stmt
+Rule 296   stmt_list -> stmt
+Rule 297   stmt_list -> stmt_list stmt
+Rule 298   semi_opt -> SEMI
+Rule 299   semi_opt -> empty
+Rule 300   semi_small_stmt -> SEMI small_stmt
+Rule 301   simple_stmt -> small_stmt semi_opt NEWLINE
+Rule 302   simple_stmt -> small_stmt semi_small_stmt_list semi_opt NEWLINE
+Rule 303   small_stmt -> expr_stmt
+Rule 304   small_stmt -> del_stmt
+Rule 305   small_stmt -> pass_stmt
+Rule 306   small_stmt -> flow_stmt
+Rule 307   small_stmt -> import_stmt
+Rule 308   small_stmt -> global_stmt
+Rule 309   small_stmt -> nonlocal_stmt
+Rule 310   small_stmt -> assert_stmt
+Rule 311   expr_stmt -> testlist_star_expr equals_yield_expr_or_testlist_list_opt
+Rule 312   expr_stmt -> testlist equals_yield_expr_or_testlist_list_opt
+Rule 313   expr_stmt -> testlist_star_expr augassign yield_expr_or_testlist
+Rule 314   expr_stmt -> test_comma_list_opt star_expr comma_test_list equals_yield_expr_or_testlist
+Rule 315   expr_stmt -> test_comma_list_opt star_expr comma_opt test_comma_list_opt equals_yield_expr_or_testlist
+Rule 316   test_comma -> test COMMA
+Rule 317   comma_opt -> COMMA
+Rule 318   comma_opt -> empty
+Rule 319   test_or_star_expr -> test
+Rule 320   test_or_star_expr -> star_expr
+Rule 321   comma_test_or_star_expr -> COMMA test_or_star_expr
+Rule 322   testlist_star_expr -> test_or_star_expr comma_test_or_star_expr_list comma_opt
+Rule 323   testlist_star_expr -> test_or_star_expr comma_opt
+Rule 324   augassign -> PLUSEQUAL
+Rule 325   augassign -> MINUSEQUAL
+Rule 326   augassign -> TIMESEQUAL
+Rule 327   augassign -> ATEQUAL
+Rule 328   augassign -> DIVEQUAL
+Rule 329   augassign -> MODEQUAL
+Rule 330   augassign -> AMPERSANDEQUAL
+Rule 331   augassign -> PIPEEQUAL
+Rule 332   augassign -> XOREQUAL
+Rule 333   augassign -> LSHIFTEQUAL
+Rule 334   augassign -> RSHIFTEQUAL
+Rule 335   augassign -> POWEQUAL
+Rule 336   augassign -> DOUBLEDIVEQUAL
+Rule 337   yield_expr_or_testlist -> yield_expr
+Rule 338   yield_expr_or_testlist -> testlist
+Rule 339   equals_yield_expr_or_testlist -> EQUALS yield_expr_or_testlist
+Rule 340   del_stmt -> del_tok exprlist
+Rule 341   pass_stmt -> PASS
+Rule 342   flow_stmt -> break_stmt
+Rule 343   flow_stmt -> continue_stmt
+Rule 344   flow_stmt -> return_stmt
+Rule 345   flow_stmt -> raise_stmt
+Rule 346   flow_stmt -> yield_stmt
+Rule 347   break_stmt -> BREAK
+Rule 348   continue_stmt -> CONTINUE
+Rule 349   return_stmt -> return_tok testlist_opt
+Rule 350   yield_stmt -> yield_expr
+Rule 351   raise_stmt -> raise_tok
+Rule 352   raise_stmt -> raise_tok test
+Rule 353   raise_stmt -> raise_tok test FROM test
+Rule 354   import_stmt -> import_name
+Rule 355   import_stmt -> import_from
+Rule 356   import_name -> import_tok dotted_as_names
+Rule 357   import_from_pre -> from_tok period_or_ellipsis_list
+Rule 358   import_from_pre -> from_tok period_or_ellipsis_list_opt dotted_name
+Rule 359   import_from_post -> TIMES
+Rule 360   import_from_post -> import_as_names
+Rule 361   import_from_post -> LPAREN import_as_names
+Rule 362   import_from -> import_from_pre IMPORT import_from_post
+Rule 363   period_or_ellipsis -> PERIOD
+Rule 364   period_or_ellipsis -> ELLIPSIS
+Rule 365   as_name -> AS NAME
+Rule 366   import_as_name -> NAME as_name_opt
+Rule 367   comma_import_as_name -> COMMA import_as_name
+Rule 368   comma_import_as_name -> comma_opt RPAREN
+Rule 369   dotted_as_name -> dotted_name as_name_opt
+Rule 370   comma_dotted_as_name -> COMMA dotted_as_name
+Rule 371   import_as_names -> import_as_name comma_import_as_name_list_opt
+Rule 372   dotted_as_names -> dotted_as_name comma_dotted_as_name_list_opt
+Rule 373   period_name -> PERIOD NAME
+Rule 374   dotted_name -> NAME
+Rule 375   dotted_name -> NAME period_name_list
+Rule 376   comma_name -> COMMA NAME
+Rule 377   global_stmt -> global_tok NAME comma_name_list_opt
+Rule 378   nonlocal_stmt -> nonlocal_tok NAME comma_name_list_opt
+Rule 379   comma_test -> COMMA test
+Rule 380   assert_stmt -> assert_tok test comma_test_opt
+Rule 381   compound_stmt -> if_stmt
+Rule 382   compound_stmt -> while_stmt
+Rule 383   compound_stmt -> for_stmt
+Rule 384   compound_stmt -> try_stmt
+Rule 385   compound_stmt -> with_stmt
+Rule 386   compound_stmt -> funcdef
+Rule 387   compound_stmt -> classdef
+Rule 388   compound_stmt -> decorated
+Rule 389   elif_part -> ELIF test COLON suite
+Rule 390   else_part -> ELSE COLON suite
+Rule 391   if_stmt -> if_tok test COLON suite elif_part_list_opt
+Rule 392   if_stmt -> if_tok test COLON suite elif_part_list_opt else_part
+Rule 393   while_stmt -> WHILE test COLON suite
+Rule 394   while_stmt -> WHILE test COLON suite else_part
+Rule 395   for_stmt -> for_tok exprlist IN testlist COLON suite
+Rule 396   for_stmt -> for_tok exprlist IN testlist COLON suite else_part
+Rule 397   except_part -> except_clause COLON suite
+Rule 398   finally_part -> FINALLY COLON suite
+Rule 399   try_stmt -> try_tok COLON suite finally_part
+Rule 400   try_stmt -> try_tok COLON suite except_part_list finally_part_opt
+Rule 401   try_stmt -> try_tok COLON suite except_part_list else_part finally_part_opt
+Rule 402   with_stmt -> with_tok with_item COLON suite
+Rule 403   with_stmt -> with_tok with_item comma_with_item_list COLON suite
+Rule 404   with_stmt -> with_tok BANG with_item rawsuite
+Rule 405   with_stmt -> with_tok BANG with_item comma_with_item_list rawsuite
+Rule 406   as_expr -> AS expr
+Rule 407   with_item -> test
+Rule 408   with_item -> test as_expr
+Rule 409   comma_with_item -> COMMA with_item
+Rule 410   except_clause -> except_tok
+Rule 411   except_clause -> except_tok test as_name_opt
+Rule 412   suite -> simple_stmt
+Rule 413   suite -> NEWLINE INDENT stmt_list DEDENT
+Rule 414   rawsuite -> COLON NEWLINE indent_tok nodedent dedent_tok
+Rule 415   rawsuite -> colon_tok nonewline newline_tok
+Rule 416   nodedent -> AMPERSAND
+Rule 417   nodedent -> AMPERSANDEQUAL
+Rule 418   nodedent -> AND
+Rule 419   nodedent -> AS
+Rule 420   nodedent -> ASSERT
+Rule 421   nodedent -> ASYNC
+Rule 422   nodedent -> AT
+Rule 423   nodedent -> ATDOLLAR
+Rule 424   nodedent -> ATDOLLAR_LPAREN
+Rule 425   nodedent -> ATEQUAL
+Rule 426   nodedent -> AT_LPAREN
+Rule 427   nodedent -> AWAIT
+Rule 428   nodedent -> BANG
+Rule 429   nodedent -> BANG_LBRACKET
+Rule 430   nodedent -> BANG_LPAREN
+Rule 431   nodedent -> BREAK
+Rule 432   nodedent -> CLASS
+Rule 433   nodedent -> COLON
+Rule 434   nodedent -> COLONEQUAL
+Rule 435   nodedent -> COMMA
+Rule 436   nodedent -> CONTINUE
+Rule 437   nodedent -> DEF
+Rule 438   nodedent -> DEL
+Rule 439   nodedent -> DIVEQUAL
+Rule 440   nodedent -> DIVIDE
+Rule 441   nodedent -> DOLLAR_LBRACE
+Rule 442   nodedent -> DOLLAR_LBRACKET
+Rule 443   nodedent -> DOLLAR_LPAREN
+Rule 444   nodedent -> DOLLAR_NAME
+Rule 445   nodedent -> DOUBLEDIV
+Rule 446   nodedent -> DOUBLEDIVEQUAL
+Rule 447   nodedent -> DOUBLE_QUESTION
+Rule 448   nodedent -> ELIF
+Rule 449   nodedent -> ELLIPSIS
+Rule 450   nodedent -> ELSE
+Rule 451   nodedent -> EQ
+Rule 452   nodedent -> EQUALS
+Rule 453   nodedent -> ERRORTOKEN
+Rule 454   nodedent -> EXCEPT
+Rule 455   nodedent -> FALSE
+Rule 456   nodedent -> FINALLY
+Rule 457   nodedent -> FOR
+Rule 458   nodedent -> FROM
+Rule 459   nodedent -> GE
+Rule 460   nodedent -> GLOBAL
+Rule 461   nodedent -> GT
+Rule 462   nodedent -> IF
+Rule 463   nodedent -> IMPORT
+Rule 464   nodedent -> IN
+Rule 465   nodedent -> INDENT
+Rule 466   nodedent -> IOREDIRECT
+Rule 467   nodedent -> IS
+Rule 468   nodedent -> LAMBDA
+Rule 469   nodedent -> LBRACE
+Rule 470   nodedent -> LBRACKET
+Rule 471   nodedent -> LE
+Rule 472   nodedent -> LPAREN
+Rule 473   nodedent -> LSHIFT
+Rule 474   nodedent -> LSHIFTEQUAL
+Rule 475   nodedent -> LT
+Rule 476   nodedent -> MINUS
+Rule 477   nodedent -> MINUSEQUAL
+Rule 478   nodedent -> MOD
+Rule 479   nodedent -> MODEQUAL
+Rule 480   nodedent -> NAME
+Rule 481   nodedent -> NE
+Rule 482   nodedent -> NEWLINE
+Rule 483   nodedent -> NONE
+Rule 484   nodedent -> NONLOCAL
+Rule 485   nodedent -> NOT
+Rule 486   nodedent -> NUMBER
+Rule 487   nodedent -> OR
+Rule 488   nodedent -> PASS
+Rule 489   nodedent -> PERIOD
+Rule 490   nodedent -> PIPE
+Rule 491   nodedent -> PIPEEQUAL
+Rule 492   nodedent -> PLUS
+Rule 493   nodedent -> PLUSEQUAL
+Rule 494   nodedent -> POW
+Rule 495   nodedent -> POWEQUAL
+Rule 496   nodedent -> QUESTION
+Rule 497   nodedent -> RAISE
+Rule 498   nodedent -> RARROW
+Rule 499   nodedent -> RBRACE
+Rule 500   nodedent -> RBRACKET
+Rule 501   nodedent -> RETURN
+Rule 502   nodedent -> RPAREN
+Rule 503   nodedent -> RSHIFT
+Rule 504   nodedent -> RSHIFTEQUAL
+Rule 505   nodedent -> SEARCHPATH
+Rule 506   nodedent -> SEMI
+Rule 507   nodedent -> STRING
+Rule 508   nodedent -> TILDE
+Rule 509   nodedent -> TIMES
+Rule 510   nodedent -> TIMESEQUAL
+Rule 511   nodedent -> TRUE
+Rule 512   nodedent -> TRY
+Rule 513   nodedent -> WHILE
+Rule 514   nodedent -> WITH
+Rule 515   nodedent -> WS
+Rule 516   nodedent -> XOR
+Rule 517   nodedent -> XOREQUAL
+Rule 518   nodedent -> YIELD
+Rule 519   nodedent -> INDENT any_dedent_toks DEDENT
+Rule 520   nodedent -> nodedent nodedent
+Rule 521   any_dedent_tok -> nodedent
+Rule 522   any_dedent_tok -> DEDENT
+Rule 523   any_dedent_toks -> any_dedent_tok
+Rule 524   any_dedent_toks -> any_dedent_toks any_dedent_tok
+Rule 525   nonewline -> AMPERSAND
+Rule 526   nonewline -> AMPERSANDEQUAL
+Rule 527   nonewline -> AND
+Rule 528   nonewline -> AS
+Rule 529   nonewline -> ASSERT
+Rule 530   nonewline -> ASYNC
+Rule 531   nonewline -> AT
+Rule 532   nonewline -> ATDOLLAR
+Rule 533   nonewline -> ATEQUAL
+Rule 534   nonewline -> AWAIT
+Rule 535   nonewline -> BANG
+Rule 536   nonewline -> BREAK
+Rule 537   nonewline -> CLASS
+Rule 538   nonewline -> COLON
+Rule 539   nonewline -> COLONEQUAL
+Rule 540   nonewline -> COMMA
+Rule 541   nonewline -> CONTINUE
+Rule 542   nonewline -> DEDENT
+Rule 543   nonewline -> DEF
+Rule 544   nonewline -> DEL
+Rule 545   nonewline -> DIVEQUAL
+Rule 546   nonewline -> DIVIDE
+Rule 547   nonewline -> DOLLAR_NAME
+Rule 548   nonewline -> DOUBLEDIV
+Rule 549   nonewline -> DOUBLEDIVEQUAL
+Rule 550   nonewline -> DOUBLE_QUESTION
+Rule 551   nonewline -> ELIF
+Rule 552   nonewline -> ELLIPSIS
+Rule 553   nonewline -> ELSE
+Rule 554   nonewline -> EQ
+Rule 555   nonewline -> EQUALS
+Rule 556   nonewline -> ERRORTOKEN
+Rule 557   nonewline -> EXCEPT
+Rule 558   nonewline -> FALSE
+Rule 559   nonewline -> FINALLY
+Rule 560   nonewline -> FOR
+Rule 561   nonewline -> FROM
+Rule 562   nonewline -> GE
+Rule 563   nonewline -> GLOBAL
+Rule 564   nonewline -> GT
+Rule 565   nonewline -> IF
+Rule 566   nonewline -> IMPORT
+Rule 567   nonewline -> IN
+Rule 568   nonewline -> INDENT
+Rule 569   nonewline -> IOREDIRECT
+Rule 570   nonewline -> IS
+Rule 571   nonewline -> LAMBDA
+Rule 572   nonewline -> LE
+Rule 573   nonewline -> LSHIFT
+Rule 574   nonewline -> LSHIFTEQUAL
+Rule 575   nonewline -> LT
+Rule 576   nonewline -> MINUS
+Rule 577   nonewline -> MINUSEQUAL
+Rule 578   nonewline -> MOD
+Rule 579   nonewline -> MODEQUAL
+Rule 580   nonewline -> NAME
+Rule 581   nonewline -> NE
+Rule 582   nonewline -> NONE
+Rule 583   nonewline -> NONLOCAL
+Rule 584   nonewline -> NOT
+Rule 585   nonewline -> NUMBER
+Rule 586   nonewline -> OR
+Rule 587   nonewline -> PASS
+Rule 588   nonewline -> PERIOD
+Rule 589   nonewline -> PIPE
+Rule 590   nonewline -> PIPEEQUAL
+Rule 591   nonewline -> PLUS
+Rule 592   nonewline -> PLUSEQUAL
+Rule 593   nonewline -> POW
+Rule 594   nonewline -> POWEQUAL
+Rule 595   nonewline -> QUESTION
+Rule 596   nonewline -> RAISE
+Rule 597   nonewline -> RARROW
+Rule 598   nonewline -> RETURN
+Rule 599   nonewline -> RSHIFT
+Rule 600   nonewline -> RSHIFTEQUAL
+Rule 601   nonewline -> SEARCHPATH
+Rule 602   nonewline -> SEMI
+Rule 603   nonewline -> STRING
+Rule 604   nonewline -> TILDE
+Rule 605   nonewline -> TIMES
+Rule 606   nonewline -> TIMESEQUAL
+Rule 607   nonewline -> TRUE
+Rule 608   nonewline -> TRY
+Rule 609   nonewline -> WHILE
+Rule 610   nonewline -> WITH
+Rule 611   nonewline -> WS
+Rule 612   nonewline -> XOR
+Rule 613   nonewline -> XOREQUAL
+Rule 614   nonewline -> YIELD
+Rule 615   nonewline -> any_nested_raw
+Rule 616   nonewline -> nonewline nonewline
+Rule 617   test -> or_test
+Rule 618   test -> lambdef
+Rule 619   test -> or_test IF or_test ELSE test
+Rule 620   test_nocond -> or_test
+Rule 621   test_nocond -> lambdef_nocond
+Rule 622   lambdef -> lambda_tok varargslist_opt COLON test
+Rule 623   lambdef_nocond -> LAMBDA varargslist_opt COLON test_nocond
+Rule 624   or_test -> and_test or_and_test_list_opt
+Rule 625   or_and_test -> OR and_test
+Rule 626   and_test -> not_test and_not_test_list_opt
+Rule 627   and_not_test -> AND not_test
+Rule 628   not_test -> NOT not_test
+Rule 629   not_test -> comparison
+Rule 630   comparison -> expr comp_op_expr_list_opt
+Rule 631   comp_op_expr -> comp_op expr
+Rule 632   comp_op -> LT
+Rule 633   comp_op -> GT
+Rule 634   comp_op -> EQ
+Rule 635   comp_op -> GE
+Rule 636   comp_op -> LE
+Rule 637   comp_op -> NE
+Rule 638   comp_op -> IN
+Rule 639   comp_op -> IS
+Rule 640   comp_op -> NOT IN
+Rule 641   comp_op -> IS NOT
+Rule 642   star_expr -> times_tok expr
+Rule 643   expr -> xor_expr
+Rule 644   expr -> xor_expr pipe_xor_expr_list
+Rule 645   pipe_xor_expr -> pipe_tok xor_expr
+Rule 646   xor_expr -> and_expr xor_and_expr_list_opt
+Rule 647   xor_and_expr -> xor_tok and_expr
+Rule 648   and_expr -> shift_expr ampersand_shift_expr_list_opt
+Rule 649   ampersand_shift_expr -> ampersand_tok shift_expr
+Rule 650   shift_expr -> arith_expr shift_arith_expr_list_opt
+Rule 651   shift_arith_expr -> lshift_tok arith_expr
+Rule 652   shift_arith_expr -> rshift_tok arith_expr
+Rule 653   arith_expr -> term
+Rule 654   arith_expr -> term pm_term_list
+Rule 655   pm_term -> plus_tok term
+Rule 656   pm_term -> minus_tok term
+Rule 657   term -> factor op_factor_list_opt
+Rule 658   op_factor -> times_tok factor
+Rule 659   op_factor -> at_tok factor
+Rule 660   op_factor -> divide_tok factor
+Rule 661   op_factor -> mod_tok factor
+Rule 662   op_factor -> doublediv_tok factor
+Rule 663   factor -> power
+Rule 664   factor -> plus_tok factor
+Rule 665   factor -> minus_tok factor
+Rule 666   factor -> tilde_tok factor
+Rule 667   power -> atom_expr
+Rule 668   power -> atom_expr POW factor
+Rule 669   yield_expr_or_testlist_comp -> yield_expr
+Rule 670   yield_expr_or_testlist_comp -> testlist_comp
+Rule 671   atom_expr -> atom trailer_list_opt
+Rule 672   atom -> lparen_tok yield_expr_or_testlist_comp_opt RPAREN
+Rule 673   atom -> lbracket_tok testlist_comp_opt RBRACKET
+Rule 674   atom -> lbrace_tok dictorsetmaker_opt RBRACE
+Rule 675   atom -> number
+Rule 676   atom -> string_literal_list
+Rule 677   atom -> name_tok
+Rule 678   atom -> ellipsis_tok
+Rule 679   atom -> none_tok
+Rule 680   atom -> true_tok
+Rule 681   atom -> false_tok
+Rule 682   atom -> SEARCHPATH
+Rule 683   atom -> DOLLAR_NAME
+Rule 684   atom -> dollar_lbrace_tok test RBRACE
+Rule 685   atom -> bang_lparen_tok subproc RPAREN
+Rule 686   atom -> dollar_lparen_tok subproc RPAREN
+Rule 687   atom -> bang_lbracket_tok subproc RBRACKET
+Rule 688   atom -> dollar_lbracket_tok subproc RBRACKET
+Rule 689   atom -> bang_lparen_tok subproc bang_tok RPAREN
+Rule 690   atom -> dollar_lparen_tok subproc bang_tok RPAREN
+Rule 691   atom -> bang_lbracket_tok subproc bang_tok RBRACKET
+Rule 692   atom -> dollar_lbracket_tok subproc bang_tok RBRACKET
+Rule 693   atom -> bang_lparen_tok subproc bang_tok nocloser rparen_tok
+Rule 694   atom -> dollar_lparen_tok subproc bang_tok nocloser rparen_tok
+Rule 695   atom -> bang_lbracket_tok subproc bang_tok nocloser rbracket_tok
+Rule 696   atom -> dollar_lbracket_tok subproc bang_tok nocloser rbracket_tok
+Rule 697   nocloser -> AMPERSAND
+Rule 698   nocloser -> AMPERSANDEQUAL
+Rule 699   nocloser -> AND
+Rule 700   nocloser -> AS
+Rule 701   nocloser -> ASSERT
+Rule 702   nocloser -> ASYNC
+Rule 703   nocloser -> AT
+Rule 704   nocloser -> ATDOLLAR
+Rule 705   nocloser -> ATEQUAL
+Rule 706   nocloser -> AWAIT
+Rule 707   nocloser -> BANG
+Rule 708   nocloser -> BREAK
+Rule 709   nocloser -> CLASS
+Rule 710   nocloser -> COLON
+Rule 711   nocloser -> COLONEQUAL
+Rule 712   nocloser -> COMMA
+Rule 713   nocloser -> CONTINUE
+Rule 714   nocloser -> DEDENT
+Rule 715   nocloser -> DEF
+Rule 716   nocloser -> DEL
+Rule 717   nocloser -> DIVEQUAL
+Rule 718   nocloser -> DIVIDE
+Rule 719   nocloser -> DOLLAR_NAME
+Rule 720   nocloser -> DOUBLEDIV
+Rule 721   nocloser -> DOUBLEDIVEQUAL
+Rule 722   nocloser -> DOUBLE_QUESTION
+Rule 723   nocloser -> ELIF
+Rule 724   nocloser -> ELLIPSIS
+Rule 725   nocloser -> ELSE
+Rule 726   nocloser -> EQ
+Rule 727   nocloser -> EQUALS
+Rule 728   nocloser -> ERRORTOKEN
+Rule 729   nocloser -> EXCEPT
+Rule 730   nocloser -> FALSE
+Rule 731   nocloser -> FINALLY
+Rule 732   nocloser -> FOR
+Rule 733   nocloser -> FROM
+Rule 734   nocloser -> GE
+Rule 735   nocloser -> GLOBAL
+Rule 736   nocloser -> GT
+Rule 737   nocloser -> IF
+Rule 738   nocloser -> IMPORT
+Rule 739   nocloser -> IN
+Rule 740   nocloser -> INDENT
+Rule 741   nocloser -> IOREDIRECT
+Rule 742   nocloser -> IS
+Rule 743   nocloser -> LAMBDA
+Rule 744   nocloser -> LE
+Rule 745   nocloser -> LSHIFT
+Rule 746   nocloser -> LSHIFTEQUAL
+Rule 747   nocloser -> LT
+Rule 748   nocloser -> MINUS
+Rule 749   nocloser -> MINUSEQUAL
+Rule 750   nocloser -> MOD
+Rule 751   nocloser -> MODEQUAL
+Rule 752   nocloser -> NAME
+Rule 753   nocloser -> NE
+Rule 754   nocloser -> NEWLINE
+Rule 755   nocloser -> NONE
+Rule 756   nocloser -> NONLOCAL
+Rule 757   nocloser -> NOT
+Rule 758   nocloser -> NUMBER
+Rule 759   nocloser -> OR
+Rule 760   nocloser -> PASS
+Rule 761   nocloser -> PERIOD
+Rule 762   nocloser -> PIPE
+Rule 763   nocloser -> PIPEEQUAL
+Rule 764   nocloser -> PLUS
+Rule 765   nocloser -> PLUSEQUAL
+Rule 766   nocloser -> POW
+Rule 767   nocloser -> POWEQUAL
+Rule 768   nocloser -> QUESTION
+Rule 769   nocloser -> RAISE
+Rule 770   nocloser -> RARROW
+Rule 771   nocloser -> RETURN
+Rule 772   nocloser -> RSHIFT
+Rule 773   nocloser -> RSHIFTEQUAL
+Rule 774   nocloser -> SEARCHPATH
+Rule 775   nocloser -> SEMI
+Rule 776   nocloser -> STRING
+Rule 777   nocloser -> TILDE
+Rule 778   nocloser -> TIMES
+Rule 779   nocloser -> TIMESEQUAL
+Rule 780   nocloser -> TRUE
+Rule 781   nocloser -> TRY
+Rule 782   nocloser -> WHILE
+Rule 783   nocloser -> WITH
+Rule 784   nocloser -> WS
+Rule 785   nocloser -> XOR
+Rule 786   nocloser -> XOREQUAL
+Rule 787   nocloser -> YIELD
+Rule 788   nocloser -> any_nested_raw
+Rule 789   nocloser -> nocloser nocloser
+Rule 790   string_literal -> string_tok
+Rule 791   string_literal_list -> string_literal
+Rule 792   string_literal_list -> string_literal_list string_literal
+Rule 793   number -> number_tok
+Rule 794   testlist_comp -> test_or_star_expr comp_for
+Rule 795   testlist_comp -> test_or_star_expr comma_opt
+Rule 796   testlist_comp -> test_or_star_expr comma_test_or_star_expr_list comma_opt
+Rule 797   trailer -> LPAREN arglist_opt RPAREN
+Rule 798   trailer -> bang_lparen_tok macroarglist_opt rparen_tok
+Rule 799   trailer -> bang_lparen_tok nocomma comma_tok rparen_tok
+Rule 800   trailer -> bang_lparen_tok nocomma comma_tok WS rparen_tok
+Rule 801   trailer -> bang_lparen_tok macroarglist comma_tok rparen_tok
+Rule 802   trailer -> bang_lparen_tok macroarglist comma_tok WS rparen_tok
+Rule 803   trailer -> LBRACKET subscriptlist RBRACKET
+Rule 804   trailer -> PERIOD NAME
+Rule 805   trailer -> DOUBLE_QUESTION
+Rule 806   trailer -> QUESTION
+Rule 807   nocomma_tok -> AMPERSAND
+Rule 808   nocomma_tok -> AMPERSANDEQUAL
+Rule 809   nocomma_tok -> AND
+Rule 810   nocomma_tok -> AS
+Rule 811   nocomma_tok -> ASSERT
+Rule 812   nocomma_tok -> ASYNC
+Rule 813   nocomma_tok -> AT
+Rule 814   nocomma_tok -> ATDOLLAR
+Rule 815   nocomma_tok -> ATEQUAL
+Rule 816   nocomma_tok -> AWAIT
+Rule 817   nocomma_tok -> BANG
+Rule 818   nocomma_tok -> BREAK
+Rule 819   nocomma_tok -> CLASS
+Rule 820   nocomma_tok -> COLON
+Rule 821   nocomma_tok -> COLONEQUAL
+Rule 822   nocomma_tok -> CONTINUE
+Rule 823   nocomma_tok -> DEDENT
+Rule 824   nocomma_tok -> DEF
+Rule 825   nocomma_tok -> DEL
+Rule 826   nocomma_tok -> DIVEQUAL
+Rule 827   nocomma_tok -> DIVIDE
+Rule 828   nocomma_tok -> DOLLAR_NAME
+Rule 829   nocomma_tok -> DOUBLEDIV
+Rule 830   nocomma_tok -> DOUBLEDIVEQUAL
+Rule 831   nocomma_tok -> DOUBLE_QUESTION
+Rule 832   nocomma_tok -> ELIF
+Rule 833   nocomma_tok -> ELLIPSIS
+Rule 834   nocomma_tok -> ELSE
+Rule 835   nocomma_tok -> EQ
+Rule 836   nocomma_tok -> EQUALS
+Rule 837   nocomma_tok -> ERRORTOKEN
+Rule 838   nocomma_tok -> EXCEPT
+Rule 839   nocomma_tok -> FALSE
+Rule 840   nocomma_tok -> FINALLY
+Rule 841   nocomma_tok -> FOR
+Rule 842   nocomma_tok -> FROM
+Rule 843   nocomma_tok -> GE
+Rule 844   nocomma_tok -> GLOBAL
+Rule 845   nocomma_tok -> GT
+Rule 846   nocomma_tok -> IF
+Rule 847   nocomma_tok -> IMPORT
+Rule 848   nocomma_tok -> IN
+Rule 849   nocomma_tok -> INDENT
+Rule 850   nocomma_tok -> IOREDIRECT
+Rule 851   nocomma_tok -> IS
+Rule 852   nocomma_tok -> LAMBDA
+Rule 853   nocomma_tok -> LE
+Rule 854   nocomma_tok -> LSHIFT
+Rule 855   nocomma_tok -> LSHIFTEQUAL
+Rule 856   nocomma_tok -> LT
+Rule 857   nocomma_tok -> MINUS
+Rule 858   nocomma_tok -> MINUSEQUAL
+Rule 859   nocomma_tok -> MOD
+Rule 860   nocomma_tok -> MODEQUAL
+Rule 861   nocomma_tok -> NAME
+Rule 862   nocomma_tok -> NE
+Rule 863   nocomma_tok -> NEWLINE
+Rule 864   nocomma_tok -> NONE
+Rule 865   nocomma_tok -> NONLOCAL
+Rule 866   nocomma_tok -> NOT
+Rule 867   nocomma_tok -> NUMBER
+Rule 868   nocomma_tok -> OR
+Rule 869   nocomma_tok -> PASS
+Rule 870   nocomma_tok -> PERIOD
+Rule 871   nocomma_tok -> PIPE
+Rule 872   nocomma_tok -> PIPEEQUAL
+Rule 873   nocomma_tok -> PLUS
+Rule 874   nocomma_tok -> PLUSEQUAL
+Rule 875   nocomma_tok -> POW
+Rule 876   nocomma_tok -> POWEQUAL
+Rule 877   nocomma_tok -> QUESTION
+Rule 878   nocomma_tok -> RAISE
+Rule 879   nocomma_tok -> RARROW
+Rule 880   nocomma_tok -> RETURN
+Rule 881   nocomma_tok -> RSHIFT
+Rule 882   nocomma_tok -> RSHIFTEQUAL
+Rule 883   nocomma_tok -> SEARCHPATH
+Rule 884   nocomma_tok -> SEMI
+Rule 885   nocomma_tok -> STRING
+Rule 886   nocomma_tok -> TILDE
+Rule 887   nocomma_tok -> TIMES
+Rule 888   nocomma_tok -> TIMESEQUAL
+Rule 889   nocomma_tok -> TRUE
+Rule 890   nocomma_tok -> TRY
+Rule 891   nocomma_tok -> WHILE
+Rule 892   nocomma_tok -> WITH
+Rule 893   nocomma_tok -> WS
+Rule 894   nocomma_tok -> XOR
+Rule 895   nocomma_tok -> XOREQUAL
+Rule 896   nocomma_tok -> YIELD
+Rule 897   any_raw_tok -> nocomma
+Rule 898   any_raw_tok -> COMMA
+Rule 899   any_raw_toks -> any_raw_tok
+Rule 900   any_raw_toks -> any_raw_toks any_raw_tok
+Rule 901   nocomma_part -> nocomma_tok
+Rule 902   any_nested_raw -> LPAREN any_raw_toks_opt RPAREN
+Rule 903   any_nested_raw -> LBRACE any_raw_toks_opt RBRACE
+Rule 904   any_nested_raw -> LBRACKET any_raw_toks_opt RBRACKET
+Rule 905   any_nested_raw -> AT_LPAREN any_raw_toks_opt RPAREN
+Rule 906   any_nested_raw -> BANG_LPAREN any_raw_toks_opt RPAREN
+Rule 907   any_nested_raw -> BANG_LBRACKET any_raw_toks_opt RBRACKET
+Rule 908   any_nested_raw -> DOLLAR_LPAREN any_raw_toks_opt RPAREN
+Rule 909   any_nested_raw -> DOLLAR_LBRACE any_raw_toks_opt RBRACE
+Rule 910   any_nested_raw -> DOLLAR_LBRACKET any_raw_toks_opt RBRACKET
+Rule 911   any_nested_raw -> ATDOLLAR_LPAREN any_raw_toks_opt RPAREN
+Rule 912   nocomma_part -> any_nested_raw
+Rule 913   nocomma -> nocomma_part
+Rule 914   nocomma -> nocomma nocomma_part
+Rule 915   comma_nocomma -> comma_tok nocomma
+Rule 916   macroarglist -> nocomma
+Rule 917   macroarglist -> nocomma comma_nocomma_list
+Rule 918   subscriptlist -> subscript comma_subscript_list_opt comma_opt
+Rule 919   comma_subscript -> COMMA subscript
+Rule 920   subscript -> test
+Rule 921   subscript -> test_opt colon_tok test_opt sliceop_opt
+Rule 922   sliceop -> COLON test_opt
+Rule 923   expr_or_star_expr -> expr
+Rule 924   expr_or_star_expr -> star_expr
+Rule 925   comma_expr_or_star_expr -> COMMA expr_or_star_expr
+Rule 926   exprlist -> expr_or_star_expr comma_opt
+Rule 927   exprlist -> expr_or_star_expr comma_expr_or_star_expr_list comma_opt
+Rule 928   testlist -> test
+Rule 929   testlist -> test COMMA
+Rule 930   testlist -> test comma_test_list COMMA
+Rule 931   testlist -> test comma_test_list
+Rule 932   comma_item -> COMMA item
+Rule 933   dictorsetmaker -> test COLON test comma_item_list comma_opt
+Rule 934   dictorsetmaker -> item comma_item_list comma_opt
+Rule 935   dictorsetmaker -> test COLON testlist
+Rule 936   dictorsetmaker -> test_or_star_expr comma_test_or_star_expr_list comma_opt
+Rule 937   dictorsetmaker -> test_or_star_expr comma_opt
+Rule 938   dictorsetmaker -> testlist
+Rule 939   dictorsetmaker -> item comp_for
+Rule 940   dictorsetmaker -> test_or_star_expr comp_for
+Rule 941   classdef -> class_tok NAME func_call_opt COLON suite
+Rule 942   comma_argument -> COMMA argument
+Rule 943   comp_iter -> comp_for
+Rule 944   comp_iter -> comp_if
+Rule 945   comp_for -> FOR exprlist IN or_test comp_iter_opt
+Rule 946   comp_if -> IF test_nocond comp_iter_opt
+Rule 947   yield_expr -> yield_tok yield_arg_opt
+Rule 948   yield_arg -> FROM test
+Rule 949   yield_arg -> testlist
+Rule 950   pipe -> PIPE
+Rule 951   pipe -> WS PIPE
+Rule 952   pipe -> PIPE WS
+Rule 953   pipe -> WS PIPE WS
+Rule 954   amper -> AMPERSAND
+Rule 955   amper -> WS AMPERSAND
+Rule 956   amper -> AMPERSAND WS
+Rule 957   amper -> WS AMPERSAND WS
+Rule 958   subproc -> subproc_atoms
+Rule 959   subproc -> subproc_atoms WS
+Rule 960   subproc -> subproc amper
+Rule 961   subproc -> subproc pipe subproc_atoms
+Rule 962   subproc -> subproc pipe subproc_atoms WS
+Rule 963   subproc_atoms -> subproc_atom
+Rule 964   subproc_atoms -> subproc_atoms WS subproc_atom
+Rule 965   subproc_atoms -> lparen_tok any_raw_tok rparen_tok
+Rule 966   subproc_atoms -> lparen_tok any_raw_toks rparen_tok
+Rule 967   subproc_atoms -> envvar_assign subproc_atoms
+Rule 968   subproc_atoms -> envvar_assign subproc_atoms WS
+Rule 969   subproc_atom -> dollar_lbracket_tok subproc RBRACKET
+Rule 970   subproc_atom -> dollar_lbracket_tok subproc bang_tok RBRACKET
+Rule 971   subproc_atom -> dollar_lbracket_tok subproc bang_tok nocloser rbracket_tok
+Rule 972   subproc_atom -> dollar_lparen_tok subproc RPAREN
+Rule 973   subproc_atom -> dollar_lparen_tok subproc bang_tok RPAREN
+Rule 974   subproc_atom -> dollar_lparen_tok subproc bang_tok nocloser rparen_tok
+Rule 975   subproc_atom -> dollar_lbrace_tok test RBRACE
+Rule 976   subproc_atom -> at_lparen_tok testlist_comp RPAREN
+Rule 977   subproc_arg_part -> at_lparen_tok testlist_comp RPAREN
+Rule 978   subproc_atom -> atdollar_lparen_tok subproc RPAREN
+Rule 979   subproc_arg_part -> atdollar_lparen_tok subproc RPAREN
+Rule 980   subproc_atom -> atdollar_lparen_tok subproc bang_tok RPAREN
+Rule 981   subproc_arg_part -> atdollar_lparen_tok subproc bang_tok RPAREN
+Rule 982   subproc_atom -> atdollar_lparen_tok subproc bang_tok nocloser rparen_tok
+Rule 983   subproc_arg_part -> atdollar_lparen_tok subproc bang_tok nocloser rparen_tok
+Rule 984   subproc_atom -> GT
+Rule 985   subproc_atom -> LT
+Rule 986   subproc_atom -> RSHIFT
+Rule 987   subproc_atom -> IOREDIRECT
+Rule 988   subproc_atom -> SEARCHPATH
+Rule 989   subproc_atom -> string_literal
+Rule 990   subproc_atom -> subproc_arg
+Rule 991   subproc_arg -> subproc_arg_part
+Rule 992   subproc_arg -> subproc_arg subproc_arg_part
+Rule 993   subproc_arg_part -> ampersandequal_tok
+Rule 994   subproc_arg_part -> as_tok
+Rule 995   subproc_arg_part -> assert_tok
+Rule 996   subproc_arg_part -> async_tok
+Rule 997   subproc_arg_part -> at_tok
+Rule 998   subproc_arg_part -> atdollar_tok
+Rule 999   subproc_arg_part -> atequal_tok
+Rule 1000  subproc_arg_part -> await_tok
+Rule 1001  subproc_arg_part -> break_tok
+Rule 1002  subproc_arg_part -> class_tok
+Rule 1003  subproc_arg_part -> colon_tok
+Rule 1004  subproc_arg_part -> colonequal_tok
+Rule 1005  subproc_arg_part -> comma_tok
+Rule 1006  subproc_arg_part -> continue_tok
+Rule 1007  subproc_arg_part -> def_tok
+Rule 1008  subproc_arg_part -> del_tok
+Rule 1009  subproc_arg_part -> divequal_tok
+Rule 1010  subproc_arg_part -> divide_tok
+Rule 1011  subproc_arg_part -> dollar_name_tok
+Rule 1012  subproc_arg_part -> double_question_tok
+Rule 1013  subproc_arg_part -> doublediv_tok
+Rule 1014  subproc_arg_part -> doubledivequal_tok
+Rule 1015  subproc_arg_part -> elif_tok
+Rule 1016  subproc_arg_part -> ellipsis_tok
+Rule 1017  subproc_arg_part -> else_tok
+Rule 1018  subproc_arg_part -> eq_tok
+Rule 1019  subproc_arg_part -> equals_tok
+Rule 1020  subproc_arg_part -> errortoken_tok
+Rule 1021  subproc_arg_part -> except_tok
+Rule 1022  subproc_arg_part -> false_tok
+Rule 1023  subproc_arg_part -> finally_tok
+Rule 1024  subproc_arg_part -> for_tok
+Rule 1025  subproc_arg_part -> from_tok
+Rule 1026  subproc_arg_part -> ge_tok
+Rule 1027  subproc_arg_part -> global_tok
+Rule 1028  subproc_arg_part -> if_tok
+Rule 1029  subproc_arg_part -> import_tok
+Rule 1030  subproc_arg_part -> in_tok
+Rule 1031  subproc_arg_part -> is_tok
+Rule 1032  subproc_arg_part -> lambda_tok
+Rule 1033  subproc_arg_part -> le_tok
+Rule 1034  subproc_arg_part -> lshiftequal_tok
+Rule 1035  subproc_arg_part -> minus_tok
+Rule 1036  subproc_arg_part -> minusequal_tok
+Rule 1037  subproc_arg_part -> mod_tok
+Rule 1038  subproc_arg_part -> modequal_tok
+Rule 1039  subproc_arg_part -> name_tok
+Rule 1040  subproc_arg_part -> ne_tok
+Rule 1041  subproc_arg_part -> newline_tok
+Rule 1042  subproc_arg_part -> none_tok
+Rule 1043  subproc_arg_part -> nonlocal_tok
+Rule 1044  subproc_arg_part -> number_tok
+Rule 1045  subproc_arg_part -> pass_tok
+Rule 1046  subproc_arg_part -> period_tok
+Rule 1047  subproc_arg_part -> pipeequal_tok
+Rule 1048  subproc_arg_part -> plus_tok
+Rule 1049  subproc_arg_part -> plusequal_tok
+Rule 1050  subproc_arg_part -> pow_tok
+Rule 1051  subproc_arg_part -> powequal_tok
+Rule 1052  subproc_arg_part -> question_tok
+Rule 1053  subproc_arg_part -> raise_tok
+Rule 1054  subproc_arg_part -> rarrow_tok
+Rule 1055  subproc_arg_part -> return_tok
+Rule 1056  subproc_arg_part -> rshiftequal_tok
+Rule 1057  subproc_arg_part -> semi_tok
+Rule 1058  subproc_arg_part -> string_tok
+Rule 1059  subproc_arg_part -> tilde_tok
+Rule 1060  subproc_arg_part -> times_tok
+Rule 1061  subproc_arg_part -> timesequal_tok
+Rule 1062  subproc_arg_part -> true_tok
+Rule 1063  subproc_arg_part -> try_tok
+Rule 1064  subproc_arg_part -> while_tok
+Rule 1065  subproc_arg_part -> with_tok
+Rule 1066  subproc_arg_part -> xor_tok
+Rule 1067  subproc_arg_part -> xorequal_tok
+Rule 1068  subproc_arg_part -> yield_tok
+Rule 1069  envvar_assign_left -> dollar_name_tok EQUALS
+Rule 1070  envvar_assign -> envvar_assign_left test WS
+Rule 1071  envvar_assign -> envvar_assign_left subproc_atom WS
+Rule 1072  test_comma_list -> test comma_test_list
+Rule 1073  test_comma_list -> test comma_test_list COMMA
+Rule 1074  empty -> <empty>
+
+Terminals, with rules where they appear
+
+AMPERSAND            : 149 416 525 697 807 954 955 956 957
+AMPERSANDEQUAL       : 150 330 417 526 698 808
+AND                  : 418 527 627 699 809
+AS                   : 151 365 406 419 528 700 810
+ASSERT               : 152 420 529 701 811
+ASYNC                : 421 530 702 812
+AT                   : 154 422 531 703 813
+ATDOLLAR             : 156 423 532 704 814
+ATDOLLAR_LPAREN      : 155 424 911
+ATEQUAL              : 157 327 425 533 705 815
+AT_LPAREN            : 153 426 905
+AWAIT                : 427 534 706 816
+BANG                 : 160 404 405 428 535 707 817
+BANG_LBRACKET        : 158 429 907
+BANG_LPAREN          : 159 430 906
+BREAK                : 161 347 431 536 708 818
+CLASS                : 162 432 537 709 819
+COLON                : 163 264 277 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 414 433 538 622 623 710 820 922 933 935 941
+COLONEQUAL           : 434 539 711 821
+COMMA                : 164 275 276 279 280 281 288 289 291 292 293 316 317 321 367 370 376 379 409 435 540 712 898 919 925 929 930 932 942 1073
+CONTINUE             : 165 348 436 541 713 822
+DEDENT               : 166 413 519 522 542 714 823
+DEF                  : 167 437 543 715 824
+DEL                  : 168 438 544 716 825
+DIVEQUAL             : 169 328 439 545 717 826
+DIVIDE               : 170 440 546 718 827
+DOLLAR_LBRACE        : 171 441 909
+DOLLAR_LBRACKET      : 172 442 910
+DOLLAR_LPAREN        : 173 443 908
+DOLLAR_NAME          : 174 444 547 683 719 828
+DOUBLEDIV            : 176 445 548 720 829
+DOUBLEDIVEQUAL       : 177 336 446 549 721 830
+DOUBLE_QUESTION      : 175 447 550 722 805 831
+ELIF                 : 178 389 448 551 723 832
+ELLIPSIS             : 179 364 449 552 724 833
+ELSE                 : 180 390 450 553 619 725 834
+EQ                   : 181 451 554 634 726 835
+EQUALS               : 182 266 339 452 555 727 836 1069
+ERRORTOKEN           : 183 453 556 728 837
+EXCEPT               : 184 454 557 729 838
+FALSE                : 185 455 558 730 839
+FINALLY              : 186 398 456 559 731 840
+FOR                  : 187 457 560 732 841 945
+FROM                 : 188 353 458 561 733 842 948
+GE                   : 189 459 562 635 734 843
+GLOBAL               : 190 460 563 735 844
+GT                   : 461 564 633 736 845 984
+IF                   : 191 462 565 619 737 846 946
+IMPORT               : 192 362 463 566 738 847
+IN                   : 193 395 396 464 567 638 640 739 848 945
+INDENT               : 194 413 465 519 568 740 849
+IOREDIRECT           : 466 569 741 850 987
+IS                   : 195 467 570 639 641 742 851
+LAMBDA               : 196 468 571 623 743 852
+LBRACE               : 197 469 903
+LBRACKET             : 198 470 803 904
+LE                   : 199 471 572 636 744 853
+LPAREN               : 200 254 265 361 472 797 902
+LSHIFT               : 201 473 573 745 854
+LSHIFTEQUAL          : 202 333 474 574 746 855
+LT                   : 475 575 632 747 856 985
+MINUS                : 203 476 576 748 857
+MINUSEQUAL           : 204 325 477 577 749 858
+MOD                  : 205 478 578 750 859
+MODEQUAL             : 206 329 479 579 751 860
+NAME                 : 207 255 264 365 366 373 374 375 376 377 378 480 580 752 804 861 941
+NE                   : 208 481 581 637 753 862
+NEWLINE              : 209 245 249 251 252 258 259 301 302 413 414 482 754 863
+NONE                 : 210 483 582 755 864
+NONLOCAL             : 211 484 583 756 865
+NOT                  : 485 584 628 640 641 757 866
+NUMBER               : 212 486 585 758 867
+OR                   : 487 586 625 759 868
+PASS                 : 213 341 488 587 760 869
+PERIOD               : 214 255 363 373 489 588 761 804 870
+PIPE                 : 215 490 589 762 871 950 951 952 953
+PIPEEQUAL            : 216 331 491 590 763 872
+PLUS                 : 217 492 591 764 873
+PLUSEQUAL            : 218 324 493 592 765 874
+POW                  : 219 267 273 275 276 281 282 286 288 289 293 494 593 668 766 875
+POWEQUAL             : 220 335 495 594 767 876
+QUESTION             : 221 496 595 768 806 877
+RAISE                : 222 497 596 769 878
+RARROW               : 223 263 498 597 770 879
+RBRACE               : 499 674 684 903 909 975
+RBRACKET             : 224 500 673 687 688 691 692 803 904 907 910 969 970
+RETURN               : 225 501 598 771 880
+RPAREN               : 226 254 265 368 502 672 685 686 689 690 797 902 905 906 908 911 972 973 976 977 978 979 980 981
+RSHIFT               : 227 503 599 772 881 986
+RSHIFTEQUAL          : 228 334 504 600 773 882
+SEARCHPATH           : 505 601 682 774 883 988
+SEMI                 : 229 298 300 506 602 775 884
+STRING               : 230 507 603 776 885
+TILDE                : 231 508 604 777 886
+TIMES                : 232 268 269 270 271 274 275 276 283 284 287 288 289 359 509 605 778 887
+TIMESEQUAL           : 233 326 510 606 779 888
+TRUE                 : 234 511 607 780 889
+TRY                  : 235 512 608 781 890
+WHILE                : 236 393 394 513 609 782 891
+WITH                 : 237 514 610 783 892
+WS                   : 515 611 784 800 802 893 951 952 953 953 955 956 957 957 959 962 964 968 1070 1071
+XOR                  : 238 516 612 785 894
+XOREQUAL             : 239 332 517 613 786 895
+YIELD                : 240 518 614 787 896
+error                : 
+
+Nonterminals, with rules where they appear
+
+amper                : 960
+ampersand_shift_expr : 87 88
+ampersand_shift_expr_list : 2 88
+ampersand_shift_expr_list_opt : 648
+ampersand_tok        : 649
+ampersandequal_tok   : 993
+and_expr             : 646 647
+and_not_test         : 89 90
+and_not_test_list    : 4 90
+and_not_test_list_opt : 626
+and_test             : 624 625
+any_dedent_tok       : 523 524
+any_dedent_toks      : 519 524
+any_nested_raw       : 615 788 912
+any_raw_tok          : 899 900 965
+any_raw_toks         : 6 900 966
+any_raw_toks_opt     : 902 903 904 905 906 907 908 909 910 911
+arglist              : 8
+arglist_opt          : 254 797
+argument             : 942
+arith_expr           : 650 651 652
+as_expr              : 408
+as_name              : 10
+as_name_opt          : 366 369 411
+as_tok               : 994
+assert_stmt          : 310
+assert_tok           : 380 995
+async_tok            : 996
+at_lparen_tok        : 976 977
+at_tok               : 258 259 659 997
+atdollar_lparen_tok  : 978 979 980 981 982 983
+atdollar_tok         : 998
+atequal_tok          : 999
+atom                 : 671
+atom_expr            : 667 668
+attr_name            : 258 259
+attr_period_name     : 91 92
+attr_period_name_list : 92 257
+augassign            : 313
+await_tok            : 1000
+bang_lbracket_tok    : 687 691 695
+bang_lparen_tok      : 685 689 693 798 799 800 801 802
+bang_tok             : 689 690 691 692 693 694 695 696 970 971 973 974 980 981 982 983
+break_stmt           : 342
+break_tok            : 1001
+class_tok            : 941 1002
+classdef             : 387
+classdef_or_funcdef  : 262
+colon_test           : 12
+colon_test_opt       : 278
+colon_tok            : 415 921 1003
+colonequal_tok       : 1004
+comma_argument       : 93 94
+comma_argument_list  : 94
+comma_dotted_as_name : 95 96
+comma_dotted_as_name_list : 14 96
+comma_dotted_as_name_list_opt : 372
+comma_expr_or_star_expr : 97 98
+comma_expr_or_star_expr_list : 98 927
+comma_import_as_name : 99 100
+comma_import_as_name_list : 16 100
+comma_import_as_name_list_opt : 371
+comma_item           : 101 102
+comma_item_list      : 102 933 934
+comma_name           : 103 104
+comma_name_list      : 18 104
+comma_name_list_opt  : 377 378
+comma_nocomma        : 105 106
+comma_nocomma_list   : 106 917
+comma_opt            : 272 273 274 275 276 285 286 287 288 289 315 322 323 368 795 796 918 926 927 933 934 936 937
+comma_pow_tfpdef     : 20 269
+comma_pow_tfpdef_opt : 268 270 271
+comma_pow_vfpdef     : 22
+comma_pow_vfpdef_opt : 283 284
+comma_subscript      : 107 108
+comma_subscript_list : 24 108
+comma_subscript_list_opt : 918
+comma_test           : 26 109 110
+comma_test_list      : 110 314 930 931 1072 1073
+comma_test_opt       : 380
+comma_test_or_star_expr : 111 112
+comma_test_or_star_expr_list : 112 322 796 936
+comma_tfpdef         : 113 114
+comma_tfpdef_list    : 28 114 270 271 276
+comma_tfpdef_list_opt : 272 273 274 274 275 276
+comma_tok            : 799 800 801 802 915 1005
+comma_vfpdef         : 115 116
+comma_vfpdef_list    : 30 116 284 289
+comma_vfpdef_list_opt : 285 286 287 287 288 289
+comma_with_item      : 117 118
+comma_with_item_list : 118 403 405
+comp_for             : 794 939 940 943
+comp_if              : 944
+comp_iter            : 32
+comp_iter_opt        : 945 946
+comp_op              : 631
+comp_op_expr         : 119 120
+comp_op_expr_list    : 34 120
+comp_op_expr_list_opt : 630
+comparison           : 629
+compound_stmt        : 245 295
+continue_stmt        : 343
+continue_tok         : 1006
+decorated            : 388
+decorator            : 260 261
+decorators           : 261 262
+dedent_tok           : 414
+def_tok              : 264 1007
+del_stmt             : 304
+del_tok              : 340 1008
+dictorsetmaker       : 36
+dictorsetmaker_opt   : 674
+divequal_tok         : 1009
+divide_tok           : 660 1010
+dollar_lbrace_tok    : 684 975
+dollar_lbracket_tok  : 688 692 696 969 970 971
+dollar_lparen_tok    : 686 690 694 972 973 974
+dollar_name_tok      : 1011 1069
+dotted_as_name       : 370 372
+dotted_as_names      : 356
+dotted_name          : 358 369
+double_question_tok  : 1012
+doublediv_tok        : 662 1013
+doubledivequal_tok   : 1014
+elif_part            : 121 122
+elif_part_list       : 38 122
+elif_part_list_opt   : 391 392
+elif_tok             : 1015
+ellipsis_tok         : 678 1016
+else_part            : 392 394 396 401
+else_tok             : 1017
+empty                : 1 3 5 7 9 11 13 15 17 19 21 23 25 27 29 31 33 35 37 39 41 43 45 47 49 51 53 55 57 59 61 63 65 67 69 71 73 75 77 79 81 83 85 244 299 318
+envvar_assign        : 967 968
+envvar_assign_left   : 1070 1071
+eq_tok               : 1018
+equals_test          : 40
+equals_test_opt      : 272 273 274 275 276 280 285 286 287 288 289 292
+equals_tok           : 1019
+equals_yield_expr_or_testlist : 123 124 314 315
+equals_yield_expr_or_testlist_list : 42 124
+equals_yield_expr_or_testlist_list_opt : 311 312
+errortoken_tok       : 1020
+eval_input           : 243
+except_clause        : 397
+except_part          : 125 126
+except_part_list     : 126 400 401
+except_tok           : 410 411 1021
+expr                 : 406 630 631 642 923
+expr_or_star_expr    : 925 926 927
+expr_stmt            : 303
+exprlist             : 340 395 396 945
+factor               : 657 658 659 660 661 662 664 665 666 668
+false_tok            : 681 1022
+file_input           : 242
+file_stmts           : 246 248
+finally_part         : 44 399
+finally_part_opt     : 400 401
+finally_tok          : 1023
+flow_stmt            : 306
+for_stmt             : 383
+for_tok              : 395 396 1024
+from_tok             : 357 358 1025
+func_call            : 46 259
+func_call_opt        : 941
+funcdef              : 386
+ge_tok               : 1026
+global_stmt          : 308
+global_tok           : 377 1027
+if_stmt              : 381
+if_tok               : 391 392 1028
+import_as_name       : 367 371
+import_as_names      : 360 361
+import_from          : 355
+import_from_post     : 362
+import_from_pre      : 362
+import_name          : 354
+import_stmt          : 307
+import_tok           : 356 1029
+in_tok               : 1030
+indent_tok           : 414
+is_tok               : 1031
+item                 : 932 934 939
+lambda_tok           : 622 1032
+lambdef              : 618
+lambdef_nocond       : 621
+lbrace_tok           : 674
+lbracket_tok         : 673
+le_tok               : 1033
+lparen_tok           : 672 965 966
+lshift_tok           : 651
+lshiftequal_tok      : 1034
+macroarglist         : 48 801 802
+macroarglist_opt     : 798
+minus_tok            : 656 665 1035
+minusequal_tok       : 1036
+mod_tok              : 661 1037
+modequal_tok         : 1038
+name_tok             : 256 257 278 290 677 1039
+ne_tok               : 1040
+newline_or_stmt      : 247 248
+newline_tok          : 415 1041
+newlines             : 50 252
+newlines_opt         : 253
+nocloser             : 693 694 695 696 789 789 971 974 982 983
+nocomma              : 799 800 897 914 915 916 917
+nocomma_part         : 913 914
+nocomma_tok          : 901
+nodedent             : 414 520 520 521
+none_tok             : 679 1042
+nonewline            : 415 616 616
+nonlocal_stmt        : 309
+nonlocal_tok         : 378 1043
+not_test             : 626 627 628
+number               : 675
+number_tok           : 793 1044
+op_factor            : 127 128
+op_factor_list       : 52 128
+op_factor_list_opt   : 657
+or_and_test          : 129 130
+or_and_test_list     : 54 130
+or_and_test_list_opt : 624
+or_test              : 617 619 619 620 945
+parameters           : 264
+pass_stmt            : 305
+pass_tok             : 1045
+period_name          : 131 132
+period_name_list     : 132 375
+period_or_ellipsis   : 133 134
+period_or_ellipsis_list : 56 134 357
+period_or_ellipsis_list_opt : 358
+period_tok           : 1046
+pipe                 : 961 962
+pipe_tok             : 645
+pipe_xor_expr        : 135 136
+pipe_xor_expr_list   : 136 644
+pipeequal_tok        : 1047
+plus_tok             : 655 664 1048
+plusequal_tok        : 1049
+pm_term              : 137 138
+pm_term_list         : 138 654
+pow_tok              : 1050
+powequal_tok         : 1051
+power                : 663
+question_tok         : 1052
+raise_stmt           : 345
+raise_tok            : 351 352 353 1053
+rarrow_test          : 58
+rarrow_test_opt      : 264
+rarrow_tok           : 1054
+rawsuite             : 404 405
+rbracket_tok         : 695 696 971
+return_stmt          : 344
+return_tok           : 349 1055
+rparen_tok           : 693 694 798 799 800 801 802 965 966 974 982 983
+rshift_tok           : 652
+rshiftequal_tok      : 1056
+semi_opt             : 301 302
+semi_small_stmt      : 139 140
+semi_small_stmt_list : 140 302
+semi_tok             : 1057
+shift_arith_expr     : 141 142
+shift_arith_expr_list : 60 142
+shift_arith_expr_list_opt : 650
+shift_expr           : 648 649
+simple_stmt          : 294 412
+single_input         : 241
+sliceop              : 62
+sliceop_opt          : 921
+small_stmt           : 300 301 302
+star_expr            : 314 315 320 924
+start_symbols        : 0
+stmt                 : 250 296 297
+stmt_list            : 297 413
+string_literal       : 791 792 989
+string_literal_list  : 676 792
+string_tok           : 790 1058
+subproc              : 685 686 687 688 689 690 691 692 693 694 695 696 960 961 962 969 970 971 972 973 974 978 979 980 981 982 983
+subproc_arg          : 990 992
+subproc_arg_part     : 991 992
+subproc_atom         : 963 964 1071
+subproc_atoms        : 958 959 961 962 964 967 968
+subscript            : 918 919
+subscriptlist        : 803
+suite                : 264 389 390 391 392 393 394 395 396 397 398 399 400 401 402 403 941
+term                 : 653 654 655 656
+test                 : 66 263 266 277 316 319 352 353 353 379 380 389 391 392 393 394 407 408 411 619 622 684 920 928 929 930 931 933 933 935 948 975 1070 1072 1073
+test_comma           : 143 144
+test_comma_list      : 64 144
+test_comma_list_opt  : 314 315 315
+test_nocond          : 623 946
+test_opt             : 921 921 922
+test_or_star_expr    : 321 322 323 794 795 796 936 937 940
+testlist             : 70 253 312 338 395 396 935 938 949
+testlist_comp        : 68 670 976 977
+testlist_comp_opt    : 673
+testlist_opt         : 349
+testlist_star_expr   : 311 313
+tfpdef               : 72 267 268 270 272 273 273 274 275 276 276 280 281
+tfpdef_opt           : 274 275 276
+tilde_tok            : 666 1059
+times_tok            : 642 658 1060
+timesequal_tok       : 1061
+trailer              : 145 146
+trailer_list         : 74 146
+trailer_list_opt     : 671
+true_tok             : 680 1062
+try_stmt             : 384
+try_tok              : 399 400 401 1063
+typedargslist        : 76
+typedargslist_opt    : 265
+varargslist          : 78
+varargslist_opt      : 622 623
+vfpdef               : 80 275 282 285 286 286 287 288 288 289 289 292 293
+vfpdef_opt           : 283 284 287 288 289
+while_stmt           : 382
+while_tok            : 1064
+with_item            : 402 403 404 405 409
+with_stmt            : 385
+with_tok             : 402 403 404 405 1065
+xor_and_expr         : 147 148
+xor_and_expr_list    : 82 148
+xor_and_expr_list_opt : 646
+xor_expr             : 643 644 645
+xor_tok              : 647 1066
+xorequal_tok         : 1067
+yield_arg            : 84
+yield_arg_opt        : 947
+yield_expr           : 337 350 669
+yield_expr_or_testlist : 313 339
+yield_expr_or_testlist_comp : 86
+yield_expr_or_testlist_comp_opt : 672
+yield_stmt           : 346
+yield_tok            : 947 1068
+

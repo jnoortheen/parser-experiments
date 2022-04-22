@@ -1,0 +1,6 @@
+[python]
+path = "/Users/noor/.pyenv/shims/python3"
+use_venv = true
+
+[install]
+cache = false

@@ -1,5 +1,4 @@
 import errno
-import hashlib
 import json
 import os
 import sys
@@ -98,20 +97,6 @@ class ParserGenerator(object):
         self.error_handler = func
         return func
 
-    def compute_grammar_hash(self, g):
-        hasher = hashlib.sha1()
-        hasher.update(g.start.encode())
-        hasher.update(json.dumps(sorted(g.terminals)).encode())
-        for term, (assoc, level) in sorted(iteritems(g.precedence)):
-            hasher.update(term.encode())
-            hasher.update(assoc.encode())
-            hasher.update(bytes(level))
-        for p in g.productions:
-            hasher.update(p.name.encode())
-            hasher.update(json.dumps(p.prec).encode())
-            hasher.update(json.dumps(p.prod).encode())
-        return hasher.hexdigest()
-
     def serialize_table(self, table):
         return {
             "lr_action": table.lr_action,
@@ -180,8 +165,7 @@ class ParserGenerator(object):
             cache_dir = "/Users/noor/Library/Caches/rply"
             cache_file = os.path.join(
                 cache_dir,
-                "%s-%s-%s.json"
-                % (self.cache_id, self.VERSION, self.compute_grammar_hash(g)),
+                "%s-%s.json" % (self.cache_id, self.VERSION),
             )
 
             if os.path.exists(cache_file):

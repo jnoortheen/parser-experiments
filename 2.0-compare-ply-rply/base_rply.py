@@ -19,7 +19,8 @@ lg.ignore(r"\s+")
 pg = ParserGenerator(
     ["NUMBER", "PLUS", "MINUS"],
     precedence=[("left", ["PLUS", "MINUS"])],
-    cache_id="myparser",
+    # with the removal of cahing, we explicitly pass the parser version
+    cache_id="base-calc-v1",
 )
 
 

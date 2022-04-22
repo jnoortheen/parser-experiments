@@ -1,0 +1,46 @@
+-18
+parser size in bytes: <ply.yacc.LRParser object at 0x102e66380> size=16624 flat=48
+    __dict__ size=16576 flat=144
+    __class__ size=0 flat=0
+Top 10 lines. key_type='lineno'
+#1: <frozen importlib._bootstrap_external>:672: 2574.1 KiB
+#2: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:106: 119.4 KiB
+    cls = super().__new__(mcls, name, bases, namespace, **kwargs)
+#3: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:107: 27.4 KiB
+    _abc_init(cls)
+#4: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py:481: 27.1 KiB
+    result = type(typename, (tuple,), class_namespace)
+#5: <frozen importlib._bootstrap_external>:128: 25.0 KiB
+#6: <frozen importlib._bootstrap_external>:1607: 23.8 KiB
+#7: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/locale.py:872: 18.1 KiB
+    locale_alias = {
+#8: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:123: 15.1 KiB
+    return _abc_subclasscheck(cls, subclass)
+#9: <frozen importlib._bootstrap_external>:1582: 13.2 KiB
+#10: /Users/noor/src/py/parser-experiments/.venv/lib/python3.10/site-packages/pympler/asizeof.py:1678: 11.6 KiB
+    class _Rank(object):
+3830 other: 1635.9 KiB
+Total allocated size: 4490.7 KiB
+	Command being timed: "python -X tracemalloc=25 base_ply.py"
+	User time (seconds): 0.68
+	System time (seconds): 0.01
+	Percent of CPU this job got: 98%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.69
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 45840
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 7
+	Minor (reclaiming a frame) page faults: 3155
+	Voluntary context switches: 29
+	Involuntary context switches: 20
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

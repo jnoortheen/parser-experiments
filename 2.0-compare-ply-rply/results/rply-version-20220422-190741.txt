@@ -1,0 +1,43 @@
+<__main__.BoxInt object at 0x102a31270>
+Top 10 lines. key_type='lineno'
+#1: <frozen importlib._bootstrap_external>:672: 2325.9 KiB
+#2: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:106: 115.4 KiB
+    cls = super().__new__(mcls, name, bases, namespace, **kwargs)
+#3: /Users/noor/src/py/parser-experiments/2.0-compare-ply-rply/base_rply.py:53: 29.6 KiB
+    parser = pg.build()
+#4: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/collections/__init__.py:481: 28.9 KiB
+    result = type(typename, (tuple,), class_namespace)
+#5: <frozen importlib._bootstrap_external>:128: 26.8 KiB
+#6: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:107: 26.0 KiB
+    _abc_init(cls)
+#7: <frozen importlib._bootstrap_external>:1607: 22.6 KiB
+#8: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/locale.py:872: 18.1 KiB
+    locale_alias = {
+#9: /opt/homebrew/Cellar/python@3.10/3.10.2/Frameworks/Python.framework/Versions/3.10/lib/python3.10/abc.py:123: 15.3 KiB
+    return _abc_subclasscheck(cls, subclass)
+#10: <frozen importlib._bootstrap_external>:1582: 12.9 KiB
+3223 other: 1325.5 KiB
+Total allocated size: 3946.8 KiB
+	Command being timed: "python -X tracemalloc=25 base_rply.py"
+	User time (seconds): 0.63
+	System time (seconds): 0.00
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.64
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 42096
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 3032
+	Voluntary context switches: 0
+	Involuntary context switches: 13
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 0
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 16384
+	Exit status: 0

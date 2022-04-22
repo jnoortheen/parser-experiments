@@ -12,3 +12,10 @@ tasks:
     vars:
       TS:
         sh: date "+%Y%m%d-%H%M%S"
+  clean:
+    cmds:
+      - find rply -name "*.c" -delete
+      - find rply -name "*.so" -delete
+  build:
+    cmds:
+      - cythonize -i rply

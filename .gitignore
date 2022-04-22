@@ -47,3 +47,7 @@ Icon*
 .idea/
 .local/
 *.log
+
+# extensions
+*.c
+*.so

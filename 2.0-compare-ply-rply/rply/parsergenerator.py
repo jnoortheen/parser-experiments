@@ -1,9 +1,9 @@
 import errno
-import json
 import os
 import sys
 import tempfile
 import warnings
+import marshal
 
 
 from rply.errors import ParserGeneratorError, ParserGeneratorWarning
@@ -163,14 +163,15 @@ class ParserGenerator(object):
         table = None
         if self.cache_id is not None:
             cache_dir = "/Users/noor/Library/Caches/rply"
+            # chore: make sure to set marshal version in cache file
             cache_file = os.path.join(
                 cache_dir,
-                "%s-%s.json" % (self.cache_id, self.VERSION),
+                "%s-%s.marshal" % (self.cache_id, self.VERSION),
             )
 
             if os.path.exists(cache_file):
-                with open(cache_file) as f:
-                    data = json.load(f)
+                with open(cache_file, "rb") as f:
+                    data = marshal.load(f)
                 if self.data_is_valid(g, data):
                     table = LRTable.from_cache(g, data)
         if table is None:
@@ -204,8 +205,8 @@ class ParserGenerator(object):
                     return
                 raise
 
-        with tempfile.NamedTemporaryFile(dir=cache_dir, delete=False, mode="w") as f:
-            json.dump(self.serialize_table(table), f)
+        with tempfile.NamedTemporaryFile(dir=cache_dir, delete=False, mode="wb") as f:
+            marshal.dump(self.serialize_table(table), f)
         os.rename(f.name, cache_file)
 
 

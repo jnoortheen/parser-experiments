@@ -10,4 +10,4 @@ tasks:
       - python 2-ctx-parser.py | tee "results/ctx-parser-{{.TS}}.md"
     vars:
       TS:
-        sh: date "+%Y%m%d"
+        sh: date "+%Y%m%d-%H%M%S"

@@ -19,9 +19,7 @@ from typing import (
     overload,
 )
 
-from xonsh.lazyasd import lazyobject
 from xonsh.lexer import Lexer
-from xonsh.parsers.base import Location, raise_parse_error
 from ply import yacc
 from xonsh.tools import check_for_partial_string, get_line_continuation
 

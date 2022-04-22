@@ -1,0 +1,10 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - gtime -v python base_ply.py | tee "results/ply-version.txt"
+      - gtime -v python base_rply.py | tee "results/rply-version.txt"

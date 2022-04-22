@@ -1,15 +1,17 @@
 import errno
+import hashlib
+import json
 import os
 import sys
 import tempfile
 import warnings
-import marshal
 
+from appdirs import AppDirs
 
 from rply.errors import ParserGeneratorError, ParserGeneratorWarning
 from rply.grammar import Grammar
 from rply.parser import LRParser
-from rply.utils import Counter, IdentityDict, iteritems, itervalues
+from rply.utils import Counter, IdentityDict
 
 
 LARGE_VALUE = sys.maxsize
@@ -97,6 +99,20 @@ class ParserGenerator(object):
         self.error_handler = func
         return func
 
+    def compute_grammar_hash(self, g):
+        hasher = hashlib.sha1()
+        hasher.update(g.start.encode())
+        hasher.update(json.dumps(sorted(g.terminals)).encode())
+        for term, (assoc, level) in sorted(g.precedence.items()):
+            hasher.update(term.encode())
+            hasher.update(assoc.encode())
+            hasher.update(bytes(level))
+        for p in g.productions:
+            hasher.update(p.name.encode())
+            hasher.update(json.dumps(p.prec).encode())
+            hasher.update(json.dumps(p.prod).encode())
+        return hasher.hexdigest()
+
     def serialize_table(self, table):
         return {
             "lr_action": table.lr_action,
@@ -119,7 +135,7 @@ class ParserGenerator(object):
             return False
         if sorted(g.precedence) != sorted(data["precedence"]):
             return False
-        for key, (assoc, level) in iteritems(g.precedence):
+        for key, (assoc, level) in g.precedence.items():
             if data["precedence"][key] != [assoc, level]:
                 return False
         if len(g.productions) != len(data["productions"]):
@@ -162,16 +178,16 @@ class ParserGenerator(object):
 
         table = None
         if self.cache_id is not None:
-            cache_dir = "/Users/noor/Library/Caches/rply"
-            # chore: make sure to set marshal version in cache file
+            cache_dir = AppDirs("rply").user_cache_dir
             cache_file = os.path.join(
                 cache_dir,
-                "%s-%s.marshal" % (self.cache_id, self.VERSION),
+                "%s-%s-%s.json"
+                % (self.cache_id, self.VERSION, self.compute_grammar_hash(g)),
             )
 
             if os.path.exists(cache_file):
-                with open(cache_file, "rb") as f:
-                    data = marshal.load(f)
+                with open(cache_file) as f:
+                    data = json.load(f)
                 if self.data_is_valid(g, data):
                     table = LRTable.from_cache(g, data)
         if table is None:
@@ -205,8 +221,8 @@ class ParserGenerator(object):
                     return
                 raise
 
-        with tempfile.NamedTemporaryFile(dir=cache_dir, delete=False, mode="wb") as f:
-            marshal.dump(self.serialize_table(table), f)
+        with tempfile.NamedTemporaryFile(dir=cache_dir, delete=False, mode="w") as f:
+            json.dump(self.serialize_table(table), f)
         os.rename(f.name, cache_file)
 
 
@@ -264,11 +280,11 @@ class LRTable(object):
     @classmethod
     def from_cache(cls, grammar, data):
         lr_action = [
-            dict([(str(k), v) for k, v in iteritems(action)])
+            dict([(str(k), v) for k, v in action.items()])
             for action in data["lr_action"]
         ]
         lr_goto = [
-            dict([(str(k), v) for k, v in iteritems(goto)]) for goto in data["lr_goto"]
+            dict([(str(k), v) for k, v in goto.items()]) for goto in data["lr_goto"]
         ]
         return LRTable(
             grammar,
@@ -404,7 +420,7 @@ class LRTable(object):
 
         default_reductions = [0] * len(lr_action)
         for state, actions in enumerate(lr_action):
-            actions = set(itervalues(actions))
+            actions = set(actions.values())
             if len(actions) == 1 and next(iter(actions)) < 0:
                 default_reductions[state] = next(iter(actions))
         return LRTable(
@@ -624,8 +640,10 @@ class LRTable(object):
         return lookdict, includedict
 
     @classmethod
-    def add_lookaheads(cls, lookbacks, followset):
-        for trans, lb in iteritems(lookbacks):
+    def add_lookaheads(
+        cls, lookbacks: "dict[tuple[int, str], list[tuple[int, LRItem]]]", followset
+    ):
+        for trans, lb in lookbacks.items():
             for state, p in lb:
                 f = followset.get(trans, [])
                 laheads = p.lookaheads.setdefault(state, [])

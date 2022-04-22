@@ -1,20 +1,16 @@
-import sys
-
-if sys.version_info >= (3, 3):
-    from collections.abc import MutableMapping
-else:
-    from collections import MutableMapping
+from typing import Dict, List, Union, MutableMapping
+from rply.grammar import LRItem
 
 
-class IdentityDict(MutableMapping):
-    def __init__(self):
-        self._contents = {}
-        self._keepalive = []
+class IdentityDict(MutableMapping[int, int]):
+    def __init__(self) -> None:
+        self._contents: "dict[int, tuple[list, int, int]]" = {}
+        self._keepalive: "list[]" = []
 
-    def __getitem__(self, key):
+    def __getitem__(self, key: Union[LRItem, List[LRItem], str]) -> Union[int, Dict[LRItem, Dict[LRItem, Dict[str, List[LRItem]]]], Dict[str, List[LRItem]]]:
         return self._contents[id(key)][1]
 
-    def __setitem__(self, key, value):
+    def __setitem__(self, key: Union[LRItem, List[LRItem], str], value: int) -> None:
         idx = len(self._keepalive)
         self._keepalive.append(key)
         self._contents[id(key)] = key, value, idx
@@ -30,27 +26,13 @@ class IdentityDict(MutableMapping):
         return len(self._contents)
 
     def __iter__(self):
-        for key, _, _ in itervalues(self._contents):
+        for key, _, _ in self._contents.values():
             yield key
 
 
-class Counter(object):
-    def __init__(self):
+class Counter:
+    def __init__(self) -> None:
         self.value = 0
 
-    def incr(self):
+    def incr(self) -> None:
         self.value += 1
-
-
-if sys.version_info >= (3,):
-    def itervalues(d):
-        return d.values()
-
-    def iteritems(d):
-        return d.items()
-else:
-    def itervalues(d):
-        return d.itervalues()
-
-    def iteritems(d):
-        return d.iteritems()

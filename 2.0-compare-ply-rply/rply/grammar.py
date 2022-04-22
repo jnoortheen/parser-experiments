@@ -1,5 +1,4 @@
 from rply.errors import ParserGeneratorError
-from rply.utils import iteritems
 
 
 def rightmost_terminal(symbols, terminals):
@@ -39,9 +38,7 @@ class Grammar(object):
             try:
                 prod_prec = self.precedence[precedence]
             except KeyError:
-                raise ParserGeneratorError(
-                    "Precedence %r doesn't exist" % precedence
-                )
+                raise ParserGeneratorError("Precedence %r doesn't exist" % precedence)
 
         pnumber = len(self.productions)
         self.nonterminals.setdefault(prod_name, [])
@@ -59,14 +56,10 @@ class Grammar(object):
 
     def set_precedence(self, term, assoc, level):
         if term in self.precedence:
-            raise ParserGeneratorError(
-                "Precedence already specified for %s" % term
-            )
+            raise ParserGeneratorError("Precedence already specified for %s" % term)
         if assoc not in ["left", "right", "nonassoc"]:
             raise ParserGeneratorError(
-                "Precedence must be one of left, right, nonassoc; not %s" % (
-                    assoc
-                )
+                "Precedence must be one of left, right, nonassoc; not %s" % (assoc)
             )
         self.precedence[term] = (assoc, level)
 
@@ -77,14 +70,10 @@ class Grammar(object):
         self.start = start
 
     def unused_terminals(self):
-        return [
-            t
-            for t, prods in iteritems(self.terminals)
-            if not prods and t != "error"
-        ]
+        return [t for t, prods in self.terminals.items() if not prods and t != "error"]
 
     def unused_productions(self):
-        return [p for p, prods in iteritems(self.nonterminals) if not prods]
+        return [p for p, prods in self.nonterminals.items() if not prods]
 
     def build_lritems(self):
         """
@@ -164,7 +153,7 @@ class Grammar(object):
             for p in self.productions[1:]:
                 for i, B in enumerate(p.prod):
                     if B in self.nonterminals:
-                        fst = self._first(p.prod[i + 1:])
+                        fst = self._first(p.prod[i + 1 :])
                         has_empty = False
                         for f in fst:
                             if f != "<empty>" and f not in self.follow[B]:

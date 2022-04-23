@@ -17,7 +17,7 @@ requires-python = ">=3.9"
 license = {text = "MIT"}
 [project.optional-dependencies]
 test = [
-    "pytest>=7.1.1",
+    "pytest>=6",
 ]
 bench = [
     "pympler>=1.0.1",
@@ -27,6 +27,14 @@ bench = [
 type = [
     "monkeytype>=22.2.0",
     "pytest-monkeytype>=1.1.0",
+]
+dev = [
+    "pyupgrade>=2.32.0",
+    "isort>=5.10.1",
+    "black>=22.3.0",
+    "autoflake>=1.4",
+    "flake8>=4.0.1",
+    "flake8-bugbear>=22.3.23",
 ]
 
 [tool.pdm]

@@ -31,4 +31,4 @@ tasks:
 #      - dmypy run -- rply --strict
       - mypy rply --strict
     sources:
-      - rply
+      - rply/*.py

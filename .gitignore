@@ -53,3 +53,9 @@ Icon*
 *.so
 .dmypy.json
 *.sqlite3
+
+#output from taskfile
+.task
+
+#osx
+.DS_Store

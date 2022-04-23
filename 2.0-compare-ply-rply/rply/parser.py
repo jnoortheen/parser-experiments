@@ -1,12 +1,19 @@
+from typing import List, Union, TYPE_CHECKING
+
 from rply.errors import ParsingError
+from rply.lexer import LexerStream
+
+if TYPE_CHECKING:
+    from rply.parsergenerator import LRTable
+    from rply.token import Token, BaseBox
 
 
 class LRParser(object):
-    def __init__(self, lr_table, error_handler):
+    def __init__(self, lr_table: "LRTable", error_handler: None) -> None:
         self.lr_table = lr_table
         self.error_handler = error_handler
 
-    def parse(self, tokenizer, state=None):
+    def parse(self, tokenizer: LexerStream, state: None = None) -> "BaseBox":
         from rply.token import Token
 
         lookahead = None
@@ -19,9 +26,7 @@ class LRParser(object):
         while True:
             if self.lr_table.default_reductions[current_state]:
                 t = self.lr_table.default_reductions[current_state]
-                current_state = self._reduce_production(
-                    t, symstack, statestack, state
-                )
+                current_state = self._reduce_production(t, symstack, statestack, state)
                 continue
 
             if lookahead is None:
@@ -64,14 +69,20 @@ class LRParser(object):
                 else:
                     raise ParsingError(None, lookahead.getsourcepos())
 
-    def _reduce_production(self, t, symstack, statestack, state):
+    def _reduce_production(
+        self,
+        t: int,
+        symstack: List[Union["Token", "BaseBox"]],
+        statestack: List[int],
+        state: None,
+    ) -> int:
         # reduce a symbol on the stack and emit a production
         p = self.lr_table.grammar.productions[-t]
         pname = p.name
         plen = p.getlength()
         start = len(symstack) + (-plen - 1)
         assert start >= 0
-        targ = symstack[start + 1:]
+        targ = symstack[start + 1 :]
         start = len(symstack) + (-plen)
         assert start >= 0
         del symstack[start:]

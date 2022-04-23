@@ -9,9 +9,10 @@ import warnings
 from appdirs import AppDirs
 
 from rply.errors import ParserGeneratorError, ParserGeneratorWarning
-from rply.grammar import Grammar
+from rply.grammar import LRItem, Grammar
 from rply.parser import LRParser
 from rply.utils import Counter, IdentityDict
+from typing import Any, Callable, Dict, List, Optional, Set, Tuple, Union
 
 
 LARGE_VALUE = sys.maxsize
@@ -34,14 +35,19 @@ class ParserGenerator(object):
 
     VERSION = 1
 
-    def __init__(self, tokens, precedence=[], cache_id=None):
+    def __init__(
+        self,
+        tokens: List[str],
+        precedence: Optional[List[Tuple[str, List[str]]]] = None,
+        cache_id: Optional[str] = None,
+    ) -> None:
         self.tokens = tokens
         self.productions = []
-        self.precedence = precedence
+        self.precedence = precedence or []
         self.cache_id = cache_id
         self.error_handler = None
 
-    def production(self, rule, precedence=None):
+    def production(self, rule: str, precedence: None = None) -> Callable:
         """
         A decorator that defines one or many production rules and registers
         the decorated function to be called with the terminals and
@@ -99,7 +105,7 @@ class ParserGenerator(object):
         self.error_handler = func
         return func
 
-    def compute_grammar_hash(self, g):
+    def compute_grammar_hash(self, g: Grammar) -> str:
         hasher = hashlib.sha1()
         hasher.update(g.start.encode())
         hasher.update(json.dumps(sorted(g.terminals)).encode())
@@ -113,7 +119,7 @@ class ParserGenerator(object):
             hasher.update(json.dumps(p.prod).encode())
         return hasher.hexdigest()
 
-    def serialize_table(self, table):
+    def serialize_table(self, table: "LRTable") -> Dict[str, Any]:
         return {
             "lr_action": table.lr_action,
             "lr_goto": table.lr_goto,
@@ -128,7 +134,7 @@ class ParserGenerator(object):
             ],
         }
 
-    def data_is_valid(self, g, data):
+    def data_is_valid(self, g: Grammar, data: Dict[str, Any]) -> bool:
         if g.start != data["start"]:
             return False
         if sorted(g.terminals) != data["terminals"]:
@@ -149,7 +155,7 @@ class ParserGenerator(object):
                 return False
         return True
 
-    def build(self):
+    def build(self) -> LRParser:
         g = Grammar(self.tokens)
 
         for level, (assoc, terms) in enumerate(self.precedence, 1):
@@ -212,7 +218,7 @@ class ParserGenerator(object):
             )
         return LRParser(table, self.error_handler)
 
-    def _write_cache(self, cache_dir, cache_file, table):
+    def _write_cache(self, cache_dir: str, cache_file: str, table: "LRTable") -> None:
         if not os.path.exists(cache_dir):
             try:
                 os.makedirs(cache_dir, mode=0o0700)
@@ -226,7 +232,9 @@ class ParserGenerator(object):
         os.rename(f.name, cache_file)
 
 
-def digraph(X, R, FP):
+def digraph(
+    X: List[Tuple[int, str]], R: Callable, FP: Callable
+) -> Dict[Tuple[int, str], List[str]]:
     N = dict.fromkeys(X, 0)
     stack = []
     F = {}
@@ -236,7 +244,15 @@ def digraph(X, R, FP):
     return F
 
 
-def traverse(x, N, stack, F, X, R, FP):
+def traverse(
+    x: Tuple[int, str],
+    N: Dict[Tuple[int, str], int],
+    stack: List[Union[Tuple[int, str], Any]],
+    F: Dict[Tuple[int, str], List[str]],
+    X: List[Tuple[int, str]],
+    R: Callable,
+    FP: Callable,
+) -> None:
     stack.append(x)
     d = len(stack)
     N[x] = d
@@ -263,13 +279,13 @@ def traverse(x, N, stack, F, X, R, FP):
 class LRTable(object):
     def __init__(
         self,
-        grammar,
-        lr_action,
-        lr_goto,
-        default_reductions,
-        sr_conflicts,
-        rr_conflicts,
-    ):
+        grammar: Grammar,
+        lr_action: List[Dict[str, int]],
+        lr_goto: List[Dict[str, int]],
+        default_reductions: List[int],
+        sr_conflicts: List[Any],
+        rr_conflicts: List[Any],
+    ) -> None:
         self.grammar = grammar
         self.lr_action = lr_action
         self.lr_goto = lr_goto
@@ -278,7 +294,7 @@ class LRTable(object):
         self.rr_conflicts = rr_conflicts
 
     @classmethod
-    def from_cache(cls, grammar, data):
+    def from_cache(cls, grammar: Grammar, data: Dict[str, Any]) -> "LRTable":
         lr_action = [
             dict([(str(k), v) for k, v in action.items()])
             for action in data["lr_action"]
@@ -296,7 +312,7 @@ class LRTable(object):
         )
 
     @classmethod
-    def from_grammar(cls, grammar):
+    def from_grammar(cls, grammar: Grammar) -> "LRTable":
         cidhash = IdentityDict()
         goto_cache = {}
         add_count = Counter()
@@ -428,7 +444,13 @@ class LRTable(object):
         )
 
     @classmethod
-    def lr0_items(cls, grammar, add_count, cidhash, goto_cache):
+    def lr0_items(
+        cls,
+        grammar: Grammar,
+        add_count: Counter,
+        cidhash: IdentityDict,
+        goto_cache: Dict[Any, Any],
+    ) -> List[List[LRItem]]:
         C = [cls.lr0_closure([grammar.productions[0].lr_next], add_count)]
         for i, I in enumerate(C):
             cidhash[I] = i
@@ -452,7 +474,7 @@ class LRTable(object):
         return C
 
     @classmethod
-    def lr0_closure(cls, I, add_count):
+    def lr0_closure(cls, I: List[LRItem], add_count: Counter) -> List[LRItem]:
         add_count.incr()
 
         J = I[:]
@@ -469,7 +491,13 @@ class LRTable(object):
         return J
 
     @classmethod
-    def lr0_goto(cls, I, x, add_count, goto_cache):
+    def lr0_goto(
+        cls,
+        I: List[LRItem],
+        x: str,
+        add_count: Counter,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> Optional[List[LRItem]]:
         s = goto_cache.setdefault(x, IdentityDict())
 
         gs = []
@@ -492,7 +520,14 @@ class LRTable(object):
         return g
 
     @classmethod
-    def add_lalr_lookaheads(cls, grammar, C, add_count, cidhash, goto_cache):
+    def add_lalr_lookaheads(
+        cls,
+        grammar: Grammar,
+        C: List[List[LRItem]],
+        add_count: Counter,
+        cidhash: IdentityDict,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> None:
         nullable = cls.compute_nullable_nonterminals(grammar)
         trans = cls.find_nonterminal_transitions(grammar, C)
         readsets = cls.compute_read_sets(
@@ -505,7 +540,7 @@ class LRTable(object):
         cls.add_lookaheads(lookd, followsets)
 
     @classmethod
-    def compute_nullable_nonterminals(cls, grammar):
+    def compute_nullable_nonterminals(cls, grammar: Grammar) -> Set[Any]:
         nullable = set()
         num_nullable = 0
         while True:
@@ -524,7 +559,9 @@ class LRTable(object):
         return nullable
 
     @classmethod
-    def find_nonterminal_transitions(cls, grammar, C):
+    def find_nonterminal_transitions(
+        cls, grammar: Grammar, C: List[List[LRItem]]
+    ) -> List[Tuple[int, str]]:
         trans = []
         for idx, state in enumerate(C):
             for p in state:
@@ -536,8 +573,15 @@ class LRTable(object):
 
     @classmethod
     def compute_read_sets(
-        cls, grammar, C, ntrans, nullable, add_count, cidhash, goto_cache
-    ):
+        cls,
+        grammar: Grammar,
+        C: List[List[LRItem]],
+        ntrans: List[Tuple[int, str]],
+        nullable: Set[Any],
+        add_count: Counter,
+        cidhash: IdentityDict,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> Dict[Tuple[int, str], List[str]]:
         return digraph(
             ntrans,
             R=lambda x: cls.reads_relation(
@@ -549,7 +593,12 @@ class LRTable(object):
         )
 
     @classmethod
-    def compute_follow_sets(cls, ntrans, readsets, includesets):
+    def compute_follow_sets(
+        cls,
+        ntrans: List[Tuple[int, str]],
+        readsets: Dict[Tuple[int, str], List[str]],
+        includesets: Dict[Tuple[int, str], List[Tuple[int, str]]],
+    ) -> Dict[Tuple[int, str], List[str]]:
         return digraph(
             ntrans,
             R=lambda x: includesets.get(x, []),
@@ -557,7 +606,15 @@ class LRTable(object):
         )
 
     @classmethod
-    def dr_relation(cls, grammar, C, trans, nullable, add_count, goto_cache):
+    def dr_relation(
+        cls,
+        grammar: Grammar,
+        C: List[List[LRItem]],
+        trans: Tuple[int, str],
+        nullable: Set[Any],
+        add_count: Counter,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> List[str]:
         state, N = trans
         terms = []
 
@@ -572,7 +629,15 @@ class LRTable(object):
         return terms
 
     @classmethod
-    def reads_relation(cls, C, trans, empty, add_count, cidhash, goto_cache):
+    def reads_relation(
+        cls,
+        C: List[List[LRItem]],
+        trans: Tuple[int, str],
+        empty: Set[Any],
+        add_count: Counter,
+        cidhash: IdentityDict,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> List[Any]:
         rel = []
         state, N = trans
 
@@ -587,8 +652,18 @@ class LRTable(object):
 
     @classmethod
     def compute_lookback_includes(
-        cls, grammar, C, trans, nullable, add_count, cidhash, goto_cache
-    ):
+        cls,
+        grammar: Grammar,
+        C: List[List[LRItem]],
+        trans: List[Tuple[int, str]],
+        nullable: Set[Any],
+        add_count: Counter,
+        cidhash: IdentityDict,
+        goto_cache: Dict[str, IdentityDict],
+    ) -> Tuple[
+        Dict[Tuple[int, str], List[Tuple[int, LRItem]]],
+        Dict[Tuple[int, str], List[Tuple[int, str]]],
+    ]:
         lookdict = {}
         includedict = {}
 
@@ -641,8 +716,10 @@ class LRTable(object):
 
     @classmethod
     def add_lookaheads(
-        cls, lookbacks: "dict[tuple[int, str], list[tuple[int, LRItem]]]", followset
-    ):
+        cls,
+        lookbacks: "dict[tuple[int, str], list[tuple[int, LRItem]]]",
+        followset: Dict[Tuple[int, str], List[str]],
+    ) -> None:
         for trans, lb in lookbacks.items():
             for state, p in lb:
                 f = followset.get(trans, [])

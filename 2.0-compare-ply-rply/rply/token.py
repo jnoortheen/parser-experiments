@@ -1,3 +1,6 @@
+from typing import Optional
+
+
 class BaseBox(object):
     """
     A base class for polymorphic boxes that wrap parser results. Simply use
@@ -5,7 +8,8 @@ class BaseBox(object):
     parser. This is necessary because RPython unlike Python expects functions
     to always return objects of the same type.
     """
-    _attrs_ = []
+
+    _attrs_: "list[str]" = []
 
 
 class Token(BaseBox):
@@ -18,33 +22,36 @@ class Token(BaseBox):
                        position of the first character in the source from which
                        this token was generated.
     """
-    def __init__(self, name, value, source_pos=None):
+
+    def __init__(
+        self, name: str, value: str, source_pos: Optional["SourcePosition"] = None
+    ) -> None:
         self.name = name
         self.value = value
         self.source_pos = source_pos
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "Token(%r, %r)" % (self.name, self.value)
 
-    def __eq__(self, other):
+    def __eq__(self, other) -> bool:
         if not isinstance(other, Token):
             return NotImplemented
         return self.name == other.name and self.value == other.value
 
-    def gettokentype(self):
+    def gettokentype(self) -> str:
         """
         Returns the type or name of the token.
         """
         return self.name
 
-    def getsourcepos(self):
+    def getsourcepos(self) -> "SourcePosition":
         """
         Returns a :class:`SourcePosition` instance, describing the position of
         this token's first character in the source.
         """
         return self.source_pos
 
-    def getstr(self):
+    def getstr(self) -> str:
         """
         Returns the string represented by this token.
         """
@@ -62,12 +69,13 @@ class SourcePosition(object):
     The values passed to this object can be retrieved using the identically
     named attributes.
     """
-    def __init__(self, idx, lineno, colno):
+
+    def __init__(self, idx: int, lineno: int, colno: int) -> None:
         self.idx = idx
         self.lineno = lineno
         self.colno = colno
 
-    def __repr__(self):
+    def __repr__(self) -> str:
         return "SourcePosition(idx={0}, lineno={1}, colno={2})".format(
             self.idx, self.lineno, self.colno
         )

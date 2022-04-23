@@ -1,18 +1,23 @@
 from rply.errors import LexingError
 from rply.token import SourcePosition, Token
 
+from typing import List, TYPE_CHECKING
+
+if TYPE_CHECKING:
+    from rply.lexergenerator import Match, Rule
+
 
 class Lexer(object):
-    def __init__(self, rules, ignore_rules):
+    def __init__(self, rules: List["Rule"], ignore_rules: List["Rule"]) -> None:
         self.rules = rules
         self.ignore_rules = ignore_rules
 
-    def lex(self, s):
+    def lex(self, s: str) -> "LexerStream":
         return LexerStream(self, s)
 
 
 class LexerStream(object):
-    def __init__(self, lexer, s):
+    def __init__(self, lexer: Lexer, s: str) -> None:
         self.lexer = lexer
         self.s = s
         self.idx = 0
@@ -23,7 +28,7 @@ class LexerStream(object):
     def __iter__(self):
         return self
 
-    def _update_pos(self, match):
+    def _update_pos(self, match: "Match") -> int:
         self.idx = match.end
         self._lineno += self.s.count("\n", match.start, match.end)
         last_nl = self.s.rfind("\n", 0, match.start)
@@ -32,7 +37,7 @@ class LexerStream(object):
         else:
             return match.start - last_nl
 
-    def next(self):
+    def next(self) -> Token:
         while True:
             if self.idx >= len(self.s):
                 raise StopIteration
@@ -50,13 +55,10 @@ class LexerStream(object):
                 lineno = self._lineno
                 self._colno = self._update_pos(match)
                 source_pos = SourcePosition(match.start, lineno, self._colno)
-                token = Token(
-                    rule.name, self.s[match.start:match.end], source_pos
-                )
+                token = Token(rule.name, self.s[match.start : match.end], source_pos)
                 return token
         else:
-            raise LexingError(None, SourcePosition(
-                self.idx, self._lineno, self._colno))
+            raise LexingError(None, SourcePosition(self.idx, self._lineno, self._colno))
 
-    def __next__(self):
+    def __next__(self) -> Token:
         return self.next()

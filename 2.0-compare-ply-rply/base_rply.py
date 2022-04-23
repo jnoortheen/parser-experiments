@@ -20,7 +20,7 @@ pg = ParserGenerator(
     ["NUMBER", "PLUS", "MINUS"],
     precedence=[("left", ["PLUS", "MINUS"])],
     # with the removal of cahing, we explicitly pass the parser version
-    cache_id="base-calc-v1.1",
+    cache_id="base-calc-v1.9",
 )
 
 

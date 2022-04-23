@@ -2,7 +2,9 @@ from rply.errors import ParserGeneratorError
 from typing import Any, Callable, Dict, List, Optional, Tuple, Union
 
 
-def rightmost_terminal(symbols: List[str], terminals: Dict[str, Union[List[Any], List[Union[Any, int]]]]) -> Optional[str]:
+def rightmost_terminal(
+    symbols: List[str], terminals: Dict[str, Union[List[Any], List[Union[Any, int]]]]
+) -> Optional[str]:
     for sym in reversed(symbols):
         if sym in terminals:
             return sym
@@ -15,20 +17,22 @@ class Grammar(object):
         self.productions = [None]
         # A dictionary mapping the names of non-terminals to a list of all
         # productions of that nonterminal
-        self.prod_names = {}
+        self.prod_names: "dict[str, list[Production]]" = {}
         # A dictionary mapping the names of terminals to a list of the rules
         # where they are used
-        self.terminals = dict((t, []) for t in terminals)
+        self.terminals: "dict[str, list[int]]" = dict((t, []) for t in terminals)
         self.terminals["error"] = []
         # A dictionary mapping names of nonterminals to a list of rule numbers
         # where they are used
-        self.nonterminals = {}
-        self.first = {}
-        self.follow = {}
-        self.precedence = {}
+        self.nonterminals: "dict[str, list[int]]" = {}
+        self.first: "dict[str, Any]" = {}
+        self.follow: "dict[str, list[str]]" = {}
+        self.precedence: "dict[str, tuple[str, int]]" = {}
         self.start = None
 
-    def add_production(self, prod_name: str, syms: List[str], func: Callable, precedence: None) -> None:
+    def add_production(
+        self, prod_name: str, syms: List[str], func: Callable, precedence: str
+    ) -> None:
         if prod_name in self.terminals:
             raise ParserGeneratorError("Illegal rule name %r" % prod_name)
 
@@ -170,7 +174,14 @@ class Grammar(object):
 
 
 class Production(object):
-    def __init__(self, num: int, name: str, prod: List[str], precedence: Tuple[str, int], func: Optional[Callable]) -> None:
+    def __init__(
+        self,
+        num: int,
+        name: str,
+        prod: List[str],
+        precedence: Tuple[str, int],
+        func: Optional[Callable],
+    ) -> None:
         self.name = name
         self.prod = prod
         self.number = num
@@ -195,7 +206,9 @@ class Production(object):
 
 
 class LRItem(object):
-    def __init__(self, p: Production, n: int, before: str, after: List[Union[Production, Any]]) -> None:
+    def __init__(
+        self, p: Production, n: int, before: str, after: List[Union[Production, Any]]
+    ) -> None:
         self.name = p.name
         self.prod = p.prod[:]
         self.prod.insert(n, ".")
@@ -205,6 +218,7 @@ class LRItem(object):
         self.unique_syms = p.unique_syms
         self.lr_before = before
         self.lr_after = after
+        self.lr_next: Optional[LRItem] = None
 
     def __repr__(self):
         return "LRItem(%s -> %s)" % (self.name, " ".join(self.prod))

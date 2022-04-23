@@ -6,13 +6,13 @@ from collections.abc import MutableMapping
 KeyType = Union[LRItem, List[LRItem], str]
 
 
-class IdentityDict(MutableMapping[int, int]):
+class IdentityDict(MutableMapping[KeyType, int]):
     def __init__(self) -> None:
         self._contents: Dict[int, "tuple[KeyType, int, int]"] = {}
         self._keepalive: List[KeyType] = []
 
     def __getitem__(
-        self, key: Union[LRItem, List[LRItem], str]
+        self, key: KeyType
     ) -> Union[
         int,
         Dict[LRItem, Dict[LRItem, Dict[str, List[LRItem]]]],

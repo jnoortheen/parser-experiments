@@ -1,7 +1,7 @@
 from typing import Optional
 
 
-class BaseBox(object):
+class BaseBox:
     """
     A base class for polymorphic boxes that wrap parser results. Simply use
     this as a base class for anything you return in a production function of a
@@ -33,7 +33,7 @@ class Token(BaseBox):
     def __repr__(self) -> str:
         return "Token(%r, %r)" % (self.name, self.value)
 
-    def __eq__(self, other) -> bool:
+    def __eq__(self, other: "object") -> bool:
         if not isinstance(other, Token):
             return NotImplemented
         return self.name == other.name and self.value == other.value
@@ -44,7 +44,7 @@ class Token(BaseBox):
         """
         return self.name
 
-    def getsourcepos(self) -> "SourcePosition":
+    def getsourcepos(self) -> Optional["SourcePosition"]:
         """
         Returns a :class:`SourcePosition` instance, describing the position of
         this token's first character in the source.

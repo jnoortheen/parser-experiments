@@ -16,16 +16,21 @@ as it has a separate pypi package. We can expect some stability as Python may in
 
 # Conclusions
 
-## A. xonsh-ply
+## A. [xonsh-ply](https://www.dabeaz.com/ply/ply.html#ply_nn11)
 
 - the existing parser is slow and uses more memory. 
 - the ply codebase is a mess though rply is good and we can optimize with some care
 
-## B. pegen
+## B. [pegen](https://github.com/we-like-parsers/pegen)
 
 - It will be following the official parser, hence future proof
 - generates AST which we can feed directly to the interpreter
 - has big peak memory size but it gets released and will end up with optimal size
+- I found a PR which intends to make use of pegen in place of ply
+  - https://github.com/nucleic/enaml/pull/474/
+  - https://github.com/jecki/DHParser - another interesting peg generator. 
+    - includes test generation 
+    - language server...
 
 ## C. pgen2
 
@@ -33,9 +38,25 @@ as it has a separate pypi package. We can expect some stability as Python may in
   - but black-formatter has forked it and it may stick around sometime more. 
   we can refer these packages if we decided to base our parser on this
 - but has very less memory usage and faster too for any of the tested tools here
+- Links
+  - https://github.com/pyga/awpa/tree/master/awpa
+  - parso grammars
 
 ## D. parso
  
 - it is a fork of pgen2
 - does error recovery of sorts and hence the high memory usage
 - we can pick some pieces from this project if we decided to use pgen2
+
+
+# Step forward
+
+1. implement the completion-context parser in pgen2 and pegen and compare the
+   1. development time
+   2. performance
+   3. memory usage
+
+
+# Links
+
+- https://www.dabeaz.com/ply/ply.html - good resource to dive into the world of parser generation

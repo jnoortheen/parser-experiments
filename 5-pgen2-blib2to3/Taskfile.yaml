@@ -6,24 +6,35 @@ version: '3'
 tasks:
   default:
     cmds:
+      - task: py-run
+  py-run:
+    deps:
+      - task: clean
+    cmds:
       - python main.py
   clean:
     cmds:
-      - find pgen2 -name "*.c" -delete -print
-      - find pgen2 -name "*.so" -delete -print
-  cythonize:
-    cmds:
-      - cythonize -3 -i pgen2/*.py
-    sources:
-      - pgen2/*.py
-    generates:
-      - pgen2/*.so
-      - pgen2/*.c
+      - find l2to3/pgen2 -name "*.c" -delete -print
+      - find l2to3/pgen2 -name "*.so" -delete -print
   mypycify:
     cmds:
-      - mypyc pgen2
+      - fd "^[a-z].+\.py" l2to3/pgen2/ | xargs -I _ mypyc _
+#      - mypyc l2to3/pgen2/conv.py
+#      - mypyc l2to3/pgen2/driver.py # has some unused vars issues with clang
+#      - mypyc l2to3/pgen2/grammar.py
+#      - mypyc l2to3/pgen2/literals.py
+#      - mypyc l2to3/pgen2/parse.py
+#      - mypyc l2to3/pgen2/pgen.py
+#      - mypyc l2to3/pgen2/token.py
+#      - mypyc l2to3/pgen2/tokenize.py
     sources:
-      - pgen2/*.py
+      - l2to3/pgen2/*.py
     generates:
-      - pgen2/*.so
-      - pgen2/*.c
+      - l2to3/pgen2/*.so
+      - l2to3/pgen2/*.c
+  my-run:
+    deps:
+#      - task: clean
+      - task: mypycify
+    cmds:
+      - python main.py

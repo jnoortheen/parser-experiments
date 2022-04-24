@@ -2,7 +2,7 @@
 # Licensed to PSF under a Contributor Agreement.
 
 # Pgen imports
-from . import grammar, token, tokenize
+from l2to3.pgen2 import token, tokenize, grammar
 
 from typing import (
     Any,
@@ -17,12 +17,11 @@ from typing import (
     Sequence,
     NoReturn,
 )
-from pgen2 import grammar
-from pgen2.tokenize import GoodTokenInfo
+from l2to3.pgen2.tokenize import GoodTokenInfo
 import os
 
 
-Path = Union[str, "os.PathLike[str]"]
+Path = Union[str, os.PathLike[str]]
 
 
 class PgenGrammar(grammar.Grammar):

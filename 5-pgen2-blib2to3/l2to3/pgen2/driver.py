@@ -31,19 +31,17 @@ from typing import (
     Text,
     Iterator,
     Tuple,
-    TypeVar,
-    Generic,
     Union,
 )
 from contextlib import contextmanager
 from dataclasses import dataclass, field
 
 # Pgen imports
-from pgen2 import grammar, parse, token, tokenize, pgen
+from l2to3.pgen2 import grammar, parse, token, tokenize, pgen
 from logging import Logger
-from pytree import NL
-from pgen2.grammar import Grammar
-from pgen2.tokenize import GoodTokenInfo
+from l2to3.pytree import NL
+from l2to3.pgen2.grammar import Grammar
+from l2to3.pgen2.tokenize import GoodTokenInfo
 
 Path = Union[str, "os.PathLike[str]"]
 

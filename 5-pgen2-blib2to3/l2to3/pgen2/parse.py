@@ -13,7 +13,7 @@ import copy
 from contextlib import contextmanager
 
 # Local imports
-from . import grammar, token, tokenize
+from l2to3.pgen2 import grammar, token, tokenize
 from typing import (
     cast,
     Any,
@@ -28,11 +28,11 @@ from typing import (
     Set,
     TYPE_CHECKING,
 )
-from pgen2.grammar import Grammar
-from pytree import convert, NL, Context, RawNode, Leaf, Node
+from l2to3.pgen2.grammar import Grammar
+from l2to3.pytree import convert, NL, Context, RawNode, Leaf, Node
 
 if TYPE_CHECKING:
-    from driver import TokenProxy
+    from .driver import TokenProxy
 
 
 Results = Dict[Text, NL]

@@ -27,7 +27,6 @@ are the same, except instead of generating tokens, tokeneater is a callback
 function to which the 5 fields described above are passed as 5 arguments,
 each time a new token is found."""
 
-import sys
 from typing import (
     Callable,
     Iterable,
@@ -39,22 +38,19 @@ from typing import (
     Pattern,
     Union,
     cast,
+    Final,
 )
 
-if sys.version_info >= (3, 8):
-    from typing import Final
-else:
-    from typing_extensions import Final
 
-from pgen2.token import *
-from pgen2.grammar import Grammar
+# from pgen2.token import *
+from l2to3.pgen2.grammar import Grammar
 
 __author__ = "Ka-Ping Yee <ping@lfw.org>"
 __credits__ = "GvR, ESR, Tim Peters, Thomas Wouters, Fred Drake, Skip Montanaro"
 
 import re
 from codecs import BOM_UTF8, lookup
-from pgen2.token import *
+from .token import *
 
 from . import token
 

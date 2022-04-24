@@ -3,7 +3,7 @@ import logging
 import sys
 
 # Pgen imports
-from pgen2 import grammar, driver
+from l2to3.pgen2 import grammar, driver
 
 
 def main() -> bool:
@@ -11,8 +11,8 @@ def main() -> bool:
 
     Calls load_grammar for each argument, a path to a grammar text file.
     """
-    from pgen2.parse import ParseError
-    from pgen2.tokenize import TokenError
+    from l2to3.pgen2.parse import ParseError
+    from l2to3.pgen2.tokenize import TokenError
 
     logging.basicConfig(level=logging.INFO, stream=sys.stdout, format="%(message)s")
 
@@ -29,10 +29,9 @@ def main() -> bool:
         )
         return g
 
-    # for gt in args:
-    #     load_grammar(gt, save=True, force=True)
-    # d = Driver(get_gram310())
-    d = driver.Driver(get_gram())
+    g = get_gram310()
+    # g = get_gram()
+    d = driver.Driver(g)
     src_txt = "print(1)\n"
     errors = {}
     try:

@@ -25,7 +25,7 @@ from typing import (
     Set,
     Iterable,
 )
-from pgen2.grammar import Grammar
+from l2to3.pgen2.grammar import Grammar
 
 __author__ = "Guido van Rossum <guido@python.org>"
 
@@ -40,7 +40,7 @@ _type_reprs: Dict[int, Union[Text, int]] = {}
 def type_repr(type_num: int) -> Union[Text, int]:
     global _type_reprs
     if not _type_reprs:
-        from pygram import python_symbols
+        from l2to3.pygram import python_symbols
 
         # printing tokens is possible but not as useful
         # from .pgen2 import token // token.__dict__.items():

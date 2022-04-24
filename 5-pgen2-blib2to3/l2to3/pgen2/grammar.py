@@ -19,7 +19,7 @@ import tempfile
 from typing import Any, Dict, List, Optional, Text, Tuple, TypeVar, Union
 
 # Local imports
-from . import token
+from l2to3.pgen2 import token
 
 _P = TypeVar("_P", bound="Grammar")
 Label = Tuple[int, Optional[Text]]

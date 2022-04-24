@@ -7,3 +7,6 @@
 [submodule "s2-pegen_experiments"]
 	path = s2-pegen_experiments
 	url = ./s2-pegen_experiments/
+[submodule "s3-parso"]
+	path = s3-parso
+	url = git@github.com:davidhalter/parso.git

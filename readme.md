@@ -8,6 +8,7 @@ All of these below parse Python3.10 grammar.
 | pgen2     | 369KiB               | 0.08s | 684KiB     |
 | pegen     | 1234KiB              | 0.38s | 19655.9KiB |
 | xonsh-ply | 8240.6 KiB           | 0.65s | 10333.5KiB |
+| parso     | 3542.7 KiB           | 0.80s | 3690.2KiB  |
 
 
 seems like both are good. easpecially pgen2 interms of memory usage and performance. but we can use pegen2 
@@ -32,3 +33,9 @@ as it has a separate pypi package. We can expect some stability as Python may in
   - but black-formatter has forked it and it may stick around sometime more. 
   we can refer these packages if we decided to base our parser on this
 - but has very less memory usage and faster too for any of the tested tools here
+
+## D. parso
+ 
+- it is a fork of pgen2
+- does error recovery of sorts and hence the high memory usage
+- we can pick some pieces from this project if we decided to use pgen2

@@ -67,6 +67,7 @@ import sys
 import os.path
 import inspect
 import warnings
+from ply.yacc_mini import MiniProduction
 
 __version__ = "3.11"
 __tabversion__ = "3.10"
@@ -2085,6 +2086,10 @@ class LRTable(object):
         if parsetab._tabversion != __tabversion__:
             raise VersionError("yacc table file version is out of date")
 
+        from ply.yacc_mini import test_dict
+
+        print(sys.getsizeof(test_dict), "------", sys.getsizeof({1: ""}))
+
         self.lr_action = parsetab._lr_action
         self.lr_goto = parsetab._lr_goto
 
@@ -2096,10 +2101,7 @@ class LRTable(object):
         return parsetab._lr_signature
 
     def read_pickle(self, filename):
-        try:
-            import cPickle as pickle
-        except ImportError:
-            import pickle
+        import pickle
 
         if not os.path.exists(filename):
             raise ImportError
@@ -2997,10 +2999,8 @@ del _lr_goto_items
     # -----------------------------------------------------------------------------
 
     def pickle_table(self, filename, signature=""):
-        try:
-            import cPickle as pickle
-        except ImportError:
-            import pickle
+        import pickle
+
         with open(filename, "wb") as outf:
             pickle.dump(__tabversion__, outf, pickle_protocol)
             pickle.dump(self.lr_method, outf, pickle_protocol)

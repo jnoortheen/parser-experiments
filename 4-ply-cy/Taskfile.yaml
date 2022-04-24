@@ -5,30 +5,31 @@ version: '3'
 
 tasks:
   default:
+    deps:
+      - task: cythonize
+#      - task: mypycify
     cmds:
-      - gtime -v python -X tracemalloc=25 -c "print('test interpreter')" 2>&1 | tee "results/python.txt"
-      - gtime -v python -X tracemalloc=25 base_ply.py 2>&1 | tee "results/ply-version-{{.TS}}.txt"
-      - gtime -v python -X tracemalloc=25 base_rply.py 2>&1 | tee "results/rply-version-{{.TS}}.txt"
+      - python xonsh_parser.py 2>&1 | tee "xonsh-parser-{{.TS}}.log"
     vars:
       TS:
         sh: date "+%Y%m%d-%H%M%S"
   clean:
     cmds:
-      - find rply -name "*.c" -delete
-      - find rply -name "*.so" -delete
-  cy-build:
+      - find ply -name "*.c" -delete
+      - find ply -name "*.so" -delete
+  cythonize:
     cmds:
-      - cythonize -i rply
-  profile:
-    cmds:
-      # you can inspect the output in qcachegrind or kcachegrind
-      - yappi -f callgrind -o results/profile-rply.callgrind profile_rply.py
-  grind:
-    cmds:
-      - qcachegrind results/profile-rply.callgrind
-  type:
-    cmds:
-#      - dmypy run -- rply --strict
-      - mypy rply --strict
+      - cythonize -3 -i ply/yacc_mini.pxd
     sources:
-      - rply/*.py
+      - ply/yacc_mini.py*
+    generates:
+      - ply/yacc_mini.so
+      - ply/yacc_mini.c
+  mypycify:
+    cmds:
+      - mypyc ply/yacc_mini.py
+    sources:
+      - ply/yacc_mini.py
+    generates:
+      - ply/yacc_mini.so
+      - ply/yacc_mini.c

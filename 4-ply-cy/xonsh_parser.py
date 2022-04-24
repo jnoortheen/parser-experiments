@@ -17,6 +17,7 @@ def trace():
     from pympler import asizeof
 
     print(asizeof.asized(p.parser, detail=2).format())
+    print(type(p.parser.action[0]))
 
 
 if __name__ == "__main__":

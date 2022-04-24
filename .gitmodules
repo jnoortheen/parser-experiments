@@ -1,3 +1,9 @@
 [submodule "3-rply-mypyc"]
 	path = 3-rply-mypyc
 	url = ./3-rply-mypyc/
+[submodule "s1-black"]
+	path = s1-black
+	url = ./s1-black/
+[submodule "s2-pegen_experiments"]
+	path = s2-pegen_experiments
+	url = ./s2-pegen_experiments/

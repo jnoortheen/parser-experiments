@@ -11,7 +11,10 @@ tasks:
     deps:
       - task: clean
     cmds:
-      - python main.py
+      - python main.py 2>&1 | tee "run-results-{{.TS}}.log"
+    vars:
+      TS:
+        sh: date "+%Y%m%d-%H%M%S"
   clean:
     cmds:
       - find l2to3/pgen2 -name "*.c" -delete -print

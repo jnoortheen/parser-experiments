@@ -1,0 +1,19 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - python main.py 2>&1 | tee "run-results-{{.TS}}.log"
+    vars:
+      TS:
+        sh: date "+%Y%m%d-%H%M%S"
+  gen-parser:
+    cmds:
+      - python -m pegen python.gram > python.gram.out
+
+  mypycify:
+    cmds:
+      - mypyc parse.py

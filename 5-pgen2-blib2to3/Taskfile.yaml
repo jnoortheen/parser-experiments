@@ -1,0 +1,29 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - python main.py
+  clean:
+    cmds:
+      - find pgen2 -name "*.c" -delete -print
+      - find pgen2 -name "*.so" -delete -print
+  cythonize:
+    cmds:
+      - cythonize -3 -i pgen2/*.py
+    sources:
+      - pgen2/*.py
+    generates:
+      - pgen2/*.so
+      - pgen2/*.c
+  mypycify:
+    cmds:
+      - mypyc pgen2
+    sources:
+      - pgen2/*.py
+    generates:
+      - pgen2/*.so
+      - pgen2/*.c

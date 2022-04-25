@@ -1,0 +1,15 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  default:
+    cmds:
+      - python main.py 2>&1 | tee "run-results-{{.TS}}.log"
+    vars:
+      TS:
+        sh: date "+%Y%m%d-%H%M%S"
+  build:
+    cmds:
+      - python builder.py

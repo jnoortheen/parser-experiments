@@ -301,6 +301,12 @@ requires_python = ">=3.7"
 summary = "A lil' TOML parser"
 
 [[package]]
+name = "tree-sitter"
+version = "0.20.0"
+requires_python = ">=3.3"
+summary = "Python bindings to the Tree-sitter parsing library"
+
+[[package]]
 name = "typing-extensions"
 version = "4.2.0"
 requires_python = ">=3.7"
@@ -328,7 +334,7 @@ summary = "Yet Another Python Profiler"
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:501ea43348b489e8e9e53b2a00f5815e0a023e173113d39662899bc613e1972d"
+content_hash = "sha256:45e5235ca780f671f2066205163d5b2a22d4cd11849918e5604a935b69513db3"
 
 [metadata.files]
 "appdirs 1.4.4" = [
@@ -630,6 +636,10 @@ content_hash = "sha256:501ea43348b489e8e9e53b2a00f5815e0a023e173113d39662899bc61
 "tomli 2.0.1" = [
     {file = "tomli-2.0.1-py3-none-any.whl", hash = "sha256:939de3e7a6161af0c887ef91b7d41a53e7c5a1ca976325f429cb46ea9bc30ecc"},
     {file = "tomli-2.0.1.tar.gz", hash = "sha256:de526c12914f0c550d15924c62d72abc48d6fe7364aa87328337a31007fe8a4f"},
+]
+"tree-sitter 0.20.0" = [
+    {file = "tree_sitter-0.20.0-cp39-cp39-macosx_12_0_arm64.whl", hash = "sha256:51a609a7c1bd9d9e75d92ee128c12c7852ae70a482900fbbccf3d13a79e0378c"},
+    {file = "tree_sitter-0.20.0.tar.gz", hash = "sha256:1940f64be1e8c9c3c0e34a2258f1e4c324207534d5b1eefc5ab2960a9d98f668"},
 ]
 "typing-extensions 4.2.0" = [
     {file = "typing_extensions-4.2.0-py3-none-any.whl", hash = "sha256:6657594ee297170d19f67d55c05852a874e7eb634f4f753dbd667855e07c1708"},

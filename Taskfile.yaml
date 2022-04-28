@@ -6,10 +6,13 @@ version: '3'
 tasks:
   update-cpython-pegen:
     cmds:
+# todo: should move to git-diff version https://stackoverflow.com/questions/23937436
       - git fetch --depth=1 https://github.com/python/cpython.git main:tmp_cpython_main
       - git checkout tmp_cpython_main
-      - git subtree split --squash --prefix=images -b subtree_split_branch
-      -
+      - git subtree split --prefix=Tools/peg_generator -b subtree_split_branch
+      - git checkout -
+      - git subtree add --prefix=9-cpy-pegen subtree_split_branch
+      - git branch -D subtree_split_branch tmp_cpython_main
 
     vars:
       TS:

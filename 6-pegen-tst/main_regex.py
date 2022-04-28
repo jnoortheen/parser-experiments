@@ -1,3 +1,11 @@
+import sys
+
+# optimization
+import regex as re
+
+sys.modules["re"] = re
+
+
 def main():
     from parse import parse_string
 

@@ -7,9 +7,11 @@ tasks:
   default:
     cmds:
       - python main.py 2>&1 | tee "run-results-{{.TS}}.log"
+      - python main_regex.py 2>&1 | tee "run-results-regex-{{.TS}}.log"
     vars:
       TS:
         sh: date "+%Y%m%d-%H%M%S"
+
   gen-parser:
     cmds:
       - python -m pegen python.gram > python.gram.out

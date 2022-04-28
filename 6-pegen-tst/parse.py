@@ -130,7 +130,6 @@ class Parser(Parser):
         )
 
     def parse(self, rule: str, call_invalid_rules: bool = False) -> Optional[ast.AST]:
-        # old = self.call_invalid_rules
         self.call_invalid_rules = call_invalid_rules
         res = getattr(self, rule)()
 
@@ -8831,43 +8830,43 @@ class PythonParser(Parser):
         return None
 
     KEYWORDS = (
-        "raise",
-        "finally",
-        "True",
-        "not",
-        "in",
-        "as",
-        "def",
-        "return",
-        "lambda",
-        "break",
-        "class",
+        "except",
+        "try",
+        "yield",
         "with",
-        "or",
-        "while",
-        "and",
-        "global",
-        "for",
+        "True",
+        "del",
         "False",
+        "not",
+        "class",
+        "global",
+        "raise",
+        "None",
+        "or",
+        "lambda",
+        "await",
+        "pass",
+        "finally",
+        "async",
+        "def",
+        "if",
         "elif",
         "else",
-        "del",
-        "async",
-        "yield",
-        "await",
-        "None",
-        "assert",
-        "except",
-        "if",
-        "try",
         "from",
-        "nonlocal",
-        "pass",
-        "import",
-        "is",
+        "as",
+        "assert",
         "continue",
+        "for",
+        "return",
+        "is",
+        "import",
+        "in",
+        "while",
+        "and",
+        "nonlocal",
+        "break",
     )
-    SOFT_KEYWORDS = ("case", "_", "match")
+    SOFT_KEYWORDS = ("_", "case", "match")
 
 
 if __name__ == "__main__":

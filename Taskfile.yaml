@@ -1,0 +1,16 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  update-cpython-pegen:
+    cmds:
+      - git fetch --depth=1 https://github.com/python/cpython.git main:tmp_cpython_main
+      - git checkout tmp_cpython_main
+      - git subtree split --squash --prefix=images -b subtree_split_branch
+      -
+
+    vars:
+      TS:
+        sh: date "+%Y%m%d-%H%M%S"

@@ -12,7 +12,7 @@ from typing import (
 )
 
 from pegen.tokenizer import Tokenizer
-from .parser import XonshParser as Parser
+from xonsh_parser import XonshParser as Parser
 
 
 def parse_file(

@@ -4,14 +4,13 @@ version: '3'
 
 
 tasks:
-  default:
+  generate-parser:
     cmds:
-      - python 1-xonsh-parser.py | tee "results/xonsh-parser-{{.TS}}.md"
-      - python 2-ctx-parser.py | tee "results/ctx-parser-{{.TS}}.md"
+      - python task_generate_parser.py
+
+  profile-memory:
+    cmds:
+      - python task_profile_mem.py | tee "results-xonsh-parser-{{.TS}}.log"
     vars:
       TS:
         sh: date "+%Y%m%d-%H%M%S"
-
-  generate-parser:
-    cmds:
-      - python tasks/generate.py

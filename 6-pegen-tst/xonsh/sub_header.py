@@ -4,18 +4,18 @@ import tokenize
 from pegen.parser import Parser
 
 # -->
-
-
 import sys
 from typing import (
     Any,
+    Callable,
+    Iterator,
     List,
+    Literal,
     Tuple,
     TypeVar,
     Union,
-    Optional,
+    NoReturn,
 )
-
 from pegen.tokenizer import Tokenizer
 
 # Singleton ast nodes, created once for efficiency

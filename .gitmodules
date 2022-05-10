@@ -1,12 +1,12 @@
 [submodule "3-rply-mypyc"]
 	path = 3-rply-mypyc
-	url = ./3-rply-mypyc/
+	url = git@github.com:alex/rply.git
 [submodule "s1-black"]
 	path = s1-black
-	url = ./s1-black/
+	url = git@github.com:psf/black.git
 [submodule "s2-pegen_experiments"]
 	path = s2-pegen_experiments
-	url = ./s2-pegen_experiments/
+	url = git@github.com:we-like-parsers/pegen_experiments.git
 [submodule "s3-parso"]
 	path = s3-parso
 	url = git@github.com:davidhalter/parso.git

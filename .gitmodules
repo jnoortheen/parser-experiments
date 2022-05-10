@@ -1,6 +1,6 @@
 [submodule "3-rply-mypyc"]
 	path = 3-rply-mypyc
-	url = git@github.com:alex/rply.git
+	url = git@github.com:jnoortheen/rply.git
 [submodule "s1-black"]
 	path = s1-black
 	url = git@github.com:psf/black.git

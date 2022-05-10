@@ -334,7 +334,7 @@ summary = "Yet Another Python Profiler"
 
 [metadata]
 lock_version = "3.1"
-content_hash = "sha256:45e5235ca780f671f2066205163d5b2a22d4cd11849918e5604a935b69513db3"
+content_hash = "sha256:ed72bd89b17bb21582e975910d0907b0007c8329b2f1f350229eb5de881400d2"
 
 [metadata.files]
 "appdirs 1.4.4" = [

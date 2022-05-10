@@ -13,3 +13,6 @@
 [submodule "8-tree-sitter/pygram"]
 	path = 8-tree-sitter/pygram
 	url = https://github.com/tree-sitter/tree-sitter-python
+[submodule "s4-pegen"]
+	path = s4-pegen
+	url = git@github.com:we-like-parsers/pegen.git

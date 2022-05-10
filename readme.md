@@ -11,6 +11,7 @@ All of these below parse Python3.10 grammar.
 | xonsh-ply                | 8240.6 KiB           | 0.65s | 10333.5KiB |
 | parso                    | 3542.7 KiB           | 0.80s | 3690.2KiB  |
 | treesitter               | 9137.0 KiB           | 1.56s | 9708.7KiB  |
+| libcst                   | 21817.KiB            | 6.5s  | 23024.4KiB |
 
 
 seems like both are good. easpecially pgen2 interms of memory usage and performance. but we can use pegen2 
@@ -67,3 +68,4 @@ as it has a separate pypi package. We can expect some stability as Python may in
 # Links
 
 - https://www.dabeaz.com/ply/ply.html - good resource to dive into the world of parser generation
+- https://itnext.io/hacking-the-python-syntax-part-1-ternary-operator-bbcb04aa6ecb

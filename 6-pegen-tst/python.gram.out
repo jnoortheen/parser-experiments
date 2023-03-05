@@ -85,8 +85,8 @@ Clean Grammar:
   function_def: decorators function_def_raw | function_def_raw
   function_def_raw:
       | invalid_def_raw
-      | 'def' NAME '(' params? ')' ['->' expression] &&':' func_type_comment? block
-      | 'async' 'def' NAME '(' params? ')' ['->' expression] &&':' func_type_comment? block
+      | 'def' NAME &&'(' params? ')' ['->' expression] &&':' func_type_comment? block
+      | 'async' 'def' NAME &&'(' params? ')' ['->' expression] &&':' func_type_comment? block
   params: invalid_parameters | parameters
   parameters:
       | slash_no_default param_no_default* param_with_default* star_etc?
@@ -99,11 +99,11 @@ Clean Grammar:
       | param_no_default* param_with_default+ '/' ','
       | param_no_default* param_with_default+ '/' &')'
   star_etc:
+      | invalid_star_etc
       | '*' param_no_default param_maybe_default* kwds?
       | '*' ',' param_maybe_default+ kwds?
       | kwds
-      | invalid_star_etc
-  kwds: '**' param_no_default
+  kwds: invalid_kwds | '**' param_no_default
   param_no_default: param ',' TYPE_COMMENT? | param TYPE_COMMENT? &')'
   param_with_default: param default ',' TYPE_COMMENT? | param default TYPE_COMMENT? &')'
   param_maybe_default:
@@ -111,7 +111,7 @@ Clean Grammar:
       | param default? TYPE_COMMENT? &')'
   param: NAME annotation?
   annotation: ':' expression
-  default: '=' expression
+  default: '=' expression | invalid_default
   if_stmt:
       | invalid_if_stmt
       | 'if' named_expression ':' block elif_stmt
@@ -220,6 +220,7 @@ Clean Grammar:
   expressions: expression ((',' expression))+ ','? | expression ',' | expression
   expression:
       | invalid_expression
+      | invalid_legacy_expression
       | disjunction 'if' disjunction 'else' expression
       | disjunction
       | lambdef
@@ -308,11 +309,11 @@ Clean Grammar:
       | lambda_param_no_default* lambda_param_with_default+ '/' ','
       | lambda_param_no_default* lambda_param_with_default+ '/' &':'
   lambda_star_etc:
+      | invalid_lambda_star_etc
       | '*' lambda_param_no_default lambda_param_maybe_default* lambda_kwds?
       | '*' ',' lambda_param_maybe_default+ lambda_kwds?
       | lambda_kwds
-      | invalid_lambda_star_etc
-  lambda_kwds: '**' lambda_param_no_default
+  lambda_kwds: invalid_lambda_kwds | '**' lambda_param_no_default
   lambda_param_no_default: lambda_param ',' | lambda_param &':'
   lambda_param_with_default: lambda_param default ',' | lambda_param default &':'
   lambda_param_maybe_default: lambda_param default? ',' | lambda_param default? &':'
@@ -396,14 +397,16 @@ Clean Grammar:
       | args for_if_clauses
       | args ',' expression for_if_clauses
       | args ',' args
-  invalid_kwarg: NAME '=' expression for_if_clauses | !(NAME '=') expression '='
+  invalid_kwarg:
+      | ('True' | 'False' | 'None') '='
+      | NAME '=' expression for_if_clauses
+      | !(NAME '=') expression '='
   expression_without_invalid:
       | disjunction 'if' disjunction 'else' expression
       | disjunction
       | lambdef
   invalid_legacy_expression: NAME !'(' expression_without_invalid
   invalid_expression:
-      | invalid_legacy_expression
       | !(NAME STRING | SOFT_KEYWORD) disjunction expression_without_invalid
       | disjunction 'if' disjunction !('else' | ':')
   invalid_named_expression:
@@ -425,15 +428,39 @@ Clean Grammar:
       | ('[' | '{') star_named_expression ',' star_named_expressions for_if_clauses
       | ('[' | '{') star_named_expression ',' for_if_clauses
   invalid_dict_comprehension: '{' '**' bitwise_or for_if_clauses '}'
-  invalid_parameters: param_no_default* invalid_parameters_helper param_no_default
+  invalid_parameters:
+      | param_no_default* invalid_parameters_helper param_no_default
+      | param_no_default* '(' param_no_default+ ','? ')'
+      | "/" ','
+      | (slash_no_default | slash_with_default) param_maybe_default* '/'
+      | [(slash_no_default | slash_with_default)] param_maybe_default* '*' (',' | param_no_default) param_maybe_default* '/'
+      | param_maybe_default+ '/' '*'
+  invalid_default: '=' &(')' | ',')
+  invalid_star_etc:
+      | '*' (')' | ',' (')' | '**'))
+      | '*' ',' TYPE_COMMENT
+      | '*' param '='
+      | '*' (param_no_default | ',') param_maybe_default* '*' (param_no_default | ',')
+  invalid_kwds: '**' param '=' | '**' param ',' param | '**' param ',' ('*' | '**' | '/')
   invalid_parameters_helper: slash_with_default | param_with_default+
   invalid_lambda_parameters:
       | lambda_param_no_default* invalid_lambda_parameters_helper lambda_param_no_default
+      | lambda_param_no_default* '(' ','.lambda_param+ ','? ')'
+      | "/" ','
+      | (lambda_slash_no_default | lambda_slash_with_default) lambda_param_maybe_default* '/'
+      | [(lambda_slash_no_default | lambda_slash_with_default)] lambda_param_maybe_default* '*' (',' | lambda_param_no_default) lambda_param_maybe_default* '/'
+      | lambda_param_maybe_default+ '/' '*'
   invalid_lambda_parameters_helper:
       | lambda_slash_with_default
       | lambda_param_with_default+
-  invalid_star_etc: '*' (')' | ',' (')' | '**')) | '*' ',' TYPE_COMMENT
-  invalid_lambda_star_etc: '*' (':' | ',' (':' | '**'))
+  invalid_lambda_star_etc:
+      | '*' (':' | ',' (':' | '**'))
+      | '*' lambda_param '='
+      | '*' (lambda_param_no_default | ',') lambda_param_maybe_default* '*' (lambda_param_no_default | ',')
+  invalid_lambda_kwds:
+      | '**' lambda_param '='
+      | '**' lambda_param ',' lambda_param
+      | '**' lambda_param ',' ('*' | '**' | '/')
   invalid_double_type_comments: TYPE_COMMENT NEWLINE TYPE_COMMENT NEWLINE INDENT
   invalid_with_item: expression 'as' expression &(',' | ')' | ':')
   invalid_for_target: 'async'? 'for' star_expressions

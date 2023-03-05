@@ -14,8 +14,9 @@ tasks:
 
   gen-parser:
     cmds:
+      # this saves the generated parser to `parse.py`
       - python -m pegen python.gram > python.gram.out
 
   mypycify:
     cmds:
-      - mypyc parse.py
+      - python3 setup.py build_ext --inplace

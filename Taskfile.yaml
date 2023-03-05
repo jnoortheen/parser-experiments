@@ -2,6 +2,13 @@
 
 version: '3'
 
+includes:
+  ply:
+    taskfile: ./1-ply-plain/Taskfile.yaml
+    dir: ./1-ply-plain
+  pegen:
+    taskfile: ./6-pegen-tst/Taskfile.yaml
+    dir: ./6-pegen-tst
 
 tasks:
   update-cpython-pegen:

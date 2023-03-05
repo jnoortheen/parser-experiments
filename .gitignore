@@ -63,3 +63,5 @@ Icon*
 # dev tools
 .mypy_cache
 .pytest_cache
+
+.pdm.toml

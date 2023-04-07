@@ -344,7 +344,6 @@ class RepresentationPrinter(PrettyPrinter):
         deferred_pprinters=None,
         max_seq_length=MAX_SEQ_LENGTH,
     ):
-
         PrettyPrinter.__init__(
             self, output, max_width, newline, max_seq_length=max_seq_length
         )
@@ -639,13 +638,6 @@ def _dict_pprinter_factory(start, end, basetype=None):
             return p.text("{...}")
         p.begin_group(1, start)
         keys = obj.keys()
-        # if dict isn't large enough to be truncated, sort keys before displaying
-        if not (p.max_seq_length and len(obj) >= p.max_seq_length):
-            try:
-                keys = sorted(keys)
-            except Exception:
-                # Sometimes the keys don't sort.
-                pass
         for idx, key in p._enumerate(keys):
             if idx:
                 p.text(",")

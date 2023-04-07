@@ -177,7 +177,10 @@ def color_name_to_pygments_code(name, styles):
             fgcolor = color
         else:
             fgcolor = styles[getattr(Color, color)]
-        res = "bg:" + fgcolor
+        if fgcolor == "noinherit":
+            res = "noinherit"
+        else:
+            res = f"bg:{fgcolor}"
     else:
         # have regular, non-background color
         mods = parts["modifiers"]
@@ -1340,7 +1343,6 @@ def _monkey_patch_pygments_codes():
 
 @lazyobject
 def XonshTerminal256Formatter():
-
     if (
         ptk_version_info()
         and ptk_version_info() > (2, 0)
@@ -1592,7 +1594,7 @@ def color_file(file_path: str, path_stat: os.stat_result) -> tp.Tuple[_TokenType
 def _command_is_valid(cmd):
     try:
         cmd_abspath = os.path.abspath(os.path.expanduser(cmd))
-    except (OSError):
+    except OSError:
         return False
     return (cmd in XSH.commands_cache and not iskeyword(cmd)) or (
         os.path.isfile(cmd_abspath) and os.access(cmd_abspath, os.X_OK)
@@ -1604,7 +1606,7 @@ def _command_is_autocd(cmd):
         return False
     try:
         cmd_abspath = os.path.abspath(os.path.expanduser(cmd))
-    except (OSError):
+    except OSError:
         return False
     return os.path.isdir(cmd_abspath)
 
@@ -1625,7 +1627,7 @@ def subproc_arg_callback(_, match):
         path = os.path.expanduser(text)
         path_stat = os.lstat(path)  # lstat() will raise FNF if not a real file
         yieldVal, _ = color_file(path, path_stat)
-    except (OSError):
+    except OSError:
         pass
 
     yield (match.start(), yieldVal, text)
@@ -1644,13 +1646,13 @@ class XonshLexer(Python3Lexer):
     def __init__(self, *args, **kwargs):
         # If the lexer is loaded as a pygment plugin, we have to mock
         # __xonsh__.env and __xonsh__.commands_cache
-        if not hasattr(XSH, "env"):
+        if getattr(XSH, "env", None) is None:
             XSH.env = {}
             if ON_WINDOWS:
                 pathext = os_environ.get("PATHEXT", [".EXE", ".BAT", ".CMD"])
                 XSH.env["PATHEXT"] = pathext.split(os.pathsep)
         if getattr(XSH, "commands_cache", None) is None:
-            XSH.commands_cache = CommandsCache()
+            XSH.commands_cache = CommandsCache(XSH.env)
         _ = XSH.commands_cache.all_commands  # NOQA
         super().__init__(*args, **kwargs)
 

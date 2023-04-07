@@ -68,10 +68,11 @@ from xonsh.tools import (
     is_logfile_opt,
     is_nonstring_seq_of_strings,
     is_path,
-    is_str_str_dict,
+    is_regex,
     is_string,
     is_string_or_callable,
     is_string_set,
+    is_tok_color_dict,
     is_valid_shlvl,
     logfile_opt_to_str,
     path_to_str,
@@ -96,7 +97,7 @@ from xonsh.tools import (
     to_logfile_opt,
     to_repr_pretty_,
     to_shlvl,
-    to_str_str_dict,
+    to_tok_color_dict,
 )
 
 events.doc(
@@ -110,7 +111,6 @@ cause a recursion until the limit.
 """,
 )
 
-
 events.doc(
     "on_envvar_change",
     """
@@ -122,7 +122,6 @@ cause a recursion until the limit.
 """,
 )
 
-
 events.doc(
     "on_pre_spec_run_ls",
     """
@@ -132,7 +131,6 @@ Fires right before a SubprocSpec.run() is called for the ls
 command.
 """,
 )
-
 
 events.doc(
     "on_lscolors_change",
@@ -482,7 +480,7 @@ class LsColors(cabc.MutableMapping):
         # run dircolors
         try:
             out = subprocess.check_output(
-                cmd, env=denv, universal_newlines=True, stderr=subprocess.DEVNULL
+                cmd, env=denv, text=True, stderr=subprocess.DEVNULL
             )
         except (subprocess.CalledProcessError, FileNotFoundError):
             return cls(cls.default_settings)
@@ -565,6 +563,14 @@ DEFAULT_TITLE = "{current_job:{} | }{user}@{hostname}: {cwd} | xonsh"
 def xonsh_data_dir(env):
     """Ensures and returns the $XONSH_DATA_DIR"""
     xdd = os.path.expanduser(os.path.join(env.get("XDG_DATA_HOME"), "xonsh"))
+    os.makedirs(xdd, exist_ok=True)
+    return xdd
+
+
+@default_value
+def xonsh_cache_dir(env):
+    """Ensures and returns the $XONSH_CACHE_DIR"""
+    xdd = os.path.expanduser(os.path.join(env.get("XDG_CACHE_HOME"), "xonsh"))
     os.makedirs(xdd, exist_ok=True)
     return xdd
 
@@ -851,13 +857,19 @@ class GeneralSetting(Xettings):
         "will print information about how to continue the stopped process.",
     )
 
-    COMMANDS_CACHE_SIZE_WARNING = Var.with_default(
-        6000,
-        "Number of files on the PATH above which a warning is shown.",
-    )
     COMMANDS_CACHE_SAVE_INTERMEDIATE = Var.with_default(
         False,
-        "If enabled, the CommandsCache saved between runs and can reduce the startup time.",
+        "If enabled, the CommandsCache is saved between runs and can reduce the startup time.",
+    )
+
+    ENABLE_COMMANDS_CACHE = Var(
+        default=True,
+        doc="command names in a directory are cached when enabled.",
+        doc_default="True"
+        "On some platforms it may not be accurate enough"
+        "(e.g. Windows, Linux save mtime in seconds). "
+        "setting it to False would disable the caching mechanism "
+        "and may slow down the shell",
     )
 
     HOSTNAME = Var.with_default(
@@ -920,6 +932,11 @@ class GeneralSetting(Xettings):
         "should cause an end to execution. This is less useful at a terminal. "
         "The error that is raised is a ``subprocess.CalledProcessError``.",
     )
+    LAST_RETURN_CODE = Var.with_default(
+        0,
+        "Integer return code of the last command. Only updated during interactive use, i.e. not during execution of scripts.",
+    )
+
     SHLVL = Var(
         is_valid_shlvl,
         to_shlvl,
@@ -1006,6 +1023,12 @@ class GeneralSetting(Xettings):
         doc_default="``~/.local/share``",
         type_str="str",
     )
+    XDG_CACHE_HOME = Var.with_default(
+        os.path.expanduser(os.path.join("~", ".cache")),
+        "The base directory relative to which user-specific non-essential data files should be stored.",
+        doc_default="``~/.cache``",
+        type_str="str",
+    )
     XDG_DATA_DIRS = Var.with_default(
         xdg_data_dirs,
         "A list of directories where system level data files are stored.",
@@ -1088,15 +1111,16 @@ The file should contain a function with the signature
         "presented, like PLY parsing messages.",
         is_configurable=False,
     )
-    XONSH_NO_AMALGAMATE = Var.with_default(
-        False,
-        "Setting this variable prior to starting xonsh to a truthy value will suppress amalgamated imports.",
-        is_configurable=False,
-    )
     XONSH_DATA_DIR = Var.with_default(
         xonsh_data_dir,
         "This is the location where xonsh data files are stored, such as history, generated completers ...",
         doc_default="``$XDG_DATA_HOME/xonsh``",
+        type_str="str",
+    )
+    XONSH_CACHE_DIR = Var.with_default(
+        xonsh_cache_dir,
+        "This is the location where cache files used by xonsh are stored, such as commands-cache...",
+        doc_default="``$XDG_CACHE_HOME/xonsh``",
         type_str="str",
     )
     XONSH_ENCODING = Var.with_default(
@@ -1150,8 +1174,8 @@ The file should contain a function with the signature
         "``!()`` and ``![]`` operators.",
     )
     XONSH_STYLE_OVERRIDES = Var(
-        is_str_str_dict,
-        to_str_str_dict,
+        is_tok_color_dict,
+        to_tok_color_dict,
         dict_to_str,
         {},
         "A dictionary containing custom prompt_toolkit/pygments style definitions.\n"
@@ -1178,8 +1202,9 @@ The file should contain a function with the signature
 By default it just prints ``cmds`` like below.
 
 .. code-block:: python
-def tracer(cmds: list, captured: Union[bool, str]):
-    print(f"TRACE SUBPROC: {cmds}, captured={captured}", file=sys.stderr)
+
+    def tracer(cmds: list, captured: Union[bool, str]):
+        print(f"TRACE SUBPROC: {cmds}, captured={captured}", file=sys.stderr)
 """,
     )
     XONSH_TRACEBACK_LOGFILE = Var(
@@ -1191,6 +1216,17 @@ def tracer(cmds: list, captured: Union[bool, str]):
         "``XONSH_SHOW_TRACEBACK`` has been set. Its value must be a writable file "
         "or None / the empty string if traceback logging is not desired. "
         "Logging to a file is not enabled by default.",
+    )
+    XONTRIBS_AUTOLOAD_DISABLED = Var(
+        default=False,
+        doc="""\
+Controls auto-loading behaviour of xontrib packages at the startup.
+* Set this to ``True`` to disable autoloading completely.
+* Setting this to a list of xontrib names will block loading those specifically.
+""",
+        doc_default="""\
+Xontribs with ``xonsh.xontrib`` entrypoint will be loaded automatically by default.
+""",
     )
     STAR_PATH = Var.no_default("env_path", pattern=re.compile(r"\w*PATH$"))
     STAR_DIRS = Var.no_default("env_path", pattern=re.compile(r"\w*DIRS$"))
@@ -1229,7 +1265,7 @@ class ChangeDirSetting(Xettings):
     COMPLETE_DOTS = Var.with_default(
         "matching",
         doc="Flag to specify how current and previous directories should be "
-        "tab completed  ('./', '../'):"
+        "tab completed  ('./', '../'):\n"
         "    - ``always`` Always complete paths with ./ and ../\n"
         "    - ``never`` Never complete paths with ./ and ../\n"
         "    - ``matching`` Complete if path starts with . or ..",
@@ -1349,6 +1385,30 @@ class PromptSetting(Xettings):
         ".",
         "Prompt text for 2nd+ lines of input, may be str or function which "
         "returns a str.",
+    )
+    MULTILINE_PROMPT_PRE = Var(
+        is_string_or_callable,
+        ensure_string,
+        ensure_string,
+        "",
+        "Indicator inserted before the line continuation marks set "
+        "in ``$MULTILINE_PROMPT``. Can be used to mark the start of "
+        "a semantic continuation prompt "
+        "(see `Semantic Prompts <https://gitlab.freedesktop.org/Per_Bothner/specifications/blob/master/proposals/semantic-prompts.md>`_ "
+        "or `WezTerm <https://wezfurlong.org/wezterm/shell-integration.html>`_ "
+        "for more details). May be str or function which returns a str.",
+    )
+    MULTILINE_PROMPT_POS = Var(
+        is_string_or_callable,
+        ensure_string,
+        ensure_string,
+        "",
+        "Indicator inserted after the line continuation marks set "
+        "in ``$MULTILINE_PROMPT``. Can be used to mark the end of "
+        "a semantic continuation prompt and the beginning of user input "
+        "(see `Semantic Prompts <https://gitlab.freedesktop.org/Per_Bothner/specifications/blob/master/proposals/semantic-prompts.md>`_ "
+        "or `WezTerm <https://wezfurlong.org/wezterm/shell-integration.html>`_ "
+        "for more details). May be str or function which returns a str.",
     )
     PRETTY_PRINT_RESULTS = Var.with_default(
         True,
@@ -1535,12 +1595,13 @@ class PromptHistorySetting(Xettings):
         set(),
         "A set of strings (comma-separated list in string form) of options "
         "that determine what commands are saved to the history list. By "
-        "default all commands are saved. The option ``ignoredups`` will not "
-        "save the command if it matches the previous command. The option "
-        "``ignoreerr`` will cause any commands that fail (i.e. return non-zero "
-        "exit status) to not be added to the history list. The option "
-        "``erasedups`` will remove all previous commands that matches and updates the frequency. "
-        "Note: ``erasedups`` is supported only in sqlite backend).",
+        "default all commands are saved. Options are as follows:\n\n"
+        "- ``ignoredups`` will not save the command if it matches the previous command\n"
+        "- ``ignoreerr`` will cause any commands that fail (i.e. return non-zero "
+        "exit status) to not be added to the history list\n"
+        "- ``ignorespace`` will not save the command if it begins with a space\n"
+        "- ``erasedups`` will remove all previous commands that matches and updates the frequency "
+        "(Note: only supported in sqlite backend)",
         can_store_as_str=True,
     )
     XONSH_HISTORY_SIZE = Var(
@@ -1566,6 +1627,14 @@ class PromptHistorySetting(Xettings):
         True,
         "Save current working directory to the history.",
         doc_default="True",
+    )
+    XONSH_HISTORY_IGNORE_REGEX = Var(
+        is_regex,
+        to_itself,
+        ensure_string,
+        None,
+        "Set a filter criteria for history items using a regular expression. "
+        "Any matching items will not be retained in the history.",
     )
 
 
@@ -1603,8 +1672,8 @@ class PTKSetting(PromptSetting):  # sub-classing -> sub-group
         "colors. Default is an empty string which means that prompt toolkit decide.",
     )
     PTK_STYLE_OVERRIDES = Var(
-        is_str_str_dict,
-        to_str_str_dict,
+        is_tok_color_dict,
+        to_tok_color_dict,
         dict_to_str,
         {},
         "A dictionary containing custom prompt_toolkit style definitions. (deprecated)",
@@ -1648,7 +1717,7 @@ class AsyncPromptSetting(PTKSetting):
         to_int_or_none,
         str,
         None,
-        "Define the number of workers used by the ASYC_PROPMT's pool. "
+        "Define the number of workers used by the ASYNC_PROMPT's pool. "
         "By default it is the same as defined by Python's concurrent.futures.ThreadPoolExecutor class.",
     )
     ENABLE_ASYNC_PROMPT = Var.with_default(
@@ -1879,7 +1948,12 @@ class Env(cabc.MutableMapping):
             self._d["PATH"] = list(PATH_DEFAULT)
         self._detyped = None
 
+    def get_detyped(self, key: str):
+        detyped = self.detype()
+        return detyped.get(key)
+
     def detype(self):
+        """return a dict that can be used as ``os.environ``"""
         if self._detyped is not None:
             return self._detyped
         ctx = {}

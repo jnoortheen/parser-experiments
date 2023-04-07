@@ -147,7 +147,7 @@ def _get_args_kwargs(annot: tp.Any) -> tp.Tuple[tp.Sequence[str], tp.Dict[str, t
         if hasattr(annot, "__metadata__"):
             args, kwargs = annot.__metadata__[0]
         else:
-            from typing_extensions import get_args
+            from typing import get_args
 
             _, (args, kwargs) = get_args(annot)
 
@@ -579,7 +579,7 @@ class ArgParserAlias:
 
     Examples
     ---------
-        For usage please check ``xonsh.completers.completer.py`` module.
+        For usage please check :py:mod:`xonsh.completers.completer`
     """
 
     class Error(Exception):

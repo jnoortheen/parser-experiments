@@ -11,7 +11,7 @@ import typing as tp
 
 from xonsh.lazyasd import lazyobject
 from xonsh.platform import PYTHON_VERSION_INFO
-from ply.lex import LexToken
+from xonsh.ply.ply.lex import LexToken
 from xonsh.tokenize import (
     CASE,
     COMMENT,
@@ -98,7 +98,7 @@ def token_map():
         "@$": "ATDOLLAR",
         "&": "AMPERSAND",
     }
-    for (op, typ) in _op_map.items():
+    for op, typ in _op_map.items():
         tm[(OP, op)] = typ
     tm[IOREDIRECT] = "IOREDIRECT"
     tm[STRING] = "STRING"

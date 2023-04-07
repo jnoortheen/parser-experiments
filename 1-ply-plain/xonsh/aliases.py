@@ -5,6 +5,7 @@ import functools
 import inspect
 import os
 import re
+import shutil
 import sys
 import types
 import typing as tp
@@ -255,6 +256,8 @@ class ExecAlias:
                 locs=frame.f_locals,
                 filename=self.filename,
             )
+        if XSH.history is not None:
+            return XSH.history.last_cmd_rtn
 
     def __repr__(self):
         return f"ExecAlias({self.src!r}, filename={self.filename!r})"
@@ -541,7 +544,7 @@ def source_foreign_fn(
             msg = (
                 "Skipping application of {0!r} alias from {1!r} "
                 "since it shares a name with an existing xonsh alias. "
-                'Use "--overwrite-alias" option to apply it anyway.'
+                'Use "--overwrite-alias" option to apply it anyway. '
                 'You may prevent this message with "--suppress-skip-message" or '
                 '"$FOREIGN_ALIASES_SUPPRESS_SKIP_MESSAGE = True".'
             )
@@ -809,11 +812,21 @@ def detect_xpip_alias():
 
     basecmd = [sys.executable, "-m", "pip"]
     try:
-        if ON_WINDOWS or IN_APPIMAGE:
+        if ON_WINDOWS:
             # XXX: Does windows have an installation mode that requires UAC?
             return basecmd
+        elif IN_APPIMAGE:
+            # In AppImage `sys.executable` is equal to path to xonsh.AppImage file and the real python executable is in $_
+            return [
+                XSH.env.get("_", "APPIMAGE_PYTHON_EXECUTABLE_NOT_FOUND"),
+                "-m",
+                "pip",
+            ]
         elif not os.access(os.path.dirname(sys.executable), os.W_OK):
-            return ["sudo"] + basecmd
+            return (
+                sys.executable
+                + " -m pip @(['install', '--user'] + $args[1:] if $args and $args[0] == 'install' else $args)"
+            )
         else:
             return basecmd
     except Exception:
@@ -893,7 +906,8 @@ def make_default_aliases():
             # Add aliases specific to the Anaconda python distribution.
             default_aliases["activate"] = ["source-cmd", "activate.bat"]
             default_aliases["deactivate"] = ["source-cmd", "deactivate.bat"]
-        if not locate_binary("sudo"):
+        if shutil.which("sudo", path=XSH.env.get_detyped("PATH")):
+            # XSH.commands_cache is not available during setup
             import xonsh.winutils as winutils
 
             def sudo(args):

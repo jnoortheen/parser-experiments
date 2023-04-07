@@ -37,6 +37,7 @@ import threading
 import traceback
 import typing as tp
 import warnings
+from contextlib import contextmanager
 
 # adding imports from further xonsh modules is discouraged to avoid circular
 # dependencies
@@ -51,6 +52,16 @@ from xonsh.platform import (
     os_environ,
     pygments_version_info,
 )
+
+
+@contextmanager
+def chdir(adir):
+    old_dir = os.getcwd()
+    os.chdir(adir)
+    try:
+        yield
+    finally:
+        os.chdir(old_dir)
 
 
 @functools.lru_cache(1)
@@ -838,7 +849,7 @@ def _executables_in_windows(path):
         return
 
 
-def executables_in(path):
+def executables_in(path) -> tp.Iterable[str]:
     """Returns a generator of files in path that the user could execute."""
     if ON_WINDOWS:
         func = _executables_in_windows
@@ -867,7 +878,7 @@ def debian_command_not_found(cmd):
     c = "{0} {1}; exit 0"
     s = subprocess.check_output(
         c.format(cnf, shlex.quote(cmd)),
-        universal_newlines=True,
+        text=True,
         stderr=subprocess.STDOUT,
         shell=True,
     )
@@ -902,7 +913,7 @@ def command_not_found(cmd, env):
     return rtn
 
 
-@functools.lru_cache()
+@functools.lru_cache
 def suggest_commands(cmd, env):
     """Suggests alternative commands given an environment and aliases."""
     if not env.get("SUGGEST_COMMANDS"):
@@ -1050,22 +1061,7 @@ def print_exception(msg=None, exc_info=None):
                 "$XONSH_TRACEBACK_LOGFILE = <filename>\n"
             )
 
-        traceback_str = "".join(
-            traceback.format_exception(*exc_info, limit=limit, chain=chain)
-        )
-
-        # color the traceback if available
-        _, interactive = _get_manual_env_var("XONSH_INTERACTIVE", 0)
-        _, color_results = _get_manual_env_var("COLOR_RESULTS", 0)
-        if interactive and color_results and HAS_PYGMENTS:
-            import pygments.lexers.python
-
-            lexer = pygments.lexers.python.PythonTracebackLexer()
-            tokens = list(pygments.lex(traceback_str, lexer=lexer))
-            # this goes to stdout, but since we are interactive it doesn't matter
-            print_color(tokens, end="")
-        else:
-            print(traceback_str, file=sys.stderr, end="")
+        display_colored_error_message(exc_info)
 
     # additionally, check if a file for traceback logging has been
     # specified and convert to a proper option if needed
@@ -1079,10 +1075,50 @@ def print_exception(msg=None, exc_info=None):
     if not show_trace:
         # if traceback output is disabled, print the exception's
         # error message on stderr.
+        if not xsh.env.get("XONSH_SHOW_TRACEBACK") and xsh.env.get(
+            "RAISE_SUBPROC_ERROR"
+        ):
+            display_colored_error_message(exc_info, limit=1)
+            return
         display_error_message(exc_info)
     if msg:
         msg = msg if msg.endswith("\n") else msg + "\n"
         sys.stderr.write(msg)
+
+
+def display_colored_error_message(exc_info, strip_xonsh_error_types=True, limit=None):
+    no_trace_and_raise_subproc_error = not xsh.env.get(
+        "XONSH_SHOW_TRACEBACK"
+    ) and xsh.env.get("RAISE_SUBPROC_ERROR")
+
+    if no_trace_and_raise_subproc_error:
+        limit = 1
+
+    content = traceback.format_exception(*exc_info, limit=limit)
+
+    if (
+        no_trace_and_raise_subproc_error
+        and "subprocess.CalledProcessError:" in content[-1]
+    ):
+        content = content[:-1]
+
+    traceback_str = "".join([v for v in content])
+    traceback_str += "" if traceback_str.endswith("\n") else "\n"
+
+    # color the traceback if available
+    _, interactive = _get_manual_env_var("XONSH_INTERACTIVE", 0)
+    _, color_results = _get_manual_env_var("COLOR_RESULTS", 0)
+    if not interactive and not color_results and not HAS_PYGMENTS:
+        sys.stderr.write(traceback_str)
+        return
+
+    import pygments.lexers.python
+
+    lexer = pygments.lexers.python.PythonTracebackLexer()
+    tokens = list(pygments.lex(traceback_str, lexer=lexer))
+    # this goes to stdout, but since we are interactive it doesn't matter
+    print_color(tokens, end="\n", file=sys.stderr)
+    return
 
 
 def display_error_message(exc_info, strip_xonsh_error_types=True):
@@ -1767,11 +1803,33 @@ def to_completion_mode(x):
     return y
 
 
-def is_str_str_dict(x):
-    """Tests if something is a str:str dictionary"""
-    return isinstance(x, dict) and all(
-        isinstance(k, str) and isinstance(v, str) for k, v in x.items()
-    )
+def is_tok_color_dict(x):
+    from pygments.token import _TokenType, string_to_tokentype
+
+    from xonsh.ptk_shell.shell import _style_from_pygments_dict
+
+    """Tests if something is a Token:Style dictionary"""
+    if not isinstance(x, dict):
+        return False
+    """Check if is a Token:str dict"""
+    for k, v in x.items():
+        if not isinstance(v, str):
+            return False
+        try:
+            k = _TokenType(k)
+            string_to_tokentype(k)
+        except (TypeError, AttributeError):
+            msg = f'"{k}" is not a valid Token.'
+            warnings.warn(msg, RuntimeWarning)
+            return False
+    """Check each str is a valid style"""
+    try:
+        _style_from_pygments_dict(x)
+    except (AssertionError, ValueError):
+        msg = f'"{x}" contains an invalid style.'
+        warnings.warn(msg, RuntimeWarning)
+        return False
+    return True
 
 
 def to_dict(x):
@@ -1787,13 +1845,13 @@ def to_dict(x):
     return x
 
 
-def to_str_str_dict(x):
-    """Converts a string to str:str dictionary"""
-    if is_str_str_dict(x):
+def to_tok_color_dict(x):
+    """Converts a string to Token:str dictionary"""
+    if is_tok_color_dict(x):
         return x
     x = to_dict(x)
-    if not is_str_str_dict(x):
-        msg = f'"{x}" can not be converted to str:str dictionary.'
+    if not is_tok_color_dict(x):
+        msg = f'"{x}" can not be converted to Token:str dictionary.'
         warnings.warn(msg, RuntimeWarning)
         x = dict()
     return x
@@ -1889,6 +1947,16 @@ def is_history_tuple(x):
         and x[1].lower() in CANON_HISTORY_UNITS
     ):
         return True
+    return False
+
+
+def is_regex(x):
+    """Tests if something is a valid regular expression."""
+    try:
+        re.compile(x)
+        return True
+    except re.error:
+        pass
     return False
 
 

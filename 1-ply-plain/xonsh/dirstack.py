@@ -99,21 +99,19 @@ def _unc_map_temp_drive(unc_path) -> str:
 
     if not _unc_check_enabled():
         return unc_path
-    else:
-        unc_share, rem_path = os.path.splitdrive(unc_path)
-        unc_share = unc_share.casefold()
-        for d in _unc_tempDrives:
-            if _unc_tempDrives[d] == unc_share:
-                return os.path.join(d, rem_path)
+    unc_share, rem_path = os.path.splitdrive(unc_path)
+    unc_share = unc_share.casefold()
+    for d in _unc_tempDrives:
+        if _unc_tempDrives[d] == unc_share:
+            return os.path.join(d, rem_path)
 
-        for dord in range(ord("z"), ord("a"), -1):
-            d = chr(dord) + ":"
-            if not os.path.isdir(d):  # find unused drive letter starting from z:
-                subprocess.check_output(
-                    ["NET", "USE", d, unc_share], universal_newlines=True
-                )
-                _unc_tempDrives[d] = unc_share
-                return os.path.join(d, rem_path)
+    for dord in range(ord("z"), ord("a"), -1):
+        d = chr(dord) + ":"
+        if not os.path.isdir(d):  # find unused drive letter starting from z:
+            subprocess.check_output(["NET", "USE", d, unc_share], text=True)
+            _unc_tempDrives[d] = unc_share
+            return os.path.join(d, rem_path)
+    raise RuntimeError(f"Failed to find a drive for UNC Path({unc_path})")
 
 
 def _unc_unmap_temp_drive(left_drive, cwd):
@@ -136,9 +134,7 @@ def _unc_unmap_temp_drive(left_drive, cwd):
             return
 
     _unc_tempDrives.pop(left_drive)
-    subprocess.check_output(
-        ["NET", "USE", left_drive, "/delete"], universal_newlines=True
-    )
+    subprocess.check_output(["NET", "USE", left_drive, "/delete"], text=True)
 
 
 events.doc(
@@ -520,7 +516,7 @@ def dirs_fn(
     if verbose:
         out = ""
         pad = len(str(len(o) - 1))
-        for (ix, e) in enumerate(o):
+        for ix, e in enumerate(o):
             blanks = " " * (pad - len(str(ix)))
             out += f"\n{blanks}{ix} {e}"
         out = out[1:]

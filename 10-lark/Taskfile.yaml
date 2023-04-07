@@ -1,0 +1,17 @@
+# https://taskfile.dev
+
+version: '3'
+
+
+tasks:
+  json:
+    cmds:
+      - python -m lark.tools.standalone json.lark > json_parser.py
+    dir: json-example
+  bench:
+    cmds:
+      - gtime --verbose python json_parser_main.py sample.json | tee result.{{.TS}}.log
+    dir: json-example
+    vars:
+      TS:
+        sh: date "+%Y%m%d-%H%M%S"

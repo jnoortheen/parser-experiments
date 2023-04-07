@@ -9,6 +9,9 @@ includes:
   pegen:
     taskfile: ./6-pegen-tst/Taskfile.yaml
     dir: ./6-pegen-tst
+  libsct:
+    taskfile: ./7-1-libcst-test/Taskfile.yaml
+    dir: ./7-1-libcst-test
 
 tasks:
   update-cpython-pegen:

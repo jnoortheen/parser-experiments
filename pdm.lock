@@ -140,6 +140,11 @@ requires_python = ">=3.6.1,<4.0"
 summary = "A Python utility / library to sort Python imports."
 
 [[package]]
+name = "lark"
+version = "1.1.5"
+summary = "a modern parsing library"
+
+[[package]]
 name = "libcst"
 version = "0.4.9"
 requires_python = ">=3.7"
@@ -363,8 +368,9 @@ version = "1.3.3"
 summary = "Yet Another Python Profiler"
 
 [metadata]
-lock_version = "4.1"
-content_hash = "sha256:27136d749e72901dedff7d7a5a0d069a3eedf5434d9accaf60e5e1d5124b47ed"
+lock_version = "4.2"
+groups = ["default", "bench", "dev", "test", "type"]
+content_hash = "sha256:d5500f90c35a9daedc5571b04c55df0cb52f8ef09b50df96fac3c78ea87f3e03"
 
 [metadata.files]
 "appdirs 1.4.4" = [
@@ -506,6 +512,10 @@ content_hash = "sha256:27136d749e72901dedff7d7a5a0d069a3eedf5434d9accaf60e5e1d51
 "isort 5.10.1" = [
     {url = "https://files.pythonhosted.org/packages/ab/e9/964cb0b2eedd80c92f5172f1f8ae0443781a9d461c1372a3ce5762489593/isort-5.10.1.tar.gz", hash = "sha256:e8443a5e7a020e9d7f97f1d7d9cd17c88bcb3bc7e218bf9cf5095fe550be2951"},
     {url = "https://files.pythonhosted.org/packages/b8/5b/f18e227df38b94b4ee30d2502fd531bebac23946a2497e5595067a561274/isort-5.10.1-py3-none-any.whl", hash = "sha256:6f62d78e2f89b4500b080fe3a81690850cd254227f27f75c3a0c491a1f351ba7"},
+]
+"lark 1.1.5" = [
+    {url = "https://files.pythonhosted.org/packages/a2/25/8e16de418fc83bb00dabaf8c7110bc45a90bf5481a70aa5f1668fcea73bc/lark-1.1.5.tar.gz", hash = "sha256:4b534eae1f9af5b4ea000bea95776350befe1981658eea3820a01c37e504bb4d"},
+    {url = "https://files.pythonhosted.org/packages/ac/c7/25e678cb94ac2b7be741272d5b2ae099e32e23f36d820e6feb8931b12382/lark-1.1.5-py3-none-any.whl", hash = "sha256:8476f9903e93fbde4f6c327f74d79e9b4bd0ed9294c5dfa3164ab8c581b5de2a"},
 ]
 "libcst 0.4.9" = [
     {url = "https://files.pythonhosted.org/packages/02/d1/aab567b1ee8beab17bc23aa80708fdbff3bdeb4a081c5378a36ea2d27d2d/libcst-0.4.9-cp39-cp39-manylinux_2_5_i686.manylinux1_i686.manylinux_2_17_i686.manylinux2014_i686.whl", hash = "sha256:3822056dc13326082362db35b3f649e0f4a97e36ddb4e487441da8e0fb9db7b3"},

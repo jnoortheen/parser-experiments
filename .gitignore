@@ -64,4 +64,5 @@ Icon*
 .mypy_cache
 .pytest_cache
 
-.pdm.toml
+.pdm-python
+pdm.toml

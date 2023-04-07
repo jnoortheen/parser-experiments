@@ -17,6 +17,7 @@ dependencies = [
     "libcst>=0.4.1",
     "build>=0.10.0",
     "regex>=2022.10.31",
+    "lark>=1.1.5",
 ]
 requires-python = ">=3.9"
 license = {text = "MIT"}

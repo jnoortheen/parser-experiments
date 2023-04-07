@@ -11,3 +11,12 @@ tasks:
     vars:
       TS:
         sh: date "+%Y%m%d-%H%M%S"
+
+  update-xonsh:
+    desc: Update xonsh to latest master
+    cmds:
+      - rm -rd xonsh || echo "not exists"
+      - rm -rd /tmp/xonsh || echo "not exists"
+      # bash command to download only the xonsh directory from the xonsh repo git@github.com:xonsh/xonsh.git
+      - git clone --depth=1 git@github.com:xonsh/xonsh.git /tmp/xonsh
+      - cp -r /tmp/xonsh/xonsh .

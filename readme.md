@@ -9,6 +9,7 @@ All of these below parse Python3.10 grammar.
 | pegen + regex(tokenizer) | 1767KiB              | 0.32s | 2015KiB    |
 | pegen                    | 1234KiB              | 0.38s | 2281.9KiB  |
 | xonsh-ply                | 8240.6 KiB           | 0.65s | 10333.5KiB |
+| lark (lalr-cached)       | 3753.7 KiB           | 0.74s | 9307.3KiB  |
 | parso                    | 3542.7 KiB           | 0.80s | 3690.2KiB  |
 | treesitter               | 9137.0 KiB           | 1.56s | 9708.7KiB  |
 | libcst                   | 21817.KiB            | 6.5s  | 23024.4KiB |

@@ -7,8 +7,8 @@ from lark import Lark
 from lark.indenter import PythonIndenter
 
 
-def get_parser():
-    kwargs = dict(postlex=PythonIndenter(), start="file_input", cache=True)
+def get_parser(**kwargs):
+    kwargs.update(dict(postlex=PythonIndenter(), start="file_input", cache=True))
 
     # Official Python grammar by Lark
     return Lark.open_from_package(
@@ -56,7 +56,14 @@ if __name__ == "__main__":
     from bench_utils import timeit, trace
 
     with trace(), timeit():
-        py_parser = get_parser()
+        kwargs = {}
+        if len(sys.argv) > 2:
+            if sys.argv[2] == "--cy":
+                from lark_cython import plugins
+
+                kwargs["_plugins"] = plugins
+
+        py_parser = get_parser(**kwargs)
         # test_python_lib()
         # test_earley_equals_lalr()
         py_parser.parse(_read(sys.argv[1]) + "\n")

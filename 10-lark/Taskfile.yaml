@@ -19,3 +19,8 @@ tasks:
     cmds:
       - gtime --verbose python parser.py parser.py | tee result.{{.TS}}.log
     dir: py-example
+
+  py-bench-cython:
+    cmds:
+      - gtime --verbose python parser.py parser.py --cy | tee cython-plugin-result.{{.TS}}.log
+    dir: py-example
